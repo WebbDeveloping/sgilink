@@ -8,7 +8,6 @@ import {
   Globe2,
   Layers,
   LineChart,
-  Lock,
   PhoneCall,
   ShieldCheck,
   Users2,
@@ -26,7 +25,6 @@ export default function HomePage() {
       <InvestorSection />
       <FaqSection />
       <FinalCtaSection />
-      {/* <Footer /> */}
     </main>
   );
 }
@@ -580,28 +578,5 @@ function FinalCtaSection() {
         </p>
       </div>
     </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="border-t border-[#EFE3CE] bg-[#EFE3CE]/40 py-8">
-      <div className="max-w-6xl lg:max-w-7xl mx-auto px-6 lg:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <p className="flex items-center gap-2 text-xs text-slate-600">
-          <LineChart className="h-3.5 w-3.5 text-[#3A5E7B]" />
-          <span>
-            © {new Date().getFullYear()} SGI-LINK. All rights reserved.
-          </span>
-        </p>
-        <div className="flex flex-wrap items-center gap-4 text-xs text-slate-600">
-          <button className="inline-flex items-center gap-1 hover:text-[#3A5E7B]">
-            <Lock className="h-3.5 w-3.5" />
-            Privacy
-          </button>
-          <button className="hover:text-[#3A5E7B]">Terms</button>
-          <button className="hover:text-[#3A5E7B]">Disclosures</button>
-        </div>
-      </div>
-    </footer>
   );
 }
