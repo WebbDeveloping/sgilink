@@ -19,7 +19,6 @@ import {
 export default function HomePage() {
   return (
     <main className="bg-white text-slate-900 min-h-screen">
-      <Header />
       <HeroSection />
       <FundOverviewSection />
       <StrategySection />
@@ -27,54 +26,8 @@ export default function HomePage() {
       <InvestorSection />
       <FaqSection />
       <FinalCtaSection />
-      <Footer />
+      {/* <Footer /> */}
     </main>
-  );
-}
-
-function Header() {
-  return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-[#EFE3CE] bg-white/80 backdrop-blur-xl">
-      <div className="max-w-6xl lg:max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between gap-6">
-        <div className="flex items-center gap-2">
-          <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-[#A7C7F1] to-[#3A5E7B] flex items-center justify-center shadow-sm">
-            <span className="text-xs font-semibold text-white">SG</span>
-          </div>
-          <span className="text-sm font-semibold tracking-[0.22em] uppercase text-[#3A5E7B]">
-            SGI-LINK
-          </span>
-        </div>
-
-        <nav className="hidden md:flex items-center gap-8 text-sm text-slate-600">
-          <a href="#strategy" className="hover:text-[#3A5E7B]">
-            Strategy
-          </a>
-          <a href="#track-record" className="hover:text-[#3A5E7B]">
-            Track Record
-          </a>
-          <a href="#risk" className="hover:text-[#3A5E7B]">
-            Risk
-          </a>
-          <a href="#team" className="hover:text-[#3A5E7B]">
-            Team
-          </a>
-          <a href="#faq" className="hover:text-[#3A5E7B]">
-            FAQ
-          </a>
-        </nav>
-
-        <div className="flex items-center gap-3">
-          <button className="hidden md:inline-flex items-center justify-center rounded-full border border-[#EFE3CE] px-3 py-1.5 text-xs font-medium text-slate-700 hover:bg-[#EFE3CE]/40">
-            <Lock className="mr-1.5 h-3.5 w-3.5" />
-            Investor Login
-          </button>
-          <button className="inline-flex items-center justify-center rounded-full bg-[#3A5E7B] px-4 py-1.5 text-xs font-semibold text-white shadow-md shadow-[rgba(58,94,123,0.35)] hover:bg-[#324f68]">
-            Request Access
-            <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
-          </button>
-        </div>
-      </div>
-    </header>
   );
 }
 
@@ -372,7 +325,10 @@ function TechnologySection() {
   ];
 
   return (
-    <section className="bg-[#EFE3CE]/40 py-20 lg:py-24 border-t border-[#EFE3CE]">
+    <section
+      id="technology"
+      className="bg-[#EFE3CE]/40 py-20 lg:py-24 border-t border-[#EFE3CE]"
+    >
       <div className="max-w-6xl lg:max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
         <div className="space-y-5">
           <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] text-slate-600 uppercase">
@@ -459,7 +415,10 @@ function InvestorSection() {
   ];
 
   return (
-    <section className="bg-white py-20 lg:py-24 border-t border-[#EFE3CE]">
+    <section
+      id="investor-profile"
+      className="bg-white py-20 lg:py-24 border-t border-[#EFE3CE]"
+    >
       <div className="max-w-6xl lg:max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
         <div className="max-w-2xl">
           <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] text-slate-600 uppercase">
@@ -587,7 +546,10 @@ function FaqSection() {
 
 function FinalCtaSection() {
   return (
-    <section className="bg-white py-16 lg:py-20 border-t border-[#EFE3CE]">
+    <section
+      id="cta"
+      className="bg-white py-16 lg:py-20 border-t border-[#EFE3CE]"
+    >
       <div className="max-w-3xl mx-auto px-6 lg:px-0 text-center space-y-6">
         <div className="inline-flex rounded-full border border-[#A7C7F1]/60 bg-[#A7C7F1]/10 px-3 py-1">
           <p className="text-[11px] font-medium tracking-[0.22em] text-[#3A5E7B] uppercase">
