@@ -1,26 +1,111 @@
+/* app/globals.css */
+
+@import "tailwindcss";
+/* Preflight is automatically included when you import `tailwindcss` :contentReference[oaicite:0]{index=0} */
+
+/* ────────────────────────────── */
+/*  Light / dark design tokens    */
+/* ────────────────────────────── */
+
+/* app/globals.css */
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ────────────────────────────── */
+/*  Light / dark design tokens    */
+/* ────────────────────────────── */
+
+/* These are Tailwind "theme variables" */
+/* --color-foo → gives you bg-foo, text-foo, border-foo, etc. */
+@theme {
+  --color-bg: oklch(0.99 0 0); /* app background */
+  --color-surface: oklch(0.97 0 0); /* cards, header, panels */
+  --color-border: oklch(0.9 0.02 260); /* subtle lines */
+  --color-primary: oklch(0.65 0.15 260); /* placeholder brand color */
+  --color-text: oklch(0.2 0.02 260); /* main text */
+  --color-muted: oklch(0.55 0.02 250); /* secondary text */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* When .dark is on html, override the theme vars */
+.dark {
+  color-scheme: dark;
+
+  --color-bg: oklch(0.16 0.02 260);
+  --color-surface: oklch(0.22 0.03 260);
+  --color-border: oklch(0.35 0.04 260);
+  --color-primary: oklch(0.78 0.16 260);
+  --color-text: oklch(0.97 0.01 250);
+  --color-muted: oklch(0.75 0.02 250);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Optional basic global styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  /* These use Tailwind’s theme vars under the hood */
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.bg-sgi-white {
+  background-color: #ffffff;
+}
+.bg-sgi-sand {
+  background-color: #e8dcc4;
+}
+.bg-sgi-beige {
+  background-color: #dcc7a1;
+}
+.bg-sgi-blue {
+  background-color: #afc9e8;
+}
+.bg-sgi-slate {
+  background-color: #4f6e8d;
+}
+
+.text-sgi-white {
+  color: #ffffff;
+}
+.text-sgi-sand {
+  color: #e8dcc4;
+}
+.text-sgi-beige {
+  color: #dcc7a1;
+}
+.text-sgi-blue {
+  color: #afc9e8;
+}
+.text-sgi-slate {
+  color: #4f6e8d;
+}
+
+.bg-sgi-offwhite {
+  background-color: #fafaf8;
+}
+.bg-sgi-tan {
+  background-color: #d9c9a3;
+}
+.bg-sgi-sand {
+  background-color: #e6dabf;
+}
+.bg-sgi-sky {
+  background-color: #90bdeb;
+}
+.bg-sgi-steel {
+  background-color: #406a89;
+}
+
+.text-sgi-offwhite {
+  color: #fafaf8;
+}
+.text-sgi-tan {
+  color: #d9c9a3;
+}
+.text-sgi-sand {
+  color: #e6dabf;
+}
+.text-sgi-sky {
+  color: #90bdeb;
+}
+.text-sgi-steel {
+  color: #406a89;
 }
