@@ -65,7 +65,7 @@ function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-[#ECE7DC] bg-white/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:h-20 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:h-20 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link
           href="/"
@@ -73,37 +73,39 @@ function Header() {
           onClick={closeMobile}
         >
           <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-[#A7C7F1] to-[#3A5E7B] shadow-sm shadow-slate-900/15">
-            <span className="text-xs font-semibold text-white">SG</span>
+            <span className="text-xs font-semibold leading-none text-white">
+              SG
+            </span>
           </div>
-          <div className="flex flex-col leading-none">
-            <span className="text-[11px] font-semibold tracking-[0.22em] text-[#3A5E7B]">
+          <div className="flex flex-col">
+            <span className="text-[11px] font-semibold leading-snug tracking-[0.22em] text-[#3A5E7B]">
               SGI-LINK
             </span>
-            <span className="text-[11px] text-slate-500">
+            <span className="text-[11px] leading-snug text-slate-500">
               Systematic Global Investments
             </span>
           </div>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-6 text-xs font-medium text-slate-600 md:flex lg:text-[13px]">
+        <nav className="hidden items-center gap-6 text-xs font-medium leading-snug text-slate-600 md:flex lg:text-[13px]">
           {mainNav.map((item) =>
             item.children ? (
               <div key={item.label} className="relative group">
                 <button
                   type="button"
-                  className="inline-flex items-center gap-1 whitespace-nowrap hover:text-[#3A5E7B]"
+                  className="inline-flex items-center gap-1 whitespace-nowrap py-1 hover:text-[#3A5E7B]"
                 >
                   <span>{item.label}</span>
                   <ChevronDown className="h-3 w-3" />
                 </button>
                 <div className="pointer-events-none absolute left-0 top-full mt-2 w-52 opacity-0 transition group-hover:pointer-events-auto group-hover:opacity-100">
-                  <div className="rounded-2xl border border-[#ECE7DC] bg-white/95 py-2 shadow-lg shadow-slate-900/10">
+                  <div className="rounded-2xl border border-[#ECE7DC] bg-white/95 py-1.5 shadow-lg shadow-slate-900/10">
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block px-3.5 py-1.5 text-[13px] text-slate-700 hover:bg-[#F4F2EC] hover:text-[#3A5E7B]"
+                        className="block px-3.5 py-1.5 text-[13px] leading-snug text-slate-700 hover:bg-[#F4F2EC] hover:text-[#3A5E7B]"
                         onClick={closeMobile}
                       >
                         {child.label}
@@ -116,7 +118,7 @@ function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="whitespace-nowrap hover:text-[#3A5E7B]"
+                className="whitespace-nowrap py-1 hover:text-[#3A5E7B]"
               >
                 {item.label}
               </Link>
@@ -129,7 +131,7 @@ function Header() {
           {/* Investor Login button */}
           <Link
             href="/investor-login"
-            className="hidden items-center justify-center rounded-full border border-[#ECE7DC] px-3.5 py-1.5 text-[11px] font-medium text-slate-700 hover:bg-[#F4F2EC]/70 md:inline-flex lg:text-xs"
+            className="hidden items-center justify-center rounded-full border border-[#ECE7DC] px-3.5 py-1.5 text-[11px] font-medium leading-snug text-slate-700 hover:bg-[#F4F2EC]/70 md:inline-flex lg:text-xs"
           >
             <Lock className="mr-1.5 h-3.5 w-3.5 shrink-0" />
             <span>Investor Login</span>
@@ -138,7 +140,7 @@ function Header() {
           {/* Primary CTA -> Contact */}
           <Link
             href="/contact"
-            className="hidden items-center justify-center rounded-full bg-[#3A5E7B] px-4 py-1.5 text-[11px] font-semibold text-white shadow-md shadow-slate-900/25 hover:bg-[#324f68] md:inline-flex lg:text-xs"
+            className="hidden items-center justify-center rounded-full bg-[#3A5E7B] px-4 py-1.5 text-[11px] font-semibold leading-snug text-white shadow-md shadow-slate-900/25 hover:bg-[#324f68] md:inline-flex lg:text-xs"
           >
             <span>Request Access</span>
             <ArrowRight className="ml-1.5 h-3.5 w-3.5 shrink-0" />
@@ -163,11 +165,11 @@ function Header() {
       {/* Mobile nav panel */}
       {mobileOpen && (
         <div className="border-t border-[#ECE7DC] bg-white/95 backdrop-blur-xl md:hidden">
-          <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-            <nav className="flex flex-col gap-2 text-sm text-slate-800">
+          <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6 lg:px-8">
+            <nav className="flex flex-col gap-3 text-sm leading-snug text-slate-800">
               {mainNav.map((item) =>
                 item.children ? (
-                  <div key={item.label} className="space-y-1">
+                  <div key={item.label} className="space-y-1.5">
                     <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">
                       {item.label}
                     </p>
@@ -198,10 +200,10 @@ function Header() {
             </nav>
 
             {/* Mobile actions */}
-            <div className="mt-4 space-y-2 border-t border-[#ECE7DC] pt-3">
+            <div className="mt-5 space-y-2 border-t border-[#ECE7DC] pt-3">
               <Link
                 href="/investor-login"
-                className="inline-flex w-full items-center justify-center rounded-full border border-[#ECE7DC] px-4 py-2 text-xs font-medium text-slate-700 hover:bg-[#F4F2EC]/70"
+                className="inline-flex w-full items-center justify-center rounded-full border border-[#ECE7DC] px-4 py-2 text-xs font-medium leading-snug text-slate-700 hover:bg-[#F4F2EC]/70"
                 onClick={closeMobile}
               >
                 <Lock className="mr-1.5 h-3.5 w-3.5 shrink-0" />
@@ -209,7 +211,7 @@ function Header() {
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex w-full items-center justify-center rounded-full bg-[#3A5E7B] px-4 py-2 text-xs font-semibold text-white shadow-md shadow-slate-900/25 hover:bg-[#324f68]"
+                className="inline-flex w-full items-center justify-center rounded-full bg-[#3A5E7B] px-4 py-2 text-xs font-semibold leading-snug text-white shadow-md shadow-slate-900/25 hover:bg-[#324f68]"
                 onClick={closeMobile}
               >
                 <span>Request Access</span>
@@ -226,8 +228,8 @@ function Header() {
 function Footer() {
   return (
     <footer className="mt-16 border-t border-[#ECE7DC] bg-[#F4F2EC]/60 py-8">
-      <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 px-4 sm:flex-row sm:items-center sm:px-6 lg:px-8">
-        <p className="flex items-center gap-2 text-xs text-slate-600">
+      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-4 sm:flex-row sm:items-center sm:px-6 lg:px-8">
+        <p className="flex items-center gap-2 text-xs leading-relaxed text-slate-600">
           <LineChart className="h-3.5 w-3.5 text-[#3A5E7B]" />
           <span>
             © {new Date().getFullYear()} SGI-LINK. All rights reserved.
@@ -235,7 +237,7 @@ function Footer() {
         </p>
 
         {/* Only client-requested links */}
-        <div className="flex flex-wrap items-center gap-4 text-xs text-slate-600">
+        <div className="flex flex-wrap items-center gap-4 text-xs leading-snug text-slate-600">
           <Link href="/disclosures" className="hover:text-[#3A5E7B]">
             Risk Disclosure &amp; Compliance
           </Link>
