@@ -129,6 +129,7 @@ function OverviewMetric({ label, value }: { label: string; value: string }) {
   );
 }
 
+/** UPDATED: blue Fund Overview section */
 function FundSnapshotSection() {
   const items = [
     {
@@ -149,17 +150,17 @@ function FundSnapshotSection() {
   ];
 
   return (
-    <section className="border-t border-[#ECE7DC] bg-[#F4F2EC] py-16">
+    <section className="border-t border-[#D5E3F6] bg-[#E9F2FF] py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-8 max-w-2xl space-y-3">
-          <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-600 leading-snug">
+          <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#214266] leading-snug">
             <Layers className="h-3.5 w-3.5 text-[#3A5E7B]" />
             <span>Fund Overview</span>
           </p>
-          <h2 className="text-2xl font-semibold text-slate-900 leading-snug">
+          <h2 className="text-2xl font-semibold text-[#10243A] leading-snug">
             A focused vehicle for SGI’s systems.
           </h2>
-          <p className="text-sm text-slate-700 leading-relaxed">
+          <p className="text-sm text-[#1F3B57] leading-relaxed">
             SGI-LINK exists to channel capital into SGI’s proprietary trading
             systems — nothing else.
           </p>
@@ -169,15 +170,15 @@ function FundSnapshotSection() {
           {items.map(({ title, body, icon: Icon }) => (
             <article
               key={title}
-              className="rounded-2xl border border-[#ECE7DC] bg-white/90 p-5 shadow-sm shadow-slate-900/5"
+              className="rounded-2xl border border-[#D5E3F6] bg-white/95 p-5 shadow-sm shadow-slate-900/10"
             >
-              <div className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#A7C7F1]/15 text-[#3A5E7B]">
+              <div className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#A7C7F1]/25 text-[#3A5E7B]">
                 <Icon className="h-4 w-4" />
               </div>
               <h3 className="mb-1.5 text-sm font-semibold text-slate-900 leading-snug">
                 {title}
               </h3>
-              <p className="text-xs leading-relaxed text-slate-600">{body}</p>
+              <p className="text-xs leading-relaxed text-slate-700">{body}</p>
             </article>
           ))}
         </div>
@@ -185,7 +186,7 @@ function FundSnapshotSection() {
         <div className="mt-6">
           <a
             href="/fund-overview"
-            className="inline-flex items-center text-xs font-semibold uppercase tracking-[0.18em] text-[#3A5E7B] hover:text-[#2c4157] whitespace-nowrap leading-snug"
+            className="inline-flex items-center text-xs font-semibold uppercase tracking-[0.18em] text-[#1F3B57] hover:text-[#14273A] whitespace-nowrap leading-snug"
           >
             <span>View full fund overview</span>
             <ArrowRight className="ml-1.5 h-3.5 w-3.5 shrink-0" />
