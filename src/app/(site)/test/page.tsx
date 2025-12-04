@@ -116,7 +116,7 @@ function BriefHero() {
   );
 }
 
-function OverviewMetric({ label, value }) {
+function OverviewMetric({ label, value }: { label: string; value: string }) {
   return (
     <>
       <dt className="text-[11px] uppercase tracking-wide text-slate-500 leading-snug">
