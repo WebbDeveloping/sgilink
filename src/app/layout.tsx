@@ -65,7 +65,7 @@ function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-[#ECE7DC] bg-white/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:h-20 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:h-20 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link
           href="/"
@@ -165,7 +165,7 @@ function Header() {
       {/* Mobile nav panel */}
       {mobileOpen && (
         <div className="border-t border-[#ECE7DC] bg-white/95 backdrop-blur-xl md:hidden">
-          <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
             <nav className="flex flex-col gap-3 text-sm leading-snug text-slate-800">
               {mainNav.map((item) =>
                 item.children ? (
@@ -228,7 +228,7 @@ function Header() {
 function Footer() {
   return (
     <footer className="mt-16 border-t border-[#ECE7DC] bg-[#F4F2EC]/60 py-8">
-      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-4 sm:flex-row sm:items-center sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 px-4 sm:flex-row sm:items-center sm:px-6 lg:px-8">
         <p className="flex items-center gap-2 text-xs leading-relaxed text-slate-600">
           <LineChart className="h-3.5 w-3.5 text-[#3A5E7B]" />
           <span>
