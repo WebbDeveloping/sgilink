@@ -338,16 +338,19 @@ function StrategySection() {
 
         {/* Timeline */}
         <div className="relative flex-1">
+          {/* vertical guide line */}
           <div className="pointer-events-none absolute left-4 top-0 hidden h-full w-px bg-gradient-to-b from-[#D5E3F6] via-[#ECE7DC] to-transparent sm:block" />
           <div className="space-y-4">
             {steps.map(({ label, title, body, icon: Icon }, idx) => (
               <article
                 key={label}
-                className="relative rounded-2xl border border-[#ECE7DC] bg-[#F7F5F0] p-4 pl-10 sm:p-5 sm:pl-12 shadow-sm shadow-slate-900/5"
+                className="relative rounded-2xl border border-slate-200/80 bg-white/70 p-4 pl-10 sm:p-5 sm:pl-12 shadow-sm shadow-slate-900/5 backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white hover:shadow-md"
               >
-                <div className="absolute left-2 top-4 flex h-8 w-8 items-center justify-center rounded-full border border-[#D5E3F6] bg-white text-[#3A5E7B] shadow-sm">
+                {/* timeline node */}
+                <div className="absolute left-2 top-4 flex h-8 w-8 items-center justify-center rounded-full border border-[#D5E3F6] bg-[#E2EEFF] text-[#3A5E7B] shadow-sm">
                   <Icon className="h-4 w-4" />
                 </div>
+
                 <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600 leading-snug">
                   {label}
                 </p>
@@ -355,6 +358,7 @@ function StrategySection() {
                   {title}
                 </p>
                 <p className="text-xs leading-relaxed text-slate-700">{body}</p>
+
                 {idx === 0 && (
                   <p className="mt-2 text-[11px] text-slate-500 leading-relaxed">
                     Research is version-controlled and reproducible — the same
@@ -398,15 +402,19 @@ function TechnologySection() {
   return (
     <section className="relative border-t border-[#ECE7DC] bg-[#F4F2EC] py-16">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/60 to-transparent" />
+
       <div className="relative mx-auto flex max-w-7xl flex-col gap-12 px-4 sm:px-6 lg:flex-row lg:items-start">
+        {/* LEFT COPY */}
         <div className="max-w-xl space-y-5">
           <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-600 leading-snug">
             <Cpu className="h-3.5 w-3.5 text-[#3A5E7B]" />
             <span>Technology Stack</span>
           </p>
+
           <h2 className="text-2xl font-semibold text-slate-900 leading-snug md:text-3xl">
             Infrastructure built for live markets.
           </h2>
+
           <p className="text-sm text-slate-700 leading-relaxed">
             Purpose-built execution, monitoring, and risk tooling support our
             systems in live FX and futures markets — not just in research
@@ -414,54 +422,66 @@ function TechnologySection() {
           </p>
 
           <div className="mt-2 flex flex-wrap gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-slate-600">
-            <span className="rounded-full border border-[#D4C8AF] bg-[#F7F5F0] px-3 py-1">
+            <span className="rounded-full border border-[#DDD2BD] bg-[#F7F5F0] px-3 py-1">
               Live risk dashboards
             </span>
-            <span className="rounded-full border border-[#D4C8AF] bg-[#F7F5F0] px-3 py-1">
+            <span className="rounded-full border border-[#DDD2BD] bg-[#F7F5F0] px-3 py-1">
               Automated checks
             </span>
-            <span className="rounded-full border border-[#D4C8AF] bg-[#F7F5F0] px-3 py-1">
+            <span className="rounded-full border border-[#DDD2BD] bg-[#F7F5F0] px-3 py-1">
               Same stack: backtest → live
             </span>
           </div>
 
           <a
             href="/technology"
-            className="inline-flex items-center text-xs font-semibold uppercase tracking-[0.18em] text-[#3A5E7B] hover:text-[#2c4157] whitespace-nowrap leading-snug"
+            className="inline-flex items-center text-xs font-semibold uppercase tracking-[0.18em] text-[#3A5E7B] hover:text-[#2c4157]"
           >
             <span>See technology overview</span>
-            <ArrowRight className="ml-1.5 h-3.5 w-3.5 shrink-0" />
+            <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
           </a>
         </div>
 
+        {/* RIGHT SIDE GRID */}
         <div className="flex-1">
           <div className="grid gap-4 sm:grid-cols-2">
             {layers.map(({ label, body, icon: Icon }) => (
               <div
                 key={label}
-                className="relative overflow-hidden rounded-2xl border border-[#ECE7DC] bg-white/95 p-4 sm:p-5 shadow-sm shadow-slate-900/5 transition hover:-translate-y-0.5 hover:shadow-md"
+                className="
+                  relative overflow-hidden rounded-2xl
+                  border border-white/60 bg-white/70 backdrop-blur-sm
+                  p-5 shadow-sm shadow-slate-900/5
+                  transition hover:-translate-y-0.5 hover:bg-white hover:shadow-lg
+                "
               >
-                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#E4D7BB] via-[#3A5E7B]/40 to-[#E4D7BB]" />
-                <p className="mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600 leading-snug">
-                  <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#F4F2EC] text-[#3A5E7B]">
-                    <Icon className="h-3.5 w-3.5 shrink-0" />
+                {/* ICON CHIP */}
+                <p className="mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600">
+                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#E2EEFF] text-[#3A5E7B] shadow-sm">
+                    <Icon className="h-3.5 w-3.5" />
                   </span>
-                  <span>{label}</span>
+                  {label}
                 </p>
-                <p className="text-xs leading-relaxed text-slate-700">{body}</p>
+
+                <p className="text-xs text-slate-700 leading-relaxed">{body}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-5 rounded-2xl border border-dashed border-[#D4C8AF] bg-gradient-to-r from-[#F7F5F0] to-[#F4F2EC] p-4 text-[11px] text-slate-600 leading-relaxed">
+          {/* BOTTOM STATEMENT — cleaned up */}
+          <div
+            className="
+            mt-5 rounded-2xl border border-white/60 bg-white/60 backdrop-blur-sm
+            p-4 text-[11px] leading-relaxed text-slate-600 shadow-sm shadow-slate-900/5
+          "
+          >
             <p className="font-semibold text-slate-800">
-              Technology is there to make the process more repeatable — not more
+              Technology exists to make the process more repeatable — not more
               complicated.
             </p>
             <p className="mt-1.5">
-              Every component is built to answer a simple question: “Can we
-              explain what&apos;s happening in the portfolio right now, in plain
-              language?”
+              Every component supports a simple principle: we should always be
+              able to explain what the portfolio is doing in plain language.
             </p>
           </div>
         </div>
@@ -491,7 +511,8 @@ function InvestorProfileSection() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1.1fr)] md:items-start">
-          <div className="space-y-5 rounded-2xl border border-[#ECE7DC] bg-[#F7F5F0] p-6">
+          {/* Left main card */}
+          <div className="space-y-5 rounded-2xl border border-slate-200/80 bg-white/70 p-6 shadow-sm shadow-slate-900/5 backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white hover:shadow-md">
             <h3 className="text-sm font-semibold text-[#3A5E7B] leading-snug">
               Who we typically work with
             </h3>
@@ -519,7 +540,7 @@ function InvestorProfileSection() {
             </ul>
 
             <div className="grid gap-4 pt-3 text-xs text-slate-700 sm:grid-cols-2">
-              <div className="rounded-xl border border-dashed border-[#DDD2BD] bg-white/70 p-3">
+              <div className="rounded-xl border border-slate-200/80 bg-white/80 p-3 shadow-sm shadow-slate-900/5">
                 <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600">
                   Works well for
                 </p>
@@ -530,7 +551,7 @@ function InvestorProfileSection() {
                   </li>
                 </ul>
               </div>
-              <div className="rounded-xl border border-dashed border-[#DDD2BD] bg-white/70 p-3">
+              <div className="rounded-xl border border-slate-200/80 bg-white/80 p-3 shadow-sm shadow-slate-900/5">
                 <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600">
                   Typical allocation size
                 </p>
@@ -541,9 +562,10 @@ function InvestorProfileSection() {
             </div>
           </div>
 
+          {/* Right column */}
           <div className="space-y-5">
-            <div className="rounded-2xl border border-[#F1E0D0] bg-gradient-to-br from-[#FFF9F2] via-white to-[#F7F5F0] p-5 text-xs text-slate-700 leading-relaxed">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600 mb-1.5">
+            <div className="rounded-2xl border border-slate-200/80 bg-white/70 p-5 text-xs text-slate-700 leading-relaxed shadow-sm shadow-slate-900/5 backdrop-blur-sm">
+              <p className="mb-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600">
                 May not be a fit if...
               </p>
               <ul className="space-y-1.5">
@@ -659,10 +681,8 @@ function FinalCtaSection() {
   return (
     <section className="border-t border-[#ECE7DC] bg-white py-16">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <div className="relative overflow-hidden rounded-3xl border border-[#E4D7BB] bg-gradient-to-br from-[#FFF9F2] via-white to-[#E4F0FF] p-8 text-center shadow-sm shadow-slate-900/10 sm:p-10">
-          <div className="pointer-events-none absolute -left-10 -top-10 h-40 w-40 rounded-full bg-[radial-gradient(circle,_rgba(247,245,240,0.9),_transparent_65%)]" />
-          <div className="pointer-events-none absolute -right-16 bottom-0 h-40 w-40 rounded-full bg-[radial-gradient(circle,_rgba(141,183,232,0.35),_transparent_70%)]" />
-          <div className="relative space-y-5">
+        <div className="rounded-3xl border border-slate-200 bg-white/80 p-8 text-center shadow-sm shadow-slate-900/10 backdrop-blur-sm sm:p-10">
+          <div className="space-y-5">
             <h2 className="text-2xl font-semibold text-slate-900 leading-snug md:text-3xl">
               Explore an allocation to SGI-LINK.
             </h2>
