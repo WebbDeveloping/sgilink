@@ -152,7 +152,7 @@ function FundSnapshotSection() {
   return (
     <section className="relative border-t border-[#D5E3F6] bg-[#E9F2FF] py-16">
       {/* soft overlay texture */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.65),_transparent_60%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.5),_transparent_60%)]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
@@ -172,13 +172,13 @@ function FundSnapshotSection() {
           </div>
 
           <div className="flex flex-wrap gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#355477]">
-            <span className="rounded-full border border-[#B7CAE8] bg-white/60 px-3 py-1">
+            <span className="rounded-full border border-white/60 bg-white/70 px-3 py-1">
               FX &amp; Commodities
             </span>
-            <span className="rounded-full border border-[#B7CAE8] bg-white/60 px-3 py-1">
+            <span className="rounded-full border border-white/60 bg-white/70 px-3 py-1">
               Systematic only
             </span>
-            <span className="rounded-full border border-[#B7CAE8] bg-white/60 px-3 py-1">
+            <span className="rounded-full border border-white/60 bg-white/70 px-3 py-1">
               Risk-first mandate
             </span>
           </div>
@@ -190,10 +190,10 @@ function FundSnapshotSection() {
             {items.map(({ title, body, icon: Icon }) => (
               <article
                 key={title}
-                className="group relative overflow-hidden rounded-2xl border border-[#D5E3F6] bg-white/95 p-5 shadow-sm shadow-slate-900/10 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-900/15"
+                className="group relative overflow-hidden rounded-2xl border border-white/60 bg-white/75 p-5 shadow-sm shadow-slate-900/10 backdrop-blur-sm transition hover:-translate-y-1 hover:bg-white hover:shadow-lg hover:shadow-slate-900/15"
               >
                 <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-[#8DB7E8] via-[#3A5E7B] to-[#8DB7E8] opacity-0 transition group-hover:opacity-100" />
-                <div className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#A7C7F1]/40 text-[#3A5E7B]">
+                <div className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#E2EEFF] text-[#3A5E7B]">
                   <Icon className="h-4 w-4" />
                 </div>
                 <h3 className="mb-1.5 text-sm font-semibold text-slate-900 leading-snug">
@@ -203,8 +203,8 @@ function FundSnapshotSection() {
               </article>
             ))}
 
-            {/* Small accent metric card */}
-            <article className="flex flex-col justify-between rounded-2xl border border-dashed border-[#C3D5F0] bg-[#F4F8FF]/90 p-5 text-xs leading-relaxed text-[#1F3B57]">
+            {/* Small accent metric card – same glass style */}
+            <article className="flex flex-col justify-between rounded-2xl border border-white/60 bg-white/80 p-5 text-xs leading-relaxed text-[#1F3B57] shadow-sm shadow-slate-900/10 backdrop-blur-sm">
               <p className="font-semibold text-[#10243A]">
                 Built for a calm, rules-driven sleeve within a diversified
                 alternatives allocation.
@@ -231,16 +231,15 @@ function FundSnapshotSection() {
           </div>
 
           {/* Image / visual card */}
-          <div className="relative overflow-hidden rounded-3xl border border-[#C3D5F0] bg-gradient-to-br from-[#ffffff] via-[#E4F0FF] to-[#C9DCF6] shadow-lg shadow-slate-900/10">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.75),_transparent_60%)]" />
+          <div className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/85 shadow-lg shadow-slate-900/10 backdrop-blur-sm">
             <div
-              className="relative h-48 bg-cover bg-center sm:h-56"
+              className="h-48 bg-cover bg-center sm:h-56"
               style={{
                 backgroundImage:
                   "url('https://images.pexels.com/photos/2102416/pexels-photo-2102416.jpeg?auto=compress&cs=tinysrgb&w=1200')",
               }}
             />
-            <div className="relative space-y-3 px-6 pb-6 pt-4">
+            <div className="space-y-3 px-6 pb-6 pt-4">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#355477]">
                 Position in a portfolio
               </p>
@@ -266,7 +265,7 @@ function FundSnapshotSection() {
             <ArrowRight className="ml-1.5 h-3.5 w-3.5 shrink-0" />
           </a>
 
-          <p className="text-[11px] text-[#436189] leading-relaxed max-w-xl">
+          <p className="max-w-xl text-[11px] leading-relaxed text-[#436189]">
             This summary is intentionally high-level. Full details on structure,
             terms, and risks are contained in formal offering documents.
           </p>
