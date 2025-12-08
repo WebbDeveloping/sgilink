@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import "./globals.css";
 import React, { useState } from "react";
 import {
@@ -25,20 +25,20 @@ const metadata = {
 // - Risk Disclosure: in footer
 
 const mainNav = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/strategy", label: "Strategy" },
+  { href: "#", label: "Home" },
+  { href: "#", label: "About" },
+  { href: "#", label: "Strategy" },
   {
     label: "Performance",
     children: [
-      { href: "/live-results", label: "Live Results" },
-      { href: "/performance-history", label: "Performance History" },
+      { href: "#", label: "Live Results" },
+      { href: "#", label: "Performance History" },
     ],
   },
-  { href: "/team", label: "Team" },
-  { href: "/why-sgi", label: "Why SGI" },
-  { href: "/faq", label: "FAQs" },
-  { href: "/contact", label: "Contact" },
+  { href: "#", label: "Team" },
+  { href: "#", label: "Why SGI" },
+  { href: "#", label: "FAQs" },
+  { href: "#", label: "Contact" },
 ];
 
 export default function RootLayout({
@@ -67,23 +67,15 @@ function Header() {
     <header className="fixed inset-x-0 top-0 z-40 border-b border-[#ECE7DC] bg-white/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:h-20 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-2"
-          onClick={closeMobile}
-        >
-          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-[#A7C7F1] to-[#3A5E7B] shadow-sm shadow-slate-900/15">
-            <span className="text-xs font-semibold leading-none text-white">
-              SG
-            </span>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-[11px] font-semibold leading-snug tracking-[0.22em] text-[#3A5E7B]">
-              SGI-LINK
-            </span>
-            <span className="text-[11px] leading-snug text-slate-500">
-              Systematic Global Investments
-            </span>
+        <Link href="/" className="flex items-center" onClick={closeMobile}>
+          <div className="relative h-9 w-32 sm:h-10 sm:w-36">
+            <Image
+              src="/logo-blue.png"
+              alt="SGI-LINK logo"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
         </Link>
 
@@ -103,7 +95,7 @@ function Header() {
                   <div className="rounded-2xl border border-[#ECE7DC] bg-white/95 py-1.5 shadow-lg shadow-slate-900/10">
                     {item.children.map((child) => (
                       <Link
-                        key={child.href}
+                        key={child.label}
                         href={child.href}
                         className="block px-3.5 py-1.5 text-[13px] leading-snug text-slate-700 hover:bg-[#F4F2EC] hover:text-[#3A5E7B]"
                         onClick={closeMobile}
@@ -116,7 +108,7 @@ function Header() {
               </div>
             ) : (
               <Link
-                key={item.href}
+                key={item.label}
                 href={item.href}
                 className="whitespace-nowrap py-1 hover:text-[#3A5E7B]"
               >
