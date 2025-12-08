@@ -25,8 +25,8 @@ const metadata = {
 // - Risk Disclosure: in footer
 
 const mainNav = [
-  { href: "#", label: "Home" },
-  { href: "#", label: "About" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
   { href: "#", label: "Strategy" },
   {
     label: "Performance",
