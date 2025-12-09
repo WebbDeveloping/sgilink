@@ -50,7 +50,7 @@ export function BriefHero() {
           <h1 className="text-3xl font-semibold leading-tight tracking-tight text-text sm:text-4xl md:text-5xl">
             Systematic returns.
             <span className="relative ml-2 inline-block">
-              <span className="absolute inset-x-0 bottom-1 h-2 rounded-full bg-brand-soft/20" />
+              <span className="absolute inset-x-0 bottom-1 h-2 rounded-full bg-brand-soft/30" />
               <span className="relative">Simple story.</span>
             </span>
           </h1>
@@ -503,11 +503,6 @@ export function InvestorProfileSection() {
 
             <div className="space-y-3 text-xs leading-relaxed text-text-muted">
               <CtaLink href="/why-sgi">See why SGI may be a fit</CtaLink>
-              <p>
-                The Why SGI page expands on our philosophy, conservative
-                approach, and how we think about realistic expectations and
-                investor alignment.
-              </p>
             </div>
           </div>
         </div>
