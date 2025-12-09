@@ -260,8 +260,7 @@ export function StrategySection() {
       title: "Systematic idea pipeline",
       body: "New ideas are stress-tested across instruments, timeframes, and regimes before capital is deployed.",
       icon: FileText,
-      extra:
-        "Research is version-controlled and reproducible — the same codebase powers both backtests and live systems.",
+      extra: "",
     },
     {
       label: "2 · Portfolio",
@@ -308,11 +307,6 @@ export function StrategySection() {
           Multiple independent strategies, each with defined roles and risk
           budgets, are combined into a single portfolio designed to stay durable
           across regimes — without relying on market calls.
-        </BodyText>
-
-        <BodyText className="mt-3 max-w-2xl mx-auto text-text-muted text-center">
-          The Strategy page expands on how these systems behave in different
-          environments, along with examples of drawdowns and portfolio behavior.
         </BodyText>
 
         {/* Pills */}
@@ -601,7 +595,7 @@ export function FinalCtaSection() {
       />
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6">
-        <div className="rounded-3xl border border-border-card bg-surface/5 p-10 shadow-xl shadow-brand-on/40 backdrop-blur-md sm:p-14">
+        <div className="rounded-3xl border border-border-card/20 bg-surface/5 p-10 shadow-xl shadow-brand-on/40 backdrop-blur-md sm:p-14">
           {/* Title */}
           <h2 className="text-center text-3xl font-semibold tracking-tight text-surface sm:text-4xl">
             Explore an allocation to SGI-LINK
@@ -639,7 +633,7 @@ export function FinalCtaSection() {
 
             <a
               href="/fund-deck"
-              className="inline-flex items-center rounded-full border border-border-card bg-transparent px-6 py-3 text-sm font-semibold text-surface transition hover:bg-surface/10"
+              className="inline-flex items-center rounded-full border border-border-card/50 bg-transparent px-6 py-3 text-sm font-semibold text-surface transition hover:bg-surface/10"
             >
               Download fund deck
             </a>
