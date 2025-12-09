@@ -252,12 +252,6 @@ function MonthlyReturnsSection({
               </div>
             ))}
           </div>
-
-          <SmallMuted className="mt-4 text-brand-label">
-            In a live implementation, this grid can be expanded across full
-            calendar years, exported, or toggled between gross / net views as
-            appropriate for qualified investors.
-          </SmallMuted>
         </div>
       </div>
     </section>
@@ -309,10 +303,6 @@ function DrawdownSection({
               <li>Historical worst-case and typical drawdown ranges.</li>
               <li>Approximate recovery times following major drawdowns.</li>
             </ul>
-            <SmallMuted className="mt-2">
-              This is intended to help investors size allocations and set
-              expectations before allocating capital — not after the fact.
-            </SmallMuted>
           </InfoCard>
         </div>
       </div>
@@ -372,13 +362,6 @@ function MethodologySection() {
             </ul>
           </InfoCard>
         </div>
-
-        <SmallMuted className="max-w-3xl text-text-muted">
-          When fully connected, this page is intended as a high-level,
-          always-available window into SGI-LINK performance. It is not a
-          solicitation, and any investment decision should be based on full
-          offering documents and discussions with the SGI team.
-        </SmallMuted>
       </div>
     </section>
   );
