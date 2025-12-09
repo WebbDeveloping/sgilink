@@ -1,8 +1,23 @@
 // app/live-results/page.jsx
-import { BarChart3, LineChart, TrendingUp, ShieldCheck } from "lucide-react";
+import {
+  BarChart3,
+  LineChart,
+  TrendingUp,
+  ShieldCheck,
+  CalendarDays,
+  Activity,
+} from "lucide-react";
+
+import {
+  Eyebrow,
+  SectionTitle,
+  BodyText,
+  SmallMuted,
+} from "@/components/atoms";
+import { IconEyebrow, InfoCard, OverviewMetric } from "@/components/molecules";
 
 export default function LiveResultsPage() {
-  const stats = [
+  const snapshotStats = [
     {
       label: "YTD Return",
       value: "+0.0%",
@@ -20,121 +35,366 @@ export default function LiveResultsPage() {
     },
   ];
 
-  return (
-    <main className="bg-white text-slate-900 min-h-screen">
-      {/* Hero */}
-      <section className="relative bg-gradient-to-b from-white via-white to-[#EFE3CE]/40 pt-28 sm:pt-32 lg:pt-40 pb-16 sm:pb-20 border-b border-[#EFE3CE]">
-        <div className="relative max-w-5xl mx-auto px-6 lg:px-0">
-          <div className="mx-auto max-w-3xl text-center space-y-5">
-            <p className="inline-flex items-center justify-center gap-2 text-[11px] font-semibold tracking-[0.22em] text-slate-500 uppercase">
-              <BarChart3 className="h-3.5 w-3.5 text-[#3A5E7B]" />
-              Live Results
-            </p>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900">
-              Daily transparency on{" "}
-              <span className="text-[#3A5E7B]">system performance.</span>
-            </h1>
-            <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto">
-              This page is designed to display live or daily-updated performance
-              metrics for SGI-LINK. The values and charts shown below are
-              placeholders until connected to official data sources.
-            </p>
-          </div>
+  const monthlyReturns = [
+    { month: "Jan", value: "0.0%" },
+    { month: "Feb", value: "0.0%" },
+    { month: "Mar", value: "0.0%" },
+    { month: "Apr", value: "0.0%" },
+    { month: "May", value: "0.0%" },
+    { month: "Jun", value: "0.0%" },
+  ];
 
-          {/* Subtle context card */}
-          <div className="mt-10 rounded-3xl border border-[#EFE3CE] bg-white/80 backdrop-blur-sm shadow-[0_18px_45px_rgba(15,23,42,0.08)] p-6 sm:p-8 space-y-4">
+  const drawdownMetrics = [
+    { label: "Max Drawdown (placeholder)", value: "0.0%" },
+    { label: "Average Drawdown", value: "0.0%" },
+    { label: "Longest Recovery (months)", value: "0" },
+  ];
+
+  return (
+    <main className="min-h-screen bg-bg text-text">
+      <LiveResultsHeroSection />
+      <SnapshotSection stats={snapshotStats} />
+      <EquityCurveSection />
+      <MonthlyReturnsSection monthlyReturns={monthlyReturns} />
+      <DrawdownSection drawdownMetrics={drawdownMetrics} />
+      <MethodologySection />
+    </main>
+  );
+}
+
+/** HERO – secure, read-only framing + trust */
+function LiveResultsHeroSection() {
+  return (
+    <section className="relative border-b border-border bg-surface py-24 sm:py-32">
+      <div className="relative mx-auto max-w-7xl px-4 text-center sm:px-6">
+        <IconEyebrow
+          icon={BarChart3}
+          label="Live Results"
+          className="mb-4 inline-flex items-center justify-center text-text-muted"
+          iconClassName="text-brand"
+        />
+
+        <SectionTitle
+          as="h1"
+          className="text-3xl leading-tight tracking-tight sm:text-4xl md:text-5xl"
+        >
+          Daily transparency on{" "}
+          <span className="relative inline-block">
+            <span className="absolute inset-x-0 bottom-1 h-2 rounded-full bg-section-blue" />
+            <span className="relative">system performance</span>
+          </span>
+          .
+        </SectionTitle>
+
+        <BodyText className="mx-auto mt-5 max-w-2xl text-sm text-text-muted sm:text-base">
+          A secure, read-only view of SGI-LINK performance: real-time or
+          daily-updated metrics, equity curves, monthly return summaries,
+          drawdowns, and clear notes on methodology. The values shown below are
+          placeholders until connected to official data sources.
+        </BodyText>
+
+        <SmallMuted className="mx-auto mt-3 max-w-2xl text-text-muted">
+          This page is designed as an investor-facing display only — no trading
+          controls, just verified performance context. When wired to live feeds,
+          it becomes a persistent source of trust.
+        </SmallMuted>
+
+        {/* Data status context card */}
+        <div className="mt-10 text-left">
+          <div className="space-y-4 rounded-3xl border border-border-strong bg-surface/80 p-6 shadow-[0_18px_45px_rgba(15,23,42,0.08)] backdrop-blur-sm sm:p-8">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="space-y-1">
-                <p className="text-[11px] font-semibold tracking-[0.2em] text-slate-500 uppercase flex items-center gap-2">
-                  <LineChart className="h-3.5 w-3.5 text-[#3A5E7B]" />
-                  Data status
-                </p>
-                <p className="text-sm text-slate-800">
+                <IconEyebrow
+                  icon={LineChart}
+                  label="Data Status"
+                  className="text-text-muted"
+                  iconClassName="text-brand"
+                />
+                <BodyText className="text-sm text-text">
                   Placeholder metrics are shown for now. In production, this
-                  page will reflect verified daily or monthly performance feeds.
-                </p>
+                  page will be driven by verified, read-only performance feeds
+                  updated daily or in near real time.
+                </BodyText>
               </div>
-              <div className="inline-flex items-center gap-2 rounded-full bg-[#EFE3CE]/80 px-4 py-2 text-[11px] font-medium tracking-[0.18em] text-slate-700 uppercase">
-                <span className="inline-flex h-2 w-2 rounded-full bg-[#3A5E7B]" />
+              <div className="inline-flex items-center gap-2 rounded-full bg-accent-warm/80 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-text">
+                <span className="inline-flex h-2 w-2 rounded-full bg-brand" />
                 Live once integrated
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      {/* Stat cards + equity curve */}
-      <section className="bg-[#EFE3CE]/40 border-b border-[#EFE3CE] py-16 lg:py-20">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8 space-y-10">
-          {/* Stat cards */}
-          <div className="grid gap-6 md:grid-cols-3">
-            {stats.map((item) => (
-              <article
-                key={item.label}
-                className="rounded-2xl border border-[#EFE3CE] bg-white p-6 shadow-sm flex flex-col justify-between"
-              >
-                <div className="space-y-2">
-                  <p className="text-[11px] font-semibold tracking-[0.18em] text-slate-500 uppercase">
-                    {item.label}
-                  </p>
-                  <p className="text-2xl font-semibold text-[#3A5E7B]">
-                    {item.value}
-                  </p>
-                </div>
-                <p className="mt-3 text-xs text-slate-600 leading-relaxed">
-                  {item.note}
+/** REAL-TIME / DAILY METRICS */
+function SnapshotSection({
+  stats,
+}: {
+  stats: { label: string; value: string; note: string }[];
+}) {
+  return (
+    <section className="border-b border-border-strong bg-accent-warm/40 py-16 lg:py-20">
+      <div className="mx-auto max-w-7xl space-y-10 px-6 lg:px-8">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div className="max-w-xl space-y-3">
+            <IconEyebrow
+              icon={BarChart3}
+              label="Real-time / Daily Metrics"
+              className="text-text-muted"
+              iconClassName="text-brand"
+            />
+            <SectionTitle>
+              A high-level snapshot of live performance.
+            </SectionTitle>
+            <BodyText className="text-sm text-text-muted sm:text-base">
+              These cards surface headline figures investors check most often.
+              In a live environment, values would update on a defined schedule
+              (for example, daily close or multiple times per day, depending on
+              data availability).
+            </BodyText>
+          </div>
+        </div>
+
+        {/* Stat cards */}
+        <div className="grid gap-6 md:grid-cols-3">
+          {stats.map((item) => (
+            <article
+              key={item.label}
+              className="flex flex-col justify-between rounded-2xl border border-border-strong bg-surface p-6 shadow-sm"
+            >
+              <div className="space-y-2">
+                <Eyebrow className="text-text-muted">{item.label}</Eyebrow>
+                <p className="text-2xl font-semibold text-brand">
+                  {item.value}
                 </p>
-              </article>
+              </div>
+              <SmallMuted className="mt-3 text-text-muted">
+                {item.note}
+              </SmallMuted>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** EQUITY CURVE (placeholder chart) */
+function EquityCurveSection() {
+  return (
+    <section className="border-b border-border-strong bg-surface py-16 lg:py-20">
+      <div className="mx-auto max-w-7xl space-y-8 px-6 lg:px-8">
+        <div className="max-w-2xl space-y-3">
+          <IconEyebrow
+            icon={TrendingUp}
+            label="Equity Curve"
+            className="text-text-muted"
+            iconClassName="text-brand"
+          />
+          <SectionTitle>
+            Cumulative equity over the life of the strategy.
+          </SectionTitle>
+          <BodyText className="text-sm text-text-muted sm:text-base">
+            This chart will ultimately show the evolution of a hypothetical
+            investor&apos;s equity in SGI-LINK over time, net of fees and
+            including any realized drawdowns. For now, it uses a simple
+            placeholder visual instead of live data.
+          </BodyText>
+        </div>
+
+        <div className="space-y-4 rounded-3xl border border-border-strong bg-surface p-6 shadow-md sm:p-8">
+          {/* Placeholder “chart” block with stock image-ish feel */}
+          <div className="flex h-64 items-center justify-center rounded-2xl border border-border-strong bg-accent-warm/30 text-sm text-text-muted">
+            Simulated equity curve placeholder
+          </div>
+
+          <SmallMuted className="flex gap-2 text-text-muted">
+            <ShieldCheck className="mt-0.5 h-3.5 w-3.5 text-brand" />
+            <span>
+              In production, this component would be fed from the same verified
+              performance source as the summary metrics, with clear date ranges
+              and benchmarks documented alongside it.
+            </span>
+          </SmallMuted>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** MONTHLY RETURN SUMMARIES */
+function MonthlyReturnsSection({
+  monthlyReturns,
+}: {
+  monthlyReturns: { month: string; value: string }[];
+}) {
+  return (
+    <section className="border-b border-border-blue bg-section-blue py-16 lg:py-20">
+      <div className="mx-auto max-w-7xl space-y-8 px-6 lg:px-8">
+        <div className="max-w-2xl space-y-3">
+          <IconEyebrow
+            icon={CalendarDays}
+            label="Monthly Return Summaries"
+            className="text-brand-body-alt"
+            iconClassName="text-brand"
+          />
+          <SectionTitle className="text-brand-on">
+            Month-by-month performance, at a glance.
+          </SectionTitle>
+          <BodyText className="text-sm text-brand-on-soft sm:text-base">
+            When connected, each cell will reflect the net return for that
+            month, including fees and any realized trading costs. Here, we show
+            placeholder values to indicate the layout and level of detail.
+          </BodyText>
+        </div>
+
+        <div className="rounded-2xl border border-border-blue bg-surface/90 p-6 shadow-sm sm:p-7">
+          <div className="grid gap-4 sm:grid-cols-3">
+            {monthlyReturns.map((item) => (
+              <div
+                key={item.month}
+                className="rounded-xl border border-border-blue bg-chip-blue px-4 py-3 text-sm leading-relaxed text-brand-on-soft"
+              >
+                <Eyebrow className="mb-1 text-brand-chip">{item.month}</Eyebrow>
+                <p className="text-lg font-semibold text-brand-on-soft">
+                  {item.value}
+                </p>
+                <SmallMuted className="mt-1 text-brand-label">
+                  Placeholder monthly return.
+                </SmallMuted>
+              </div>
             ))}
           </div>
 
-          {/* Equity curve placeholder */}
-          <div className="rounded-3xl border border-[#EFE3CE] bg-white p-6 sm:p-8 shadow-md space-y-4">
-            <div className="flex items-center justify-between gap-4">
-              <div className="space-y-1">
-                <p className="text-[11px] font-semibold tracking-[0.2em] text-slate-500 uppercase flex items-center gap-2">
-                  <TrendingUp className="h-3.5 w-3.5 text-[#3A5E7B]" />
-                  Equity Curve (Placeholder)
-                </p>
-                <p className="text-sm text-slate-700">
-                  In production, this chart will show the cumulative equity
-                  curve for SGI-LINK over time, updated on a regular schedule.
-                </p>
+          <SmallMuted className="mt-4 text-brand-label">
+            In a live implementation, this grid can be expanded across full
+            calendar years, exported, or toggled between gross / net views as
+            appropriate for qualified investors.
+          </SmallMuted>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** DRAWDOWNS */
+function DrawdownSection({
+  drawdownMetrics,
+}: {
+  drawdownMetrics: { label: string; value: string }[];
+}) {
+  return (
+    <section className="border-b border-border-strong bg-surface py-16 lg:py-20">
+      <div className="mx-auto max-w-7xl space-y-10 px-6 lg:px-8">
+        <div className="max-w-2xl space-y-3">
+          <IconEyebrow
+            icon={Activity}
+            label="Drawdowns"
+            className="text-text-muted"
+            iconClassName="text-brand"
+          />
+          <SectionTitle>How the strategy behaves when it hurts.</SectionTitle>
+          <BodyText className="text-sm text-text-muted sm:text-base">
+            Drawdowns are often the most important part of the story. This
+            section surfaces depth, duration, and typical recovery behavior so
+            investors can judge whether SGI-LINK fits their risk tolerance.
+          </BodyText>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-start">
+          {/* Key metrics */}
+          <dl className="grid gap-4 rounded-2xl border border-border-card bg-chip-warm/80 p-5 text-left shadow-sm">
+            {drawdownMetrics.map((m) => (
+              <div key={m.label} className="space-y-1">
+                <OverviewMetric label={m.label} value={m.value} />
               </div>
-            </div>
+            ))}
+          </dl>
 
-            <div className="mt-4 h-64 rounded-2xl border border-[#EFE3CE] bg-[#EFE3CE]/30 flex items-center justify-center text-sm text-slate-600">
-              Simulated equity curve placeholder
-            </div>
-
-            <p className="mt-4 text-[11px] leading-relaxed text-slate-500 flex gap-2">
-              <ShieldCheck className="mt-0.5 h-3.5 w-3.5 text-[#3A5E7B]" />
-              <span>
-                Any future live results should be presented alongside clear
-                disclosures and should be considered in the context of full,
-                audited performance history. Past performance does not guarantee
-                future results.
-              </span>
-            </p>
-          </div>
+          {/* Narrative context */}
+          <InfoCard title="How drawdowns will be presented">
+            <BodyText className="text-xs text-text-muted sm:text-sm">
+              In production, this area will be driven by the same data feeds as
+              the equity curve, highlighting:
+            </BodyText>
+            <ul className="mt-2 list-disc space-y-1 text-xs leading-relaxed text-text sm:text-sm sm:pl-5">
+              <li>Point-in-time and peak-to-trough drawdown series.</li>
+              <li>Historical worst-case and typical drawdown ranges.</li>
+              <li>Approximate recovery times following major drawdowns.</li>
+            </ul>
+            <SmallMuted className="mt-2">
+              This is intended to help investors size allocations and set
+              expectations before allocating capital — not after the fact.
+            </SmallMuted>
+          </InfoCard>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      {/* Bottom note / mini CTA */}
-      <section className="relative bg-white py-16 lg:py-20">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(58,94,123,0.06),_transparent_70%)]" />
-        <div className="relative max-w-3xl mx-auto px-6 lg:px-0 text-center space-y-5">
-          <h2 className="text-2xl sm:text-3xl font-semibold text-[#3A5E7B]">
-            Full details available to qualified investors.
-          </h2>
-          <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto">
-            When live, this page is intended as a high-level snapshot. We
-            provide full performance breakdowns, risk statistics, and
-            methodology to accredited and qualified investors as part of our
-            diligence process.
-          </p>
+/** PERFORMANCE METHODOLOGY & NOTES */
+function MethodologySection() {
+  return (
+    <section className="bg-surface py-24">
+      <div className="mx-auto max-w-7xl space-y-10 px-4 sm:px-6">
+        <div className="max-w-3xl space-y-3">
+          <IconEyebrow
+            icon={ShieldCheck}
+            label="Performance Methodology"
+            className="text-text-muted"
+            iconClassName="text-brand"
+          />
+
+          <SectionTitle>Notes on how results are calculated.</SectionTitle>
+
+          <BodyText className="text-sm text-text-muted sm:text-base">
+            Clear methodology is as important as the numbers themselves. This
+            section outlines how returns, drawdowns, and other statistics are
+            computed, and how they should be interpreted by long-term, qualified
+            investors.
+          </BodyText>
         </div>
-      </section>
-    </main>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          <InfoCard title="Calculation & data sources">
+            <ul className="mt-1 list-disc space-y-1 text-xs leading-relaxed text-text sm:text-sm sm:pl-5">
+              <li>Returns are shown net of management and performance fees.</li>
+              <li>
+                Performance is based on actual trading where available; any
+                modeled periods will be clearly labeled.
+              </li>
+              <li>
+                Data is sourced from SGI&apos;s internal systems and reconciled
+                against administrator records where applicable.
+              </li>
+            </ul>
+          </InfoCard>
+
+          <InfoCard title="Disclosures & interpretation">
+            <ul className="mt-1 list-disc space-y-1 text-xs leading-relaxed text-text sm:text-sm sm:pl-5">
+              <li>Past performance does not guarantee future results.</li>
+              <li>
+                All investing involves risk, including the potential loss of
+                principal.
+              </li>
+              <li>
+                Detailed, audited performance records are made available to
+                accredited and qualified investors during due diligence.
+              </li>
+            </ul>
+          </InfoCard>
+        </div>
+
+        <SmallMuted className="max-w-3xl text-text-muted">
+          When fully connected, this page is intended as a high-level,
+          always-available window into SGI-LINK performance. It is not a
+          solicitation, and any investment decision should be based on full
+          offering documents and discussions with the SGI team.
+        </SmallMuted>
+      </div>
+    </section>
   );
 }

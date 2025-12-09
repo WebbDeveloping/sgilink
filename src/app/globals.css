@@ -1,111 +1,37 @@
-/* app/globals.css */
-
-@import "tailwindcss";
-/* Preflight is automatically included when you import `tailwindcss` :contentReference[oaicite:0]{index=0} */
-
-/* ────────────────────────────── */
-/*  Light / dark design tokens    */
-/* ────────────────────────────── */
-
-/* app/globals.css */
-
 @import "tailwindcss";
 
-/* ────────────────────────────── */
-/*  Light / dark design tokens    */
-/* ────────────────────────────── */
-
-/* These are Tailwind "theme variables" */
-/* --color-foo → gives you bg-foo, text-foo, border-foo, etc. */
+/* Your design tokens (Tailwind v4 style) */
 @theme {
-  --color-bg: oklch(0.99 0 0); /* app background */
-  --color-surface: oklch(0.97 0 0); /* cards, header, panels */
-  --color-border: oklch(0.9 0.02 260); /* subtle lines */
-  --color-primary: oklch(0.65 0.15 260); /* placeholder brand color */
-  --color-text: oklch(0.2 0.02 260); /* main text */
-  --color-muted: oklch(0.55 0.02 250); /* secondary text */
-}
+  /* Base surfaces */
+  --color-bg: #fcfcfd;
+  --color-surface: #ffffff;
+  --color-section-blue: #e9f2ff;
+  --color-section-warm: #f4f2ec;
 
-/* When .dark is on html, override the theme vars */
-.dark {
-  color-scheme: dark;
+  /* Neutral text */
+  --color-text: #1f2933;
+  --color-text-muted: #6b7280; /* slate-ish muted */
 
-  --color-bg: oklch(0.16 0.02 260);
-  --color-surface: oklch(0.22 0.03 260);
-  --color-border: oklch(0.35 0.04 260);
-  --color-primary: oklch(0.78 0.16 260);
-  --color-text: oklch(0.97 0.01 250);
-  --color-muted: oklch(0.75 0.02 250);
-}
+  /* Brand blues */
+  --color-brand: #3a5e7b;
+  --color-brand-soft: #8db7e8;
+  --color-brand-dark: #324b63;
+  --color-brand-on: #10243a;
+  --color-brand-on-soft: #1f3b57;
+  --color-brand-chip: #355477;
+  --color-brand-label: #5c7aa4;
+  --color-brand-body-alt: #23405f;
 
-/* Optional basic global styles */
-body {
-  min-height: 100vh;
-  /* These use Tailwind’s theme vars under the hood */
-  background-color: var(--color-bg);
-  color: var(--color-text);
-}
+  /* Borders */
+  --color-border: #ece7dc;
+  --color-border-strong: #ddd2bd;
+  --color-border-blue: #d5e3f6;
+  --color-border-card: #e2e8f0;
 
-.bg-sgi-white {
-  background-color: #ffffff;
-}
-.bg-sgi-sand {
-  background-color: #e8dcc4;
-}
-.bg-sgi-beige {
-  background-color: #dcc7a1;
-}
-.bg-sgi-blue {
-  background-color: #afc9e8;
-}
-.bg-sgi-slate {
-  background-color: #4f6e8d;
-}
+  /* Chips / badges */
+  --color-chip-warm: #f7f5f0;
+  --color-chip-blue: #e2eeff;
 
-.text-sgi-white {
-  color: #ffffff;
-}
-.text-sgi-sand {
-  color: #e8dcc4;
-}
-.text-sgi-beige {
-  color: #dcc7a1;
-}
-.text-sgi-blue {
-  color: #afc9e8;
-}
-.text-sgi-slate {
-  color: #4f6e8d;
-}
-
-.bg-sgi-offwhite {
-  background-color: #fafaf8;
-}
-.bg-sgi-tan {
-  background-color: #d9c9a3;
-}
-.bg-sgi-sand {
-  background-color: #e6dabf;
-}
-.bg-sgi-sky {
-  background-color: #90bdeb;
-}
-.bg-sgi-steel {
-  background-color: #406a89;
-}
-
-.text-sgi-offwhite {
-  color: #fafaf8;
-}
-.text-sgi-tan {
-  color: #d9c9a3;
-}
-.text-sgi-sand {
-  color: #e6dabf;
-}
-.text-sgi-sky {
-  color: #90bdeb;
-}
-.text-sgi-steel {
-  color: #406a89;
+  /* Accent */
+  --color-accent-warm: #e4d7bb;
 }

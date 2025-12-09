@@ -27,12 +27,12 @@ const metadata = {
 const mainNav = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "#", label: "Strategy" },
+  { href: "/strategy", label: "Strategy" },
   {
     label: "Performance",
     children: [
-      { href: "#", label: "Live Results" },
-      { href: "#", label: "Performance History" },
+      { href: "/live-results", label: "Live Results" },
+      { href: "/performance-history", label: "Performance History" },
     ],
   },
   { href: "#", label: "Team" },
