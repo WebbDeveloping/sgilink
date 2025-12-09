@@ -110,7 +110,15 @@ function HeroSection() {
   );
 }
 
-function MetricCard({ label, value, note }) {
+function MetricCard({
+  label,
+  value,
+  note,
+}: {
+  label: string;
+  value: string;
+  note: string;
+}) {
   return (
     <div className="rounded-2xl border border-sky-100 bg-white/80 px-4 py-3 text-xs shadow-sm shadow-sky-900/5">
       <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-slate-500">
@@ -122,7 +130,17 @@ function MetricCard({ label, value, note }) {
   );
 }
 
-function SectionShell({ eyebrow, title, intro, children }) {
+function SectionShell({
+  eyebrow,
+  title,
+  intro,
+  children,
+}: {
+  eyebrow?: string;
+  title?: string;
+  intro?: string;
+  children: React.ReactNode;
+}) {
   return (
     <section className="relative border-y border-slate-100 bg-white/90">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(239,231,211,0.3),_transparent_70%)]" />
@@ -193,7 +211,15 @@ function OverviewSection() {
   );
 }
 
-function PillCard({ icon: Icon, label, text }) {
+function PillCard({
+  icon: Icon,
+  label,
+  text,
+}: {
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  label: string;
+  text: string;
+}) {
   return (
     <div className="flex gap-3 rounded-2xl border border-sky-50 bg-white/70 p-4 shadow-sm shadow-sky-900/5">
       <div className="mt-0.5 flex h-10 w-10 items-center justify-center rounded-full bg-sky-50">
@@ -377,7 +403,15 @@ function DifferentiatorsSection() {
   );
 }
 
-function TagCard({ icon: Icon, title, text }) {
+function TagCard({
+  icon: Icon,
+  title,
+  text,
+}: {
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  title: string;
+  text: string;
+}) {
   return (
     <div className="flex flex-col rounded-2xl border border-sky-50 bg-sky-50/40 p-4 shadow-sm shadow-sky-900/5">
       <div className="flex items-center gap-2">
