@@ -13,7 +13,7 @@ import {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-white text-slate-900">
+    <main className="min-h-screen bg-white text-text">
       <HeroSection />
       <OverviewSection />
       <HowItWorksSection />
@@ -124,7 +124,7 @@ function MetricCard({
       <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-slate-500">
         {label}
       </p>
-      <p className="mt-1 text-base font-semibold text-slate-900">{value}</p>
+      <p className="mt-1 text-base font-semibold text-text">{value}</p>
       <p className="mt-1 text-[11px] text-slate-500">{note}</p>
     </div>
   );
@@ -226,7 +226,7 @@ function PillCard({
         <Icon className="h-5 w-5 text-sky-500" />
       </div>
       <div className="space-y-1 text-sm">
-        <p className="font-semibold text-slate-900">{label}</p>
+        <p className="font-semibold text-text">{label}</p>
         <p className="text-xs text-slate-600">{text}</p>
       </div>
     </div>
@@ -269,7 +269,7 @@ function HowItWorksSection() {
 
         {/* Light “process” card */}
         <div className="h-full rounded-3xl border border-sky-50 bg-gradient-to-b from-white via-sky-50/40 to-white p-5 shadow-md shadow-sky-900/5">
-          <h3 className="flex items-center gap-2 text-sm font-semibold text-slate-900">
+          <h3 className="flex items-center gap-2 text-sm font-semibold text-text">
             <Target className="h-4 w-4 text-sky-500" />
             How SGI-LINK works
           </h3>
@@ -336,7 +336,7 @@ function AudienceSection() {
         <div className="rounded-3xl border border-sky-50 bg-white/80 p-5 shadow-sm shadow-sky-900/5">
           <div className="flex items-center gap-2">
             <Users2 className="h-5 w-5 text-sky-500" />
-            <h3 className="text-sm font-semibold text-slate-900">
+            <h3 className="text-sm font-semibold text-text">
               Fit for long-term partners
             </h3>
           </div>
@@ -433,7 +433,7 @@ function FinalCtaSection() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-500">
             Next steps
           </p>
-          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-text sm:text-3xl">
             Explore whether SGI-LINK is right for your portfolio.
           </h2>
           <p className="mt-4 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">

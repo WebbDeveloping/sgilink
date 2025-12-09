@@ -29,7 +29,7 @@ export function SectionTitle({
 }) {
   return (
     <Component
-      className={`text-2xl font-semibold text-slate-900 leading-snug sm:text-3xl ${className}`}
+      className={`text-2xl font-semibold text-text leading-snug sm:text-3xl ${className}`}
     >
       {children}
     </Component>

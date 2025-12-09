@@ -35,7 +35,7 @@ import {
 /** HERO – editorial two-column */
 export function BriefHero() {
   return (
-    <section className="relative overflow-hidden border-b border-border">
+    <section className="relative overflow-hidden border-b border-border bg-bg">
       {/* Soft sunlight / sand glow */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(244,242,236,0.9),_transparent_65%)]" />
 
@@ -47,7 +47,7 @@ export function BriefHero() {
         <div className="max-w-xl space-y-6 sgi-animate-fade-in-up">
           <Eyebrow>SGI-LINK · Private Algorithmic Fund</Eyebrow>
 
-          <h1 className="text-3xl font-semibold tracking-tight text-slate-900 leading-tight sm:text-4xl md:text-5xl">
+          <h1 className="text-3xl font-semibold leading-tight tracking-tight text-text sm:text-4xl md:text-5xl">
             Systematic returns.
             <span className="relative ml-2 inline-block">
               <span className="absolute inset-x-0 bottom-1 h-2 rounded-full bg-brand-soft/20" />
@@ -84,11 +84,11 @@ export function BriefHero() {
 
         {/* Right: snapshot card */}
         <div className="flex-1 sgi-animate-fade-in-up-delay">
-          <div className="mx-auto max-w-md rounded-3xl border border-border-card bg-surface/80 p-6 shadow-xl shadow-slate-900/5 backdrop-blur-sm">
+          <div className="mx-auto max-w-md rounded-3xl border border-border-card bg-surface/80 p-6 shadow-xl shadow-brand-on/5 backdrop-blur-sm">
             <Eyebrow className="mb-4">Fund at a glance</Eyebrow>
 
             <dl className="grid grid-cols-2 gap-4 text-sm">
-              <OverviewMetric label="Core focus" value="FX & Commodities" />
+              <OverviewMetric label="Core focus" value="FX &amp; Commodities" />
               <OverviewMetric
                 label="Objective"
                 value="Consistent, tech-driven returns"
@@ -136,8 +136,7 @@ export function FundSnapshotSection() {
 
   return (
     <section className="relative border-b border-border-blue bg-section-blue py-24">
-      {/* soft overlay texture */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.5),_transparent_60%)]" />
+      {/* Removed duplicate radial gradient to keep only the hero special */}
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
@@ -146,12 +145,12 @@ export function FundSnapshotSection() {
             <IconEyebrow
               icon={Layers}
               label="Fund Overview"
-              className="text-brand-on-soft"
+              className="text-text-soft"
             />
-            <SectionTitle className="text-brand-on">
+            <SectionTitle className="text-text">
               A focused vehicle for SGI’s systems.
             </SectionTitle>
-            <BodyText className="text-brand-on-soft">
+            <BodyText className="text-text-soft">
               SGI-LINK channels capital into SGI’s proprietary trading systems
               with a clear role inside a broader allocation. The Strategy page
               goes deeper into mandate, markets traded, and portfolio
@@ -160,14 +159,14 @@ export function FundSnapshotSection() {
           </div>
 
           {/* Chips – secondary fade */}
-          <div className="flex flex-wrap gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-brand-chip sgi-section-fade-2">
-            <span className="rounded-full border border-white/60 bg-white/70 px-3 py-1">
+          <div className="flex flex-wrap gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-text/80 sgi-section-fade-2">
+            <span className="rounded-full border border-border-blue bg-surface/80 px-3 py-1">
               FX &amp; Commodities
             </span>
-            <span className="rounded-full border border-white/60 bg-white/70 px-3 py-1">
+            <span className="rounded-full border border-border-blue bg-surface/80 px-3 py-1">
               Systematic only
             </span>
-            <span className="rounded-full border border-white/60 bg-white/70 px-3 py-1">
+            <span className="rounded-full border border-border-blue bg-surface/80 px-3 py-1">
               Risk-first mandate
             </span>
           </div>
@@ -186,8 +185,8 @@ export function FundSnapshotSection() {
             ))}
 
             {/* Small accent metric card */}
-            <article className="flex flex-col justify-between rounded-2xl border border-white/60 bg-surface/85 p-5 text-xs leading-relaxed text-brand-body-alt shadow-sm shadow-slate-900/10 backdrop-blur-sm">
-              <p className="font-semibold text-brand-on">
+            <article className="flex flex-col justify-between rounded-2xl border border-border-card bg-surface/85 p-5 text-xs leading-relaxed text-brand-body-alt shadow-sm shadow-brand-on/10 backdrop-blur-sm">
+              <p className="font-semibold text-text">
                 Built for a calm, rules-driven sleeve within a diversified
                 alternatives allocation.
               </p>
@@ -213,7 +212,7 @@ export function FundSnapshotSection() {
           </div>
 
           {/* Image / visual card – tertiary fade */}
-          <div className="relative overflow-hidden rounded-3xl border border-white/70 bg-surface/85 shadow-lg shadow-slate-900/10 backdrop-blur-sm sgi-section-fade-3">
+          <div className="relative overflow-hidden rounded-3xl border border-border-card bg-surface/85 shadow-lg shadow-brand-on/10 backdrop-blur-sm sgi-section-fade-3">
             <div
               className="h-48 bg-cover bg-center sm:h-56"
               style={{
@@ -222,10 +221,10 @@ export function FundSnapshotSection() {
               }}
             />
             <div className="space-y-3 px-6 pb-6 pt-4 text-xs leading-relaxed text-brand-body-alt">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-chip">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text/80">
                 Position in a portfolio
               </p>
-              <p className="text-sm font-semibold text-brand-on leading-snug">
+              <p className="text-sm font-semibold text-text leading-snug">
                 A single access point to SGI&apos;s trading systems, presented
                 in plain language and institutional-quality reporting.
               </p>
@@ -242,7 +241,7 @@ export function FundSnapshotSection() {
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-[11px] leading-relaxed sgi-section-fade-3">
           <a
             href="/strategy"
-            className="inline-flex items-center whitespace-nowrap font-semibold uppercase tracking-[0.18em] text-brand-on-soft hover:text-brand-on"
+            className="inline-flex items-center whitespace-nowrap font-semibold uppercase tracking-[0.18em] text-text-soft hover:text-text"
           >
             <span>Read the full strategy overview</span>
             <ArrowRight className="ml-1.5 h-3.5 w-3.5 shrink-0" />
@@ -369,7 +368,9 @@ export function TechnologySection() {
         {/* LEFT COPY */}
         <div className="max-w-xl space-y-5">
           <IconEyebrow icon={Cpu} label="Technology Stack" />
-          <SectionTitle>Infrastructure built for live markets.</SectionTitle>
+          <SectionTitle className="text-text">
+            Infrastructure built for live markets.
+          </SectionTitle>
           <BodyText>
             Purpose-built execution, monitoring, and risk tooling support our
             systems in live FX and futures markets — not just in research
@@ -399,7 +400,7 @@ export function TechnologySection() {
             ))}
           </div>
 
-          <div className="mt-5 rounded-2xl border border-white/60 bg-surface/70 p-4 text-[11px] leading-relaxed text-text-muted shadow-sm shadow-slate-900/5 backdrop-blur-sm">
+          <div className="mt-5 rounded-2xl border border-border-card/80 bg-surface/70 p-4 text-[11px] leading-relaxed text-text-muted shadow-sm shadow-brand-on/5 backdrop-blur-sm">
             <p className="font-semibold text-text">
               Technology exists to make the process more repeatable — not more
               complicated.
@@ -432,7 +433,7 @@ export function InvestorProfileSection() {
 
         <div className="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1.1fr)] md:items-start">
           {/* Left main card */}
-          <div className="space-y-5 rounded-2xl border border-border-card/80 bg-surface/70 p-6 text-sm leading-relaxed text-text shadow-sm shadow-slate-900/5 backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-surface hover:shadow-md">
+          <div className="space-y-5 rounded-2xl border border-border-card/80 bg-surface/70 p-6 text-sm leading-relaxed text-text shadow-sm shadow-brand-on/5 backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-surface hover:shadow-md">
             <h3 className="text-sm font-semibold text-brand leading-snug">
               Who we typically work with
             </h3>
@@ -474,7 +475,7 @@ export function InvestorProfileSection() {
 
           {/* Right column */}
           <div className="space-y-5">
-            <div className="rounded-2xl border border-border-card/80 bg-surface/70 p-5 text-xs leading-relaxed text-text shadow-sm shadow-slate-900/5 backdrop-blur-sm">
+            <div className="rounded-2xl border border-border-card/80 bg-surface/70 p-5 text-xs leading-relaxed text-text shadow-sm shadow-brand-on/5 backdrop-blur-sm">
               <p className="mb-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted">
                 May not be a fit if...
               </p>
@@ -526,7 +527,9 @@ export function FaqTeaserSection() {
       <div className="mx-auto max-w-7xl space-y-8 px-4 sm:px-6">
         <div className="max-w-xl space-y-3">
           <IconEyebrow icon={HelpCircle} label="FAQ" />
-          <SectionTitle>Common questions, straight answers.</SectionTitle>
+          <SectionTitle className="text-text">
+            Common questions, straight answers.
+          </SectionTitle>
           <BodyText>
             The FAQs page digs deeper into markets traded, risk management,
             reporting cadence, and how SGI-LINK fits into a broader allocation.
@@ -540,7 +543,7 @@ export function FaqTeaserSection() {
             ))}
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-border-strong bg-surface p-5 text-sm leading-relaxed text-text shadow-sm shadow-slate-900/5">
+          <div className="space-y-4 rounded-2xl border border-border-strong bg-surface p-5 text-sm leading-relaxed text-text shadow-sm shadow-brand-on/5">
             <p className="mb-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-text-muted">
               Still have questions?
             </p>
@@ -562,7 +565,7 @@ export function FinalCtaSection() {
   return (
     <section className="border-t border-border bg-surface py-24">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <div className="rounded-3xl border border-border-card bg-surface/80 p-8 text-center shadow-sm shadow-slate-900/10 backdrop-blur-sm sm:p-10">
+        <div className="rounded-3xl border border-border-card bg-surface/80 p-8 text-center shadow-sm shadow-brand-on/10 backdrop-blur-sm sm:p-10">
           <div className="space-y-5">
             <SectionTitle as="h2">
               Explore an allocation to SGI-LINK.

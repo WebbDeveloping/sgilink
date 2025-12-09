@@ -3,7 +3,7 @@ import { FileText } from "lucide-react";
 
 export default function InsightsPage() {
   return (
-    <main className="bg-white text-slate-900 min-h-screen">
+    <main className="bg-white text-text min-h-screen">
       <InsightsHeroSection />
       <InsightsListSection />
     </main>

@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Your design tokens (Tailwind v4 style) */
+/* Base: light theme tokens (what you already had) */
 @theme {
   /* Base surfaces */
   --color-bg: #fcfcfd;
@@ -10,7 +10,7 @@
 
   /* Neutral text */
   --color-text: #1f2933;
-  --color-text-muted: #6b7280; /* slate-ish muted */
+  --color-text-muted: #6b7280;
 
   /* Brand blues */
   --color-brand: #3a5e7b;
@@ -34,6 +34,43 @@
 
   /* Accent */
   --color-accent-warm: #e4d7bb;
+}
+
+/* Optional: help browsers pick correct system UI colors */
+:root {
+  color-scheme: light;
+}
+
+/* Dark theme overrides – these reuse the SAME token names */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-bg: #020617; /* deep slate */
+  --color-surface: #020617;
+  --color-section-blue: #020617;
+  --color-section-warm: #020617;
+
+  --color-text: #e5e7eb; /* neutral-200/300 */
+  --color-text-muted: #9ca3af;
+
+  --color-brand: #8db7e8; /* lighter blue for contrast */
+  --color-brand-soft: #3a5e7b;
+  --color-brand-dark: #1f2937;
+  --color-brand-on: #f9fafb;
+  --color-brand-on-soft: #e5e7eb;
+  --color-brand-chip: #1e293b;
+  --color-brand-label: #9ca3af;
+  --color-brand-body-alt: #cbd5f5;
+
+  --color-border: #1f2937;
+  --color-border-strong: #374151;
+  --color-border-blue: #1d3557;
+  --color-border-card: #111827;
+
+  --color-chip-warm: #111827;
+  --color-chip-blue: #0b1120;
+
+  --color-accent-warm: #43311f;
 }
 
 /* ---------------------------------------------------- */
