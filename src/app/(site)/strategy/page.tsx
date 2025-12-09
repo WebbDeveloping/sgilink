@@ -4,7 +4,7 @@ import {
   ShieldCheck,
   Layers,
   BarChart3,
-  LineChart,
+  // LineChart,
   FileText,
 } from "lucide-react";
 
@@ -176,7 +176,7 @@ function DiversificationSection() {
               key={item.title}
               className="space-y-2 text-sm leading-relaxed text-brand-on-soft"
             >
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text/80">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-chip">
                 {item.title}
               </p>
               <p>{item.body}</p>

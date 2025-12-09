@@ -3,7 +3,7 @@ import { LineChart, BarChart3, FileText, ShieldCheck } from "lucide-react";
 
 export default function PerformanceHistoryPage() {
   return (
-    <main className="bg-white text-text min-h-screen">
+    <main className="bg-white text-slate-900 min-h-screen">
       <PerformanceHeroSection />
       <AnnualReturnsSection />
       <MonthlyBreakdownSection />

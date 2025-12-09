@@ -76,7 +76,7 @@ function Footer() {
 
 export default function LiveResultsPage() {
   return (
-    <main className="bg-white text-text min-h-screen">
+    <main className="bg-white text-slate-900 min-h-screen">
       <Header />
 
       <section className="relative overflow-hidden bg-white pt-28 sm:pt-32 lg:pt-40 pb-16">
@@ -91,7 +91,7 @@ export default function LiveResultsPage() {
             <BarChart3 className="h-3.5 w-3.5 text-[#3A5E7B]" />
             Live Results
           </p>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-text">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900">
             Real-time performance for{" "}
             <span className="text-[#3A5E7B]">active investors.</span>
           </h1>

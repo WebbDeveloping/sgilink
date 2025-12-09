@@ -7,7 +7,7 @@ import {
   Scale,
   Eye,
   Award,
-  BookOpen,
+  // BookOpen,
   AlertTriangle,
 } from "lucide-react";
 import {
@@ -126,7 +126,7 @@ function FoundersSection() {
                 style={{ backgroundImage: `url(${founder.image})` }}
               />
               <div className="space-y-3 p-5">
-                <Eyebrow className="text-text/80">{founder.title}</Eyebrow>
+                <Eyebrow className="text-brand-chip">{founder.title}</Eyebrow>
                 <p className="text-base font-semibold">{founder.name}</p>
                 <BodyText className="text-xs text-text-muted sm:text-sm">
                   {founder.focus}
@@ -194,7 +194,7 @@ function InvestmentPartnersSection() {
               key={partner.name}
               className="space-y-2 rounded-2xl border border-border-blue bg-surface/90 p-5 text-sm leading-relaxed text-brand-on-soft shadow-sm shadow-slate-900/5"
             >
-              <Eyebrow className="text-text/80">{partner.title}</Eyebrow>
+              <Eyebrow className="text-brand-chip">{partner.title}</Eyebrow>
               <p className="text-base font-semibold text-brand-on">
                 {partner.name}
               </p>

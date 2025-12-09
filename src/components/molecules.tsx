@@ -96,15 +96,19 @@ export function TimelineStepCard({
   title,
   body,
   extra,
+  className = "",
 }: {
   icon: LucideIcon;
   label: string;
   title: string;
   body: string;
   extra?: ReactNode;
+  className?: string;
 }) {
   return (
-    <article className="relative rounded-2xl border border-border-card/80 bg-surface/70 p-4 pl-10 text-xs leading-relaxed text-text shadow-sm shadow-slate-900/5 backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-surface hover:shadow-md sm:p-5 sm:pl-12">
+    <article
+      className={`relative rounded-2xl border border-border-card/80 bg-surface/70 p-4 pl-10 text-xs leading-relaxed text-text shadow-sm shadow-slate-900/5 backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-surface hover:shadow-md sm:p-5 sm:pl-12 ${className}`}
+    >
       <div className="absolute left-2 top-4 flex h-8 w-8 items-center justify-center rounded-full border border-border-blue bg-chip-blue text-brand shadow-sm">
         <Icon className="h-4 w-4" />
       </div>
@@ -146,12 +150,16 @@ export function TechLayerCard({
 export function FaqItem({
   question,
   answer,
+  className,
 }: {
   question: string;
   answer: string;
+  className?: string;
 }) {
   return (
-    <details className="group relative overflow-hidden rounded-2xl border border-border bg-surface/95 p-4 text-sm leading-relaxed text-text shadow-sm shadow-slate-900/5 transition hover:-translate-y-0.5 hover:shadow-md">
+    <details
+      className={`group relative overflow-hidden rounded-2xl border border-border bg-surface/95 p-4 text-sm leading-relaxed text-text shadow-sm shadow-slate-900/5 transition hover:-translate-y-0.5 hover:shadow-md ${className}`}
+    >
       {/* Solid SGI Blue Accent */}
       <div className="absolute inset-x-0 top-0 h-1 bg-brand opacity-0 transition group-open:opacity-100" />
 

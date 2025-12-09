@@ -361,7 +361,7 @@ export default function Header() {
           </div>
 
           <div className="mt-6 space-y-2 border-t border-border pt-4">
-            <button
+            {/* <button
               type="button"
               onClick={toggleTheme}
               className="flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-surface px-3 py-2 text-base font-semibold text-text-muted hover:bg-chip-blue"
@@ -377,7 +377,7 @@ export default function Header() {
                   <span>Use dark theme</span>
                 </>
               )}
-            </button>
+            </button> */}
 
             <Link
               href="/investor-login"

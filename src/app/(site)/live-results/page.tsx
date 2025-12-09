@@ -242,7 +242,7 @@ function MonthlyReturnsSection({
                 key={item.month}
                 className="rounded-xl border border-border-blue bg-chip-blue px-4 py-3 text-sm leading-relaxed text-brand-on-soft"
               >
-                <Eyebrow className="mb-1 text-text/80">{item.month}</Eyebrow>
+                <Eyebrow className="mb-1 text-brand-chip">{item.month}</Eyebrow>
                 <p className="text-lg font-semibold text-brand-on-soft">
                   {item.value}
                 </p>

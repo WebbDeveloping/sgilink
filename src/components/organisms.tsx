@@ -159,7 +159,7 @@ export function FundSnapshotSection() {
           </div>
 
           {/* Chips – secondary fade */}
-          <div className="flex flex-wrap gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-text/80 sgi-section-fade-2">
+          <div className="flex flex-wrap gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-brand-chip sgi-section-fade-2">
             <span className="rounded-full border border-border-blue bg-surface/80 px-3 py-1">
               FX &amp; Commodities
             </span>
@@ -221,7 +221,7 @@ export function FundSnapshotSection() {
               }}
             />
             <div className="space-y-3 px-6 pb-6 pt-4 text-xs leading-relaxed text-brand-body-alt">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text/80">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-chip">
                 Position in a portfolio
               </p>
               <p className="text-sm font-semibold text-text leading-snug">
@@ -258,7 +258,7 @@ export function FundSnapshotSection() {
   );
 }
 
-/** STRATEGY – two-column */
+/** STRATEGY – centered editorial layout with soft abstract background */
 export function StrategySection() {
   const steps = [
     {
@@ -284,53 +284,76 @@ export function StrategySection() {
   ];
 
   return (
-    <section className="border-b border-border bg-surface py-24">
-      <div className="mx-auto flex max-w-7xl flex-col gap-12 px-4 sm:px-6 lg:flex-row lg:items-start">
-        {/* Left column – primary fade */}
-        <div className="max-w-xl space-y-5 sgi-section-fade-1">
+    <section className="relative overflow-hidden border-b border-border bg-surface py-28">
+      {/* Background image */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 z-0 bg-cover bg-center opacity-30"
+        style={{
+          backgroundImage: "url('/images/5.png')",
+        }}
+      />
+
+      {/* Optional white overlay to keep text readable */}
+      {/* <div className="absolute inset-0 z-0 bg-white/60 backdrop-blur-[2px]" /> */}
+
+      {/* Content */}
+      <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6">
+        {/* Eyebrow */}
+        <div className="flex justify-center">
           <IconEyebrow icon={ShieldCheck} label="Strategy & Risk" />
-          <SectionTitle>Diversified, rules-driven systems.</SectionTitle>
-          <BodyText>
-            Multiple independent strategies, each with defined roles and risk
-            budgets, are combined into a single portfolio designed to stay
-            durable across regimes — without relying on market calls.
-          </BodyText>
-          <BodyText className="text-text-muted">
-            The Strategy page expands on how these systems behave in different
-            environments, along with examples of drawdowns and portfolio
-            behavior.
-          </BodyText>
-
-          <div className="flex flex-wrap gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
-            <Pill className="border-border-strong bg-chip-warm">
-              Swing &amp; position horizons
-            </Pill>
-            <Pill className="border-border-strong bg-chip-warm">
-              Directional &amp; relative value
-            </Pill>
-            <Pill className="border-border-strong bg-chip-warm">
-              Predefined risk budgets
-            </Pill>
-          </div>
-
-          <CtaLink href="/strategy">Learn more about our strategy</CtaLink>
         </div>
 
-        {/* Timeline – secondary fade */}
-        <div className="relative flex-1 sgi-section-fade-2">
-          <div className="pointer-events-none absolute left-4 top-0 hidden h-full w-px bg-gradient-to-b from-border-blue via-border to-transparent sm:block" />
-          <div className="space-y-4">
-            {steps.map((step) => (
-              <TimelineStepCard
-                key={step.label}
-                icon={step.icon}
-                label={step.label}
-                title={step.title}
-                body={step.body}
-                extra={step.extra}
-              />
-            ))}
-          </div>
+        {/* Title */}
+        <SectionTitle className="mt-4 text-center">
+          Diversified, rules-driven systems.
+        </SectionTitle>
+
+        {/* Intro text */}
+        <BodyText className="mt-6 max-w-2xl mx-auto text-center">
+          Multiple independent strategies, each with defined roles and risk
+          budgets, are combined into a single portfolio designed to stay durable
+          across regimes — without relying on market calls.
+        </BodyText>
+
+        <BodyText className="mt-3 max-w-2xl mx-auto text-text-muted text-center">
+          The Strategy page expands on how these systems behave in different
+          environments, along with examples of drawdowns and portfolio behavior.
+        </BodyText>
+
+        {/* Pills */}
+        <div className="mt-8 flex flex-wrap justify-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
+          <Pill className="border-border-strong bg-chip-warm">
+            Swing &amp; position horizons
+          </Pill>
+          <Pill className="border-border-strong bg-chip-warm">
+            Directional &amp; relative value
+          </Pill>
+          <Pill className="border-border-strong bg-chip-warm">
+            Predefined risk budgets
+          </Pill>
+        </div>
+
+        {/* CTA */}
+        <div className="mt-10">
+          <CtaLink href="/strategy">Learn more about our strategy</CtaLink>
+        </div>
+      </div>
+
+      {/* Steps */}
+      <div className="relative z-10 mx-auto mt-20 max-w-5xl px-4 sm:px-6">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {steps.map((step) => (
+            <TimelineStepCard
+              key={step.label}
+              icon={step.icon}
+              label={step.label}
+              title={step.title}
+              body={step.body}
+              extra={step.extra}
+              className="text-center sgi-section-fade-2"
+            />
+          ))}
         </div>
       </div>
     </section>
@@ -505,7 +528,7 @@ export function InvestorProfileSection() {
   );
 }
 
-/** FAQ – warm section */
+/** FAQ – warm section with soft abstract background */
 export function FaqTeaserSection() {
   const faqs = [
     {
@@ -523,8 +546,22 @@ export function FaqTeaserSection() {
   ];
 
   return (
-    <section className="border-b border-border bg-section-warm py-24">
-      <div className="mx-auto max-w-7xl space-y-8 px-4 sm:px-6">
+    <section className="relative border-b border-border py-24 overflow-hidden">
+      {/* Background image (VISIBLE NOW) */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 z-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/images/3.png')",
+        }}
+      />
+
+      {/* Warm overlay using your #f4f2ec (bg-section-warm) */}
+      <div className="absolute inset-0 z-0 bg-section-blue/85 backdrop-blur-[2px]" />
+      {/* adjust opacity: /60 /70 /80 until it feels right */}
+
+      {/* Content on top */}
+      <div className="relative z-10 mx-auto max-w-7xl space-y-8 px-4 sm:px-6">
         <div className="max-w-xl space-y-3">
           <IconEyebrow icon={HelpCircle} label="FAQ" />
           <SectionTitle className="text-text">
@@ -560,42 +597,81 @@ export function FaqTeaserSection() {
   );
 }
 
-/** FINAL CTA – centered */
 export function FinalCtaSection() {
   return (
-    <section className="border-t border-border bg-surface py-24">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <div className="rounded-3xl border border-border-card bg-surface/80 p-8 text-center shadow-sm shadow-brand-on/10 backdrop-blur-sm sm:p-10">
-          <div className="space-y-5">
-            <SectionTitle as="h2">
-              Explore an allocation to SGI-LINK.
-            </SectionTitle>
-            <BodyText className="mx-auto max-w-2xl">
-              If the mandate and approach fit your portfolio, we can walk
-              through our systems, risk framework, and track record in more
-              detail — with as much transparency as possible.
-            </BodyText>
+    <section className="relative border-t border-brand-on-soft bg-brand-on py-28 overflow-hidden">
+      {/* Subtle depth gradient */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 z-0 bg-gradient-to-b from-brand-on-soft/20 via-brand-on to-brand-on"
+      />
 
-            <div className="flex flex-wrap justify-center gap-3">
-              <PrimaryLinkButton href="/contact">
-                <span>Request an introductory call</span>
-                <ArrowRight className="ml-2 h-4 w-4 shrink-0" />
-              </PrimaryLinkButton>
+      <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6">
+        <div className="rounded-3xl border border-border-card bg-surface/5 p-10 shadow-xl shadow-brand-on/40 backdrop-blur-md sm:p-14">
+          {/* Title */}
+          <h2 className="text-center text-3xl font-semibold tracking-tight text-surface sm:text-4xl">
+            Explore an allocation to SGI-LINK
+          </h2>
 
-              <SecondaryLinkButton href="/fund-deck">
-                <span>Download fund deck</span>
-              </SecondaryLinkButton>
-            </div>
+          {/* Supporting text */}
+          <p className="mx-auto mt-5 max-w-2xl text-center text-base leading-relaxed text-brand-soft">
+            If the mandate and approach fit your broader allocation, we can walk
+            through systems, risk engineering, portfolio behavior, and reporting
+            in a structured introductory call.
+          </p>
 
-            <div className="mx-auto flex max-w-2xl items-start justify-center gap-2 text-[11px] leading-relaxed text-text-muted">
-              <ShieldCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand" />
-              <span>
-                SGI-LINK is available only to qualified and accredited
-                investors. This page is for informational purposes only and does
-                not constitute an offer to sell or a solicitation of an offer to
-                buy any security.
-              </span>
-            </div>
+          {/* CTA buttons */}
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <a
+              href="/contact"
+              className="inline-flex items-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-surface shadow-sm shadow-brand-on/30 transition hover:bg-brand-dark"
+            >
+              Request an introductory call
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="ml-2 h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="/fund-deck"
+              className="inline-flex items-center rounded-full border border-border-card bg-transparent px-6 py-3 text-sm font-semibold text-surface transition hover:bg-surface/10"
+            >
+              Download fund deck
+            </a>
+          </div>
+
+          {/* Disclaimer */}
+          <div className="mx-auto mt-8 flex max-w-xl items-start justify-center gap-2 text-[11px] leading-relaxed text-brand-soft">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="mt-0.5 h-4 w-4 text-brand-soft"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 12h6m2 8H7a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v12a2 2 0 01-2 2z"
+              />
+            </svg>
+            <span>
+              SGI-LINK is available only to qualified and accredited investors.
+              This section is informational and does not constitute an offer to
+              sell any security.
+            </span>
           </div>
         </div>
       </div>
