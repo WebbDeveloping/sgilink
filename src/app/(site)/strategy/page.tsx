@@ -25,7 +25,7 @@ function StrategyHeroSection() {
   return (
     <section className="border-b border-border bg-surface py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="mx-auto max-w-3xl text-center sgi-animate-fade-in-up">
+        <div className="mx-auto max-w-4xl text-center sgi-animate-fade-in-up">
           <p className="mb-4 inline-flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-text-muted">
             <ShieldCheck className="h-3.5 w-3.5 text-brand" />
             <span>Our Strategy</span>

@@ -1,7 +1,8 @@
 "use client";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import "./globals.css";
-import React, { useState } from "react";
+
 import {
   ArrowRight,
   LineChart,
@@ -59,9 +60,29 @@ export default function RootLayout({
 
 function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+  const navRef = useRef<HTMLDivElement | null>(null);
 
   const toggleMobile = () => setMobileOpen((open) => !open);
   const closeMobile = () => setMobileOpen(false);
+
+  // Close dropdown when clicking outside the nav
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setOpenDropdown(null);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, []);
 
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-[#ECE7DC] bg-white/80 backdrop-blur-xl">
@@ -80,31 +101,60 @@ function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-6 text-xs font-medium leading-snug text-slate-600 md:flex lg:text-[13px]">
+        <nav
+          ref={navRef}
+          className="hidden items-center gap-6 text-xs font-medium leading-snug text-slate-600 md:flex lg:text-[13px]"
+        >
           {mainNav.map((item) =>
             item.children ? (
-              <div key={item.label} className="relative group">
+              <div key={item.label} className="relative inline-block">
+                {/* Trigger button (click to toggle) */}
                 <button
                   type="button"
                   className="inline-flex items-center gap-1 whitespace-nowrap py-1 hover:text-[#3A5E7B]"
+                  onClick={() =>
+                    setOpenDropdown((current) =>
+                      current === item.label ? null : item.label
+                    )
+                  }
                 >
                   <span>{item.label}</span>
-                  <ChevronDown className="h-3 w-3" />
+                  <ChevronDown
+                    className={`h-3 w-3 transition-transform ${
+                      openDropdown === item.label ? "rotate-180" : ""
+                    }`}
+                  />
                 </button>
-                <div className="pointer-events-none absolute left-0 top-full mt-2 w-52 opacity-0 transition group-hover:pointer-events-auto group-hover:opacity-100">
-                  <div className="rounded-2xl border border-[#ECE7DC] bg-white/95 py-1.5 shadow-lg shadow-slate-900/10">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.label}
-                        href={child.href}
-                        className="block px-3.5 py-1.5 text-[13px] leading-snug text-slate-700 hover:bg-[#F4F2EC] hover:text-[#3A5E7B]"
-                        onClick={closeMobile}
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
+
+                {/* Dropdown menu */}
+                {openDropdown === item.label && (
+                  <div
+                    className="
+                      absolute left-0 top-full z-30 mt-2 w-52
+                      origin-top-left
+                      rounded-2xl border border-[#ECE7DC] bg-white/95
+                      py-1.5 shadow-lg shadow-slate-900/10
+                      transform transition
+                      data-[state=closed]:scale-95 data-[state=closed]:opacity-0
+                    "
+                  >
+                    <div className="py-1">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.label}
+                          href={child.href}
+                          className="block px-3.5 py-1.5 text-[13px] leading-snug text-slate-700 hover:bg-[#F4F2EC] hover:text-[#3A5E7B]"
+                          onClick={() => {
+                            closeMobile();
+                            setOpenDropdown(null);
+                          }}
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             ) : (
               <Link
