@@ -246,12 +246,6 @@ export function FundSnapshotSection() {
             <span>Read the full strategy overview</span>
             <ArrowRight className="ml-1.5 h-3.5 w-3.5 shrink-0" />
           </a>
-
-          <p className="max-w-xl text-brand-body-alt">
-            This summary is intentionally high-level. Full details on structure,
-            terms, and risks are contained on the Strategy page and in formal
-            offering documents.
-          </p>
         </div>
       </div>
     </section>
