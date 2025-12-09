@@ -1,164 +1,244 @@
 // app/contact/page.jsx
-import { PhoneCall, FileText, Users2 } from "lucide-react";
+
+import { Mail, CalendarClock, MapPin, MessageCircle } from "lucide-react";
+import {
+  Eyebrow,
+  SectionTitle,
+  BodyText,
+  SmallMuted,
+} from "@/components/atoms";
+import { IconEyebrow } from "@/components/molecules";
 
 export default function ContactPage() {
   return (
-    <main className="bg-white text-slate-900 min-h-screen">
-      <ContactHeroSection />
-      <ContactLayoutSection />
+    <main className="min-h-screen bg-bg text-text">
+      <ContactHeroFormSection />
+      <ContactDetailsSection />
     </main>
   );
 }
 
-function ContactHeroSection() {
+/** HERO + FORM – hero content left, form right */
+function ContactHeroFormSection() {
   return (
-    <section className="border-b border-[#EFE3CE] bg-white py-20 lg:py-24">
-      <div className="max-w-6xl lg:max-w-7xl mx-auto px-6 lg:px-8 space-y-6">
-        <div className="max-w-3xl space-y-4">
-          <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] text-slate-600 uppercase">
-            <PhoneCall className="h-3.5 w-3.5 text-[#3A5E7B]" />
-            Contact
-          </p>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#3A5E7B] tracking-tight">
-            Connect with the SGI-LINK team.
-          </h1>
-          <p className="text-sm sm:text-base text-slate-700">
-            If you&apos;d like to learn more about SGI-LINK, request materials,
-            or discuss a potential allocation, please use the form below or
-            reach out via email. We&apos;ll follow up with next steps and
-            suggested times for an introductory call.
-          </p>
+    <section className="border-b border-border bg-surface py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl gap-12 px-4 sm:px-6 md:grid md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.1fr)] md:items-start">
+        {/* Left: hero content (on desktop) / top (on mobile) */}
+        <div className="mb-10 space-y-4 md:order-1 md:mb-0">
+          <IconEyebrow
+            icon={MessageCircle}
+            label="Contact"
+            className="text-text-muted"
+            iconClassName="text-brand"
+          />
+
+          <SectionTitle
+            as="h1"
+            className="text-3xl leading-tight tracking-tight sm:text-4xl md:text-5xl"
+          >
+            Start a conversation with{" "}
+            <span className="relative inline-block">
+              <span className="absolute inset-x-0 bottom-1 h-2 rounded-full bg-section-blue" />
+              <span className="relative">the SGI-LINK team</span>
+            </span>
+            .
+          </SectionTitle>
+
+          <BodyText className="text-sm text-text-muted sm:text-base">
+            Use the form to share a bit about your interest or questions. We
+            respond directly — no call centers, no automated sales funnels —
+            with a focus on clarity and fit for accredited and qualified
+            investors.
+          </BodyText>
+
+          <SmallMuted className="text-text-muted">
+            Please avoid including sensitive personal information. Formal
+            documents and secure channels are used later in the diligence
+            process.
+          </SmallMuted>
+        </div>
+
+        {/* Right: form (on desktop) / bottom (on mobile) */}
+        <div className="md:order-2 rounded-2xl border border-border-card bg-surface p-6 shadow-sm shadow-slate-900/5 sm:p-8">
+          <form className="space-y-5">
+            <div className="space-y-1">
+              <Eyebrow className="text-text-muted">Name</Eyebrow>
+              <input
+                type="text"
+                name="name"
+                autoComplete="name"
+                className="block w-full rounded-xl border border-border-card bg-surface px-3 py-2 text-sm text-text placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                placeholder="Your name"
+              />
+            </div>
+
+            <div className="space-y-1">
+              <Eyebrow className="text-text-muted">Email</Eyebrow>
+              <input
+                type="email"
+                name="email"
+                autoComplete="email"
+                className="block w-full rounded-xl border border-border-card bg-surface px-3 py-2 text-sm text-text placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                placeholder="you@example.com"
+              />
+            </div>
+
+            <div className="space-y-1">
+              <Eyebrow className="text-text-muted">Investor type</Eyebrow>
+              <select
+                name="investorType"
+                className="block w-full rounded-xl border border-border-card bg-surface px-3 py-2 text-sm text-text focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+              >
+                <option value="">Select an option</option>
+                <option value="accredited">Accredited investor</option>
+                <option value="quep">QUEP / high net worth</option>
+                <option value="allocator">Institutional allocator</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div className="space-y-1">
+              <Eyebrow className="text-text-muted">
+                What would you like to discuss?
+              </Eyebrow>
+              <textarea
+                name="message"
+                rows={5}
+                className="block w-full rounded-xl border border-border-card bg-surface px-3 py-2 text-sm text-text placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                placeholder="A brief description of your questions or interest..."
+              />
+            </div>
+
+            <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:justify-between">
+              <SmallMuted className="text-text-muted">
+                By submitting this form, you&apos;re indicating interest in
+                learning more. This is not a solicitation to invest.
+              </SmallMuted>
+
+              <button
+                type="submit"
+                className="inline-flex text-nowrap items-center justify-center rounded-full bg-brand px-5 py-2 text-sm font-semibold text-surface shadow-sm shadow-slate-900/10 hover:bg-brand-dark"
+              >
+                Submit inquiry
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
   );
 }
 
-function ContactLayoutSection() {
+/** DETAILS – email, scheduling link, optional office location */
+function ContactDetailsSection() {
   return (
-    <section className="bg-[#EFE3CE]/40 py-20 lg:py-24">
-      <div className="max-w-6xl lg:max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-3 gap-12 lg:gap-16 items-start">
-        <div className="lg:col-span-2 rounded-2xl border border-[#EFE3CE] bg-white p-6 sm:p-8">
-          <h2 className="text-sm font-semibold text-[#3A5E7B] mb-1">
-            Send us a message
-          </h2>
-          <p className="text-sm text-slate-600 mb-6">
-            Please share a few details about your interests and we&apos;ll
-            respond with the appropriate materials or next steps.
-          </p>
-
-          {/* Non-functional placeholder form; hook into your form handler later */}
-          <form className="space-y-4">
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-medium text-slate-600 mb-1">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  className="w-full rounded-lg border border-[#EFE3CE] bg-white px-3 py-2 text-sm text-slate-900 focus:outline-none focus:ring-1 focus:ring-[#3A5E7B]"
-                  placeholder="First and last name"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-slate-600 mb-1">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  className="w-full rounded-lg border border-[#EFE3CE] bg-white px-3 py-2 text-sm text-slate-900 focus:outline-none focus:ring-1 focus:ring-[#3A5E7B]"
-                  placeholder="name@example.com"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-xs font-medium text-slate-600 mb-1">
-                Message
-              </label>
-              <textarea
-                rows={4}
-                className="w-full rounded-lg border border-[#EFE3CE] bg-white px-3 py-2 text-sm text-slate-900 focus:outline-none focus:ring-1 focus:ring-[#3A5E7B]"
-                placeholder="Briefly share what you’d like to discuss."
-              />
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-medium text-slate-600 mb-1">
-                  Investor type (optional)
-                </label>
-                <input
-                  type="text"
-                  className="w-full rounded-lg border border-[#EFE3CE] bg-white px-3 py-2 text-sm text-slate-900 focus:outline-none focus:ring-1 focus:ring-[#3A5E7B]"
-                  placeholder="e.g., Accredited, Family Office"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-slate-600 mb-1">
-                  Approximate allocation size (optional)
-                </label>
-                <input
-                  type="text"
-                  className="w-full rounded-lg border border-[#EFE3CE] bg-white px-3 py-2 text-sm text-slate-900 focus:outline-none focus:ring-1 focus:ring-[#3A5E7B]"
-                  placeholder="e.g., $250k–$1M"
-                />
-              </div>
-            </div>
-
-            <button
-              type="submit"
-              className="inline-flex items-center justify-center rounded-full bg-[#3A5E7B] px-6 py-2.5 text-sm font-semibold text-white shadow-md hover:bg-[#324f68] transition"
-            >
-              Submit inquiry
-            </button>
-          </form>
+    <section className="bg-section-warm py-24">
+      <div className="mx-auto max-w-7xl space-y-8 px-4 sm:px-6">
+        {/* Intro */}
+        <div className="max-w-3xl space-y-3">
+          <IconEyebrow
+            icon={Mail}
+            label="Other Ways to Reach Us"
+            className="text-text-muted"
+            iconClassName="text-brand"
+          />
+          <SectionTitle>Contact details at a glance.</SectionTitle>
+          <BodyText className="text-sm text-text-muted sm:text-base">
+            For most investors, the form above is the easiest way to start the
+            conversation. You can also reach us directly using the options
+            below, especially if you already have materials or a specific
+            diligence process in mind.
+          </BodyText>
         </div>
 
-        <div className="space-y-6">
-          <div className="rounded-2xl border border-[#EFE3CE] bg-white p-6">
-            <h3 className="text-sm font-semibold text-[#3A5E7B] mb-1 flex items-center gap-2">
-              <Users2 className="h-4 w-4" />
-              Contact details
-            </h3>
-            <p className="text-sm text-slate-700 mb-3">
-              For investor inquiries, materials, or follow-ups:
-            </p>
-            <div className="space-y-1 text-sm text-slate-700">
-              <p>
-                Email:{" "}
-                <a
-                  href="mailto:info@sgi-link.com"
-                  className="text-[#3A5E7B] underline-offset-2 hover:underline"
-                >
-                  info@sgi-link.com
-                </a>
-              </p>
-              <p>
-                Investor:{" "}
-                <a
-                  href="mailto:investor@sgi-link.com"
-                  className="text-[#3A5E7B] underline-offset-2 hover:underline"
-                >
-                  investor@sgi-link.com
-                </a>
-              </p>
+        {/* Cards */}
+        <div className="grid gap-6 md:grid-cols-3">
+          {/* Email */}
+          <div className="rounded-2xl border border-border bg-surface p-6 shadow-sm">
+            <h3 className="mb-3 text-sm font-semibold text-brand">Email</h3>
+
+            <div className="flex items-start gap-3">
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-chip-blue text-brand shadow-sm">
+                <Mail className="h-4 w-4" />
+              </span>
+
+              <div className="space-y-1">
+                <BodyText className="text-xs text-text sm:text-sm">
+                  <a
+                    href="mailto:contact@sgilink.com"
+                    className="font-medium text-brand underline-offset-2 hover:underline"
+                  >
+                    contact@sgilink.com
+                  </a>
+                </BodyText>
+
+                <SmallMuted className="text-text-muted">
+                  For general questions, diligence requests, and follow-ups from
+                  existing conversations.
+                </SmallMuted>
+              </div>
             </div>
           </div>
 
-          <div className="rounded-2xl border border-[#EFE3CE] bg-white p-6 space-y-2">
-            <h3 className="text-sm font-semibold text-[#3A5E7B] mb-1 flex items-center gap-2">
-              <FileText className="h-4 w-4" />
-              Scheduling & location
+          {/* Schedule a call */}
+          <div className="rounded-2xl border border-border bg-surface p-6 shadow-sm">
+            <h3 className="mb-3 text-sm font-semibold text-brand">
+              Schedule a call
             </h3>
-            <p className="text-sm text-slate-700">
-              Optional: add a calendar link and any office or meeting location
-              details here once they are finalized.
-            </p>
-            <p className="text-[11px] text-slate-500">
-              For now, initial conversations are typically held via video or
-              phone after an email introduction.
-            </p>
+
+            <div className="flex items-start gap-3">
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-chip-blue text-brand shadow-sm">
+                <CalendarClock className="h-4 w-4" />
+              </span>
+
+              <div className="space-y-1">
+                <BodyText className="text-xs text-text sm:text-sm">
+                  <a
+                    href="https://calendly.com/sgilink/intro"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-medium text-brand underline-offset-2 hover:underline"
+                  >
+                    Open scheduling link
+                  </a>
+                </BodyText>
+
+                <SmallMuted className="text-text-muted">
+                  Ideal if you’ve already confirmed accreditation and want to
+                  book a call directly.
+                </SmallMuted>
+              </div>
+            </div>
+          </div>
+
+          {/* Office location */}
+          <div className="rounded-2xl border border-border bg-surface p-6 shadow-sm">
+            <h3 className="mb-3 text-sm font-semibold text-brand">
+              Office location
+            </h3>
+
+            <div className="flex items-start gap-3">
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-chip-blue text-brand shadow-sm">
+                <MapPin className="h-4 w-4" />
+              </span>
+
+              <div className="space-y-1">
+                <BodyText className="text-xs text-text sm:text-sm leading-relaxed">
+                  SGI-LINK
+                  <br />
+                  123 Market Street
+                  <br />
+                  Suite 500
+                  <br />
+                  City, State, ZIP
+                </BodyText>
+
+                <SmallMuted className="text-text-muted">
+                  In-person meetings are available for qualified investors by
+                  appointment only.
+                </SmallMuted>
+              </div>
+            </div>
           </div>
         </div>
       </div>

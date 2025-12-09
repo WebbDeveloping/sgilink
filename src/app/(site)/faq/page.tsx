@@ -1,89 +1,214 @@
 // app/faq/page.jsx
-import { ArrowRight, ChevronDown, HelpCircle } from "lucide-react";
+
+import { HelpCircle } from "lucide-react";
+import {
+  Eyebrow,
+  SectionTitle,
+  BodyText,
+  SmallMuted,
+} from "@/components/atoms";
+import { IconEyebrow, FaqItem, InfoCard } from "@/components/molecules";
 
 export default function FaqPage() {
-  const faqs = [
+  return (
+    <main className="min-h-screen bg-bg text-text">
+      <FaqHeroSection />
+      <FaqListSection />
+      <FaqFooterSection />
+    </main>
+  );
+}
+
+/** HERO – consistent with other pages */
+function FaqHeroSection() {
+  return (
+    <section className="relative border-b border-border bg-surface py-24 sm:py-32">
+      <div className="relative mx-auto max-w-7xl px-4 text-center sm:px-6">
+        <IconEyebrow
+          icon={HelpCircle}
+          label="Frequently Asked Questions"
+          className="mb-4 inline-flex items-center justify-center text-text-muted"
+          iconClassName="text-brand"
+        />
+
+        <SectionTitle
+          as="h1"
+          className="text-3xl leading-tight tracking-tight sm:text-4xl md:text-5xl"
+        >
+          Answers to key questions about{" "}
+          <span className="relative inline-block">
+            <span className="absolute inset-x-0 bottom-1 h-2 rounded-full bg-section-blue" />
+            <span className="relative">SGI-LINK</span>
+          </span>
+          .
+        </SectionTitle>
+
+        <BodyText className="mx-auto mt-5 max-w-3xl text-sm text-text-muted sm:text-base">
+          Below are short answers to common questions investors ask about our
+          strategy, structure, and process. These are summaries only — full
+          details are always provided in formal documents and direct
+          conversations.
+        </BodyText>
+      </div>
+    </section>
+  );
+}
+
+/** MAIN FAQ LIST */
+function FaqListSection() {
+  const generalFaqs = [
     {
-      q: "What markets do you trade?",
-      a: "Our systems are primarily focused on major global currency pairs and select commodities futures, where liquidity and structure support systematic approaches.",
+      question: "What is SGI-LINK and how does it work?",
+      answer:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra, ipsum sed aliquet hendrerit, velit sem elementum mauris, et molestie nibh nibh quis ante. Suspendisse potenti. Duis porta tincidunt ligula, id pulvinar lorem feugiat vitae.",
     },
     {
-      q: "Is SGI-LINK suitable for short-term trading?",
-      a: "No. SGI-LINK is designed as a longer-term allocation. While our systems operate on a range of timeframes, we encourage investors to view the fund through a multi-year lens.",
+      question: "Who is SGI-LINK intended for?",
+      answer:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse iaculis malesuada lorem, sit amet interdum velit ultrices non. Curabitur sagittis sed ligula et mollis. Donec id ipsum ipsum. Sed ac justo at arcu porta ullamcorper.",
     },
     {
-      q: "How do you think about risk?",
-      a: "Risk is defined and measured before return. We monitor position sizing, drawdowns, and correlation across strategies, with rules in place to reduce exposure when conditions warrant.",
+      question: "What are the minimum investment requirements?",
+      answer:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae nisl non mi varius tincidunt. Phasellus suscipit, mauris eget dapibus pulvinar, turpis nibh consequat velit, nec imperdiet tellus elit in lorem.",
     },
     {
-      q: "How often do investors receive reporting?",
-      a: "Investors receive regular reporting outlining performance, risk metrics, and high-level positioning, in addition to on-request conversations.",
+      question: "How often are results and reporting updated?",
+      answer:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in urna sed libero mattis accumsan. Aenean auctor nibh et arcu blandit, eget iaculis libero eleifend. Nunc in velit at turpis viverra ullamcorper.",
+    },
+  ];
+
+  const strategyFaqs = [
+    {
+      question: "What markets do your systems trade?",
+      answer:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor nulla sit amet risus efficitur, a pharetra tortor ultrices. Praesent convallis urna nec nunc ultrices, et interdum massa gravida.",
+    },
+    {
+      question: "How do you think about risk and drawdowns?",
+      answer:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis nibh sodales, tristique justo nec, dictum nibh. Sed quis odio eget nunc consequat tempor. Sed pretium fringilla libero, a dignissim purus.",
+    },
+    {
+      question: "Are results based on live trading or backtests?",
+      answer:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tristique lectus nec ante mollis, ac tristique libero porta. Donec feugiat augue ac lectus finibus, sit amet vestibulum magna lacinia.",
+    },
+    {
+      question: "Can investors redeem or add capital at any time?",
+      answer:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus lacinia aliquet magna, ac hendrerit purus.",
     },
   ];
 
   return (
-    <main className="bg-white text-slate-900 min-h-screen">
-      {/* Hero */}
-      <section className="relative bg-gradient-to-b from-white via-white to-[#EFE3CE]/40 pt-28 sm:pt-32 lg:pt-40 pb-16 sm:pb-20 border-b border-[#EFE3CE]">
-        <div className="relative max-w-4xl mx-auto px-6 lg:px-0 text-center space-y-6">
-          <p className="inline-flex items-center justify-center gap-2 text-[11px] font-semibold tracking-[0.22em] text-slate-500 uppercase">
-            <HelpCircle className="h-3.5 w-3.5 text-[#3A5E7B]" />
-            Frequently Asked Questions
-          </p>
+    <section className="border-b border-border bg-surface py-24">
+      <div className="mx-auto max-w-7xl space-y-10 px-4 sm:px-6">
+        {/* General FAQs */}
+        <div className="grid gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.1fr)] md:items-start">
+          <div className="space-y-3">
+            <Eyebrow className="text-text-muted">General</Eyebrow>
+            <SectionTitle>High-level questions about SGI-LINK.</SectionTitle>
+            <BodyText className="text-sm text-text-muted sm:text-base">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed
+              ante nec lorem fermentum ultrices. Integer sed urna ut sapien
+              consequat vulputate ut sed orci.
+            </BodyText>
+          </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900">
-            Clarity before <span className="text-[#3A5E7B]">commitment.</span>
-          </h1>
-
-          <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto">
-            Below are some of the most common questions we receive from
-            prospective investors about SGI-LINK’s strategy, risk, and
-            operations.
-          </p>
+          <div className="space-y-4">
+            {generalFaqs.map((item) => (
+              <FaqItem
+                key={item.question}
+                question={item.question}
+                answer={item.answer}
+              />
+            ))}
+          </div>
         </div>
-      </section>
 
-      {/* FAQ List */}
-      <section className="bg-[#EFE3CE]/40 border-b border-[#EFE3CE] py-16 lg:py-20">
-        <div className="max-w-3xl mx-auto px-6 lg:px-0 space-y-4">
-          {faqs.map((item) => (
-            <details
-              key={item.q}
-              className="group rounded-xl border border-[#EFE3CE] bg-white p-5 sm:p-6 shadow-sm transition-all"
-            >
-              <summary className="flex cursor-pointer items-center justify-between gap-4 text-sm font-medium text-slate-800">
-                <span>{item.q}</span>
-                <ChevronDown className="h-4 w-4 text-slate-500 transition-transform group-open:rotate-180" />
-              </summary>
+        {/* Strategy & Risk FAQs */}
+        <div className="grid gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.1fr)] md:items-start">
+          <div className="space-y-3">
+            <Eyebrow className="text-text-muted">Strategy &amp; Risk</Eyebrow>
+            <SectionTitle>How the strategy behaves over time.</SectionTitle>
+            <BodyText className="text-sm text-text-muted sm:text-base">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+              varius maximus justo, non laoreet sapien condimentum ut. Integer
+              at felis in est ultrices euismod.
+            </BodyText>
+          </div>
 
-              <p className="mt-3 text-sm text-slate-700 leading-relaxed">
-                {item.a}
-              </p>
-            </details>
-          ))}
+          <div className="space-y-4">
+            {strategyFaqs.map((item) => (
+              <FaqItem
+                key={item.question}
+                question={item.question}
+                answer={item.answer}
+              />
+            ))}
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      {/* CTA */}
-      <section className="relative bg-white py-16 lg:py-20">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(58,94,123,0.06),_transparent_70%)]" />
-        <div className="relative max-w-3xl mx-auto px-6 lg:px-0 text-center space-y-5">
-          <h2 className="text-2xl sm:text-3xl font-semibold text-[#3A5E7B]">
-            Have a question that isn’t listed?
-          </h2>
+/** FOOTER – small reassurance / contact type block */
+function FaqFooterSection() {
+  return (
+    <section className="bg-section-blue border-t border-border-blue py-24">
+      <div className="mx-auto max-w-7xl space-y-8 px-4 sm:px-6">
+        {/* Intro Block */}
+        <div className="max-w-3xl space-y-3">
+          <IconEyebrow
+            icon={HelpCircle}
+            label="Still Have Questions?"
+            className="text-brand-body-alt"
+            iconClassName="text-brand"
+          />
 
-          <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto">
-            We encourage prospective investors to ask detailed questions about
-            our systems, risk controls, and operations before allocating
-            capital.
-          </p>
+          <SectionTitle className="text-brand-on">
+            We expect — and welcome — detailed questions.
+          </SectionTitle>
 
-          <button className="inline-flex items-center justify-center rounded-full bg-[#3A5E7B] px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[rgba(58,94,123,0.35)] hover:bg-[#324f68] transition">
-            Request an introductory call
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </button>
+          <BodyText className="text-sm text-brand-on-soft sm:text-base">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+            feugiat arcu id tortor dignissim, sed venenatis magna dapibus.
+            Suspendisse dapibus eu justo vitae efficitur.
+          </BodyText>
         </div>
-      </section>
-    </main>
+
+        {/* Cards */}
+        <div className="grid gap-6 md:grid-cols-2">
+          <InfoCard title="For accredited and qualified investors">
+            <BodyText className="text-xs text-brand-on-soft sm:text-sm">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+              facilisis lectus vitae velit faucibus, ac pharetra eros
+              ullamcorper. Curabitur in lorem sit amet diam dapibus laoreet.
+            </BodyText>
+
+            <SmallMuted className="mt-2 text-brand-body-alt">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
+              urna sit amet ligula aliquet consequat.
+            </SmallMuted>
+          </InfoCard>
+
+          <InfoCard title="Request full materials">
+            <BodyText className="text-xs text-brand-on-soft sm:text-sm">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              pellentesque, erat in pulvinar feugiat, ipsum arcu porta ante, sed
+              cursus arcu tellus non lorem.
+            </BodyText>
+
+            <SmallMuted className="mt-2 text-brand-body-alt">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              id erat convallis, pretium arcu sed, cursus massa.
+            </SmallMuted>
+          </InfoCard>
+        </div>
+      </div>
+    </section>
   );
 }

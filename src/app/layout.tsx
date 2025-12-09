@@ -35,10 +35,10 @@ const mainNav = [
       { href: "/performance-history", label: "Performance History" },
     ],
   },
-  { href: "#", label: "Team" },
-  { href: "#", label: "Why SGI" },
-  { href: "#", label: "FAQs" },
-  { href: "#", label: "Contact" },
+  { href: "/team", label: "Team" },
+  { href: "/why-sgi", label: "Why SGI" },
+  { href: "/faq", label: "FAQs" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function RootLayout({
@@ -219,7 +219,7 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="mt-16 border-t border-[#ECE7DC] bg-[#F4F2EC]/60 py-8">
+    <footer className="border-t border-[#ECE7DC] bg-[#F4F2EC]/60 py-8">
       <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 px-4 sm:flex-row sm:items-center sm:px-6 lg:px-8">
         <p className="flex items-center gap-2 text-xs leading-relaxed text-slate-600">
           <LineChart className="h-3.5 w-3.5 text-[#3A5E7B]" />
