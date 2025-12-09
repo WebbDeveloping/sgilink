@@ -58,9 +58,7 @@ export function OverviewMetric({
       <dt className="text-[11px] uppercase tracking-[0.16em] text-text-muted leading-snug">
         {label}
       </dt>
-      <dd className="text-sm font-semibold text-slate-900 leading-snug">
-        {value}
-      </dd>
+      <dd className="text-sm font-semibold text-text leading-snug">{value}</dd>
     </>
   );
 }
@@ -75,14 +73,18 @@ export function IconStatCard({
   body: string;
 }) {
   return (
-    <article className="group relative overflow-hidden rounded-2xl border border-white/60 bg-surface/80 p-5 text-xs leading-relaxed text-text-muted shadow-sm shadow-slate-900/10 backdrop-blur-sm transition hover:-translate-y-1 hover:bg-surface hover:shadow-lg hover:shadow-slate-900/15">
-      <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-brand-soft via-brand to-brand-soft opacity-0 transition group-hover:opacity-100" />
+    <article className="group relative overflow-hidden rounded-2xl border border-border-card/80 bg-surface p-5 text-xs leading-relaxed text-text-muted shadow-sm shadow-slate-900/10 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-900/15">
+      {/* Solid blue top rule accent on hover */}
+      <div className="absolute inset-x-0 top-0 h-0.5 bg-brand opacity-0 transition group-hover:opacity-100" />
+
       <div className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-chip-blue text-brand">
         <Icon className="h-4 w-4" />
       </div>
-      <h3 className="mb-1.5 text-sm font-semibold text-slate-900 leading-snug">
+
+      <h3 className="mb-1.5 text-sm font-semibold text-text leading-snug">
         {title}
       </h3>
+
       <p>{body}</p>
     </article>
   );
@@ -129,7 +131,7 @@ export function TechLayerCard({
   body: string;
 }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-white/60 bg-surface/80 p-5 text-xs leading-relaxed text-text shadow-sm shadow-slate-900/5 backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-surface hover:shadow-lg">
+    <div className="relative overflow-hidden rounded-2xl border border-border-card/80 bg-surface p-5 text-xs leading-relaxed text-text shadow-sm shadow-slate-900/5 transition hover:-translate-y-0.5 hover:shadow-lg">
       <p className="mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted">
         <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-chip-blue text-brand shadow-sm">
           <Icon className="h-3.5 w-3.5" />

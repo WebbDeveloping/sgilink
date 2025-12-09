@@ -66,8 +66,8 @@ export function BriefHero() {
               <span>Request fund deck</span>
             </PrimaryButton>
 
-            <SecondaryLinkButton href="/fund-overview" className="px-5">
-              <span>Fund overview</span>
+            <SecondaryLinkButton href="/strategy" className="px-5">
+              <span>View strategy overview</span>
               <ArrowRight className="ml-1.5 h-4 w-4 shrink-0" />
             </SecondaryLinkButton>
           </div>
@@ -150,9 +150,10 @@ export function FundSnapshotSection() {
               A focused vehicle for SGI’s systems.
             </SectionTitle>
             <BodyText className="text-brand-on-soft">
-              SGI-LINK exists to channel capital into SGI’s proprietary trading
-              systems — a single mandate with a tightly defined role in a
-              broader portfolio.
+              SGI-LINK channels capital into SGI’s proprietary trading systems
+              with a clear role inside a broader allocation. The Strategy page
+              goes deeper into mandate, markets traded, and portfolio
+              construction.
             </BodyText>
           </div>
 
@@ -236,16 +237,17 @@ export function FundSnapshotSection() {
 
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-[11px] leading-relaxed">
           <a
-            href="/fund-overview"
+            href="/strategy"
             className="inline-flex items-center font-semibold uppercase tracking-[0.18em] text-brand-on-soft hover:text-brand-on whitespace-nowrap"
           >
-            <span>View full fund overview</span>
+            <span>Read the full strategy overview</span>
             <ArrowRight className="ml-1.5 h-3.5 w-3.5 shrink-0" />
           </a>
 
           <p className="max-w-xl text-brand-body-alt">
             This summary is intentionally high-level. Full details on structure,
-            terms, and risks are contained in formal offering documents.
+            terms, and risks are contained on the Strategy page and in formal
+            offering documents.
           </p>
         </div>
       </div>
@@ -288,6 +290,11 @@ export function StrategySection() {
             Multiple independent strategies, each with defined roles and risk
             budgets, are combined into a single portfolio designed to stay
             durable across regimes — without relying on market calls.
+          </BodyText>
+          <BodyText className="text-text-muted">
+            The Strategy page expands on how these systems behave in different
+            environments, along with examples of drawdowns and portfolio
+            behavior.
           </BodyText>
 
           <div className="flex flex-wrap gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
@@ -361,7 +368,8 @@ export function TechnologySection() {
           <BodyText>
             Purpose-built execution, monitoring, and risk tooling support our
             systems in live FX and futures markets — not just in research
-            notebooks.
+            notebooks. The Strategy page includes a deeper view of this
+            technology and risk stack.
           </BodyText>
 
           <div className="mt-2 flex flex-wrap gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
@@ -370,7 +378,7 @@ export function TechnologySection() {
             <Pill>Same stack: backtest → live</Pill>
           </div>
 
-          <CtaLink href="/technology">See technology overview</CtaLink>
+          <CtaLink href="/strategy">See technology &amp; risk details</CtaLink>
         </div>
 
         {/* RIGHT SIDE GRID */}
@@ -387,7 +395,7 @@ export function TechnologySection() {
           </div>
 
           <div className="mt-5 rounded-2xl border border-white/60 bg-surface/70 p-4 text-[11px] leading-relaxed text-text-muted shadow-sm shadow-slate-900/5 backdrop-blur-sm">
-            <p className="font-semibold text-slate-800">
+            <p className="font-semibold text-text">
               Technology exists to make the process more repeatable — not more
               complicated.
             </p>
@@ -477,11 +485,11 @@ export function InvestorProfileSection() {
             </div>
 
             <div className="space-y-3 text-xs leading-relaxed text-text-muted">
-              <CtaLink href="/investors">Review investor information</CtaLink>
+              <CtaLink href="/why-sgi">See why SGI may be a fit</CtaLink>
               <p>
-                Additional details on minimums, liquidity terms, and onboarding
-                are outlined on the investor information page and in formal
-                offering documents.
+                The Why SGI page expands on our philosophy, conservative
+                approach, and how we think about realistic expectations and
+                investor alignment.
               </p>
             </div>
           </div>
@@ -515,8 +523,8 @@ export function FaqTeaserSection() {
           <IconEyebrow icon={HelpCircle} label="FAQ" />
           <SectionTitle>Common questions, straight answers.</SectionTitle>
           <BodyText>
-            A deeper FAQ covers markets traded, risk management, reporting, and
-            how SGI-LINK fits into a broader allocation.
+            The FAQs page digs deeper into markets traded, risk management,
+            reporting cadence, and how SGI-LINK fits into a broader allocation.
           </BodyText>
         </div>
 
