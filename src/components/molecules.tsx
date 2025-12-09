@@ -121,16 +121,20 @@ export function TimelineStepCard({
 
       {/* TEXT BLOCK */}
       <div className="text-center sm:text-left">
-        <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted leading-snug">
+        <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted leading-snug sm:text-left">
           {label}
         </p>
 
-        <p className="mb-1.5 text-sm text-brand leading-snug">{title}</p>
+        <p className="mb-1.5 text-sm text-brand leading-snug sm:text-left">
+          {title}
+        </p>
 
         <p>{body}</p>
 
         {extra && (
-          <div className="mt-2 text-[11px] text-text-muted">{extra}</div>
+          <div className="mt-2 text-[11px] text-text-muted sm:text-left">
+            {extra}
+          </div>
         )}
       </div>
     </article>
