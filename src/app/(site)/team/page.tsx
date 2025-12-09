@@ -60,11 +60,6 @@ function TeamHeroSection() {
           of operating through different market regimes and communicating
           candidly about what has and hasn&apos;t worked.
         </BodyText>
-
-        <SmallMuted className="mx-auto mt-3 max-w-2xl text-text-muted">
-          Short bios here are intentionally concise. Detailed background and
-          references are available to qualified investors during diligence.
-        </SmallMuted>
       </div>
     </section>
   );
@@ -274,11 +269,6 @@ function RiskComplianceSection() {
             </InfoCard>
           ))}
         </div>
-
-        <SmallMuted className="max-w-3xl text-text-muted">
-          Formal role descriptions, reporting lines, and policy documents are
-          available to investors as part of the standard due diligence package.
-        </SmallMuted>
       </div>
     </section>
   );
