@@ -93,12 +93,6 @@ function LiveResultsHeroSection() {
           placeholders until connected to official data sources.
         </BodyText>
 
-        <SmallMuted className="mx-auto mt-3 max-w-2xl text-text-muted">
-          This page is designed as an investor-facing display only — no trading
-          controls, just verified performance context. When wired to live feeds,
-          it becomes a persistent source of trust.
-        </SmallMuted>
-
         {/* Data status context card */}
         <div className="mt-10 text-left">
           <div className="space-y-4 rounded-3xl border border-border-strong bg-surface/80 p-6 shadow-[0_18px_45px_rgba(15,23,42,0.08)] backdrop-blur-sm sm:p-8">
@@ -209,15 +203,6 @@ function EquityCurveSection() {
           <div className="flex h-64 items-center justify-center rounded-2xl border border-border-strong bg-accent-warm/30 text-sm text-text-muted">
             Simulated equity curve placeholder
           </div>
-
-          <SmallMuted className="flex gap-2 text-text-muted">
-            <ShieldCheck className="mt-0.5 h-3.5 w-3.5 text-brand" />
-            <span>
-              In production, this component would be fed from the same verified
-              performance source as the summary metrics, with clear date ranges
-              and benchmarks documented alongside it.
-            </span>
-          </SmallMuted>
         </div>
       </div>
     </section>

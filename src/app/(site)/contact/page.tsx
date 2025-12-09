@@ -50,12 +50,6 @@ function ContactHeroFormSection() {
             with a focus on clarity and fit for accredited and qualified
             investors.
           </BodyText>
-
-          <SmallMuted className="text-text-muted">
-            Please avoid including sensitive personal information. Formal
-            documents and secure channels are used later in the diligence
-            process.
-          </SmallMuted>
         </div>
 
         {/* Right: form (on desktop) / bottom (on mobile) */}

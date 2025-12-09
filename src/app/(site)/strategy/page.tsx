@@ -25,7 +25,7 @@ function StrategyHeroSection() {
   return (
     <section className="border-b border-border bg-surface py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-3xl text-center sgi-animate-fade-in-up">
           <p className="mb-4 inline-flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-text-muted">
             <ShieldCheck className="h-3.5 w-3.5 text-brand" />
             <span>Our Strategy</span>
@@ -40,14 +40,14 @@ function StrategyHeroSection() {
             built for durability.
           </h1>
 
-          <p className="mt-5 mx-auto max-w-2xl text-sm leading-relaxed text-text-muted sm:text-base">
+          <p className="sgi-animate-fade-in-up-delay mt-5 mx-auto max-w-2xl text-sm leading-relaxed text-text-muted sm:text-base">
             SGI-LINK aggregates multiple in-house strategies across global
             currency and commodities markets — each with its own inputs,
             timeframes, and risk budgets — into a single portfolio designed to
             remain resilient across regimes.
           </p>
 
-          <p className="mt-3 mx-auto max-w-2xl text-sm leading-relaxed text-text-muted sm:text-base">
+          <p className="sgi-animate-fade-in-up-delay mt-3 mx-auto max-w-2xl text-sm leading-relaxed text-text-muted sm:text-base">
             We focus on rules, structure, and risk constraints first, then build
             return expectations around what those frameworks can reliably
             support over time.

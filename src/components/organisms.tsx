@@ -38,12 +38,13 @@ export function BriefHero() {
     <section className="relative overflow-hidden border-b border-border">
       {/* Soft sunlight / sand glow */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(244,242,236,0.9),_transparent_65%)]" />
-      {/* Soft blue ambient glow */}
-      <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[radial-gradient(circle,_rgba(141,183,232,0.35),_transparent_70%)]" />
+
+      {/* Soft blue ambient glow – gently floating */}
+      <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[radial-gradient(circle,_rgba(141,183,232,0.35),_transparent_70%)] sgi-animate-soft-orbit" />
 
       <div className="relative mx-auto flex max-w-7xl flex-col gap-16 px-4 py-24 sm:px-6 sm:py-28 lg:flex-row lg:items-center lg:gap-20">
         {/* Left copy */}
-        <div className="max-w-xl space-y-6">
+        <div className="max-w-xl space-y-6 sgi-animate-fade-in-up">
           <Eyebrow>SGI-LINK · Private Algorithmic Fund</Eyebrow>
 
           <h1 className="text-3xl font-semibold tracking-tight text-slate-900 leading-tight sm:text-4xl md:text-5xl">
@@ -82,7 +83,7 @@ export function BriefHero() {
         </div>
 
         {/* Right: snapshot card */}
-        <div className="flex-1">
+        <div className="flex-1 sgi-animate-fade-in-up-delay">
           <div className="mx-auto max-w-md rounded-3xl border border-border-card bg-surface/80 p-6 shadow-xl shadow-slate-900/5 backdrop-blur-sm">
             <Eyebrow className="mb-4">Fund at a glance</Eyebrow>
 
@@ -140,7 +141,8 @@ export function FundSnapshotSection() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-2xl space-y-3">
+          {/* Left text block – primary fade */}
+          <div className="max-w-2xl space-y-3 sgi-section-fade-1">
             <IconEyebrow
               icon={Layers}
               label="Fund Overview"
@@ -157,7 +159,8 @@ export function FundSnapshotSection() {
             </BodyText>
           </div>
 
-          <div className="flex flex-wrap gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-brand-chip">
+          {/* Chips – secondary fade */}
+          <div className="flex flex-wrap gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-brand-chip sgi-section-fade-2">
             <span className="rounded-full border border-white/60 bg-white/70 px-3 py-1">
               FX &amp; Commodities
             </span>
@@ -171,8 +174,8 @@ export function FundSnapshotSection() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-[minmax(0,1.8fr)_minmax(0,1.2fr)] md:items-stretch">
-          {/* Cards */}
-          <div className="grid gap-5 sm:grid-cols-2">
+          {/* Cards – fade as a block */}
+          <div className="grid gap-5 sm:grid-cols-2 sgi-section-fade-2">
             {items.map((item) => (
               <IconStatCard
                 key={item.title}
@@ -209,8 +212,8 @@ export function FundSnapshotSection() {
             </article>
           </div>
 
-          {/* Image / visual card */}
-          <div className="relative overflow-hidden rounded-3xl border border-white/70 bg-surface/85 shadow-lg shadow-slate-900/10 backdrop-blur-sm">
+          {/* Image / visual card – tertiary fade */}
+          <div className="relative overflow-hidden rounded-3xl border border-white/70 bg-surface/85 shadow-lg shadow-slate-900/10 backdrop-blur-sm sgi-section-fade-3">
             <div
               className="h-48 bg-cover bg-center sm:h-56"
               style={{
@@ -235,10 +238,11 @@ export function FundSnapshotSection() {
           </div>
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-[11px] leading-relaxed">
+        {/* Bottom row – gentle fade */}
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-[11px] leading-relaxed sgi-section-fade-3">
           <a
             href="/strategy"
-            className="inline-flex items-center font-semibold uppercase tracking-[0.18em] text-brand-on-soft hover:text-brand-on whitespace-nowrap"
+            className="inline-flex items-center whitespace-nowrap font-semibold uppercase tracking-[0.18em] text-brand-on-soft hover:text-brand-on"
           >
             <span>Read the full strategy overview</span>
             <ArrowRight className="ml-1.5 h-3.5 w-3.5 shrink-0" />
@@ -283,7 +287,8 @@ export function StrategySection() {
   return (
     <section className="border-b border-border bg-surface py-24">
       <div className="mx-auto flex max-w-7xl flex-col gap-12 px-4 sm:px-6 lg:flex-row lg:items-start">
-        <div className="max-w-xl space-y-5">
+        {/* Left column – primary fade */}
+        <div className="max-w-xl space-y-5 sgi-section-fade-1">
           <IconEyebrow icon={ShieldCheck} label="Strategy & Risk" />
           <SectionTitle>Diversified, rules-driven systems.</SectionTitle>
           <BodyText>
@@ -312,8 +317,8 @@ export function StrategySection() {
           <CtaLink href="/strategy">Learn more about our strategy</CtaLink>
         </div>
 
-        {/* Timeline */}
-        <div className="relative flex-1">
+        {/* Timeline – secondary fade */}
+        <div className="relative flex-1 sgi-section-fade-2">
           <div className="pointer-events-none absolute left-4 top-0 hidden h-full w-px bg-gradient-to-b from-border-blue via-border to-transparent sm:block" />
           <div className="space-y-4">
             {steps.map((step) => (

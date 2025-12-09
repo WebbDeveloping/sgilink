@@ -1,6 +1,15 @@
-// app/about/page.jsx
+// app/team/page.jsx
 
-import { Globe2, ShieldCheck, Users2, LineChart, Layers } from "lucide-react";
+import {
+  Users2,
+  ShieldCheck,
+  Briefcase,
+  Scale,
+  Eye,
+  Award,
+  BookOpen,
+  AlertTriangle,
+} from "lucide-react";
 import {
   Eyebrow,
   SectionTitle,
@@ -9,34 +18,35 @@ import {
 } from "@/components/atoms";
 import { IconEyebrow, InfoCard } from "@/components/molecules";
 
-export default function AboutPage() {
+export default function TeamPage() {
   return (
     <main className="min-h-screen bg-bg text-text">
-      <AboutHeroSection />
-      <StorySection />
-      <PhilosophySection />
-      <InvestorFitSection />
-      <PrinciplesSection />
+      <TeamHeroSection />
+      <FoundersSection />
+      <InvestmentPartnersSection />
+      <RiskComplianceSection />
+      <TrustSection />
     </main>
   );
 }
 
-/** HERO – minimal, editorial, no gradient, SGI slash + blue underline */
-function AboutHeroSection() {
+/** HERO – editorial, consistent with About/Strategy */
+function TeamHeroSection() {
   return (
     <section className="relative border-b border-border bg-surface py-24 sm:py-32">
-      <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6">
-        {/* Overline */}
-        <Eyebrow className="mb-4 inline-block text-text-muted">
-          About SGI-LINK
-        </Eyebrow>
+      <div className="relative mx-auto max-w-7xl px-4 text-center sm:px-6 sgi-animate-fade-in-up">
+        <IconEyebrow
+          icon={Users2}
+          label="Team & Governance"
+          className="mb-4 inline-flex items-center justify-center text-text-muted"
+          iconClassName="text-brand"
+        />
 
-        {/* Headline with blue underline */}
         <SectionTitle
           as="h1"
           className="text-3xl leading-tight tracking-tight sm:text-4xl md:text-5xl"
         >
-          The firm behind{" "}
+          The people behind{" "}
           <span className="relative inline-block">
             <span className="absolute inset-x-0 bottom-1 h-2 rounded-full bg-section-blue" />
             <span className="relative">our systematic engine</span>
@@ -44,286 +54,297 @@ function AboutHeroSection() {
           .
         </SectionTitle>
 
-        {/* Supporting statement */}
-        <BodyText className="mx-auto mt-5 max-w-2xl text-sm text-text-muted sm:text-base">
-          SGI-LINK exists to make disciplined, rules-driven trading systems
-          usable by long-term investors — grounded in real-market research and a
-          risk-first philosophy.
+        <BodyText className="sgi-animate-fade-in-up-delay mx-auto mt-5 max-w-3xl text-sm text-text-muted sm:text-base">
+          SGI-LINK is built and run by a small, experienced team across
+          research, investment, and risk &amp; compliance — with a track record
+          of operating through different market regimes and communicating
+          candidly about what has and hasn&apos;t worked.
         </BodyText>
       </div>
     </section>
   );
 }
 
-/** STORY – calm, two-column but low-UI, more narrative */
-function StorySection() {
-  return (
-    <section className="border-b border-border bg-surface py-24">
-      <div className="mx-auto flex max-w-5xl flex-col gap-12 px-4 sm:px-6 lg:flex-row lg:items-start">
-        {/* Left narrative */}
-        <div className="max-w-xl space-y-4">
-          <IconEyebrow
-            icon={Layers}
-            label="Our Story"
-            className="mb-1 text-text-muted"
-          />
-
-          <SectionTitle>
-            Built on years of real-market testing, not a single backtest.
-          </SectionTitle>
-
-          <BodyText className="text-text-muted">
-            SGI began as a research effort into how systematic FX and
-            commodities strategies behave in live conditions — across liquidity
-            environments, volatility regimes, and execution partners. Many ideas
-            never made it past testing. A smaller set did.
-          </BodyText>
-
-          <BodyText className="text-text-muted">
-            SGI-LINK is the institutional expression of that journey: a vehicle
-            built around the systems, controls, and infrastructure that proved
-            durable enough to run real capital, not just attractive enough to
-            present in a slide deck.
-          </BodyText>
-        </div>
-
-        {/* Right supporting points */}
-        <div className="space-y-6 text-sm leading-relaxed text-text-muted">
-          <div>
-            <p className="mb-2 text-sm font-semibold text-brand">
-              From broad experimentation to a focused mandate
-            </p>
-            <p>
-              Early on, SGI explored a wide range of models and timeframes. Over
-              time, the team narrowed its focus to approaches that consistently
-              handled slippage, spreads, and real-world frictions in FX and
-              commodities — not just in simulation, but in production.
-            </p>
-          </div>
-
-          <div>
-            <p className="mb-2 text-sm font-semibold text-brand">
-              Infrastructure built to support real investors
-            </p>
-            <p>
-              Around the research came execution tooling, risk monitoring, and
-              reporting built for accountability: the same infrastructure that
-              supports SGI now underpins SGI-LINK, so investors access the
-              process as it actually operates day to day.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/** PHILOSOPHY – blue background for visual break, simple content */
-function PhilosophySection() {
-  return (
-    <section className="border-b border-border-blue bg-section-blue py-24">
-      <div className="mx-auto max-w-5xl space-y-10 px-4 sm:px-6">
-        <div className="max-w-xl space-y-4">
-          <IconEyebrow
-            icon={ShieldCheck}
-            label="Philosophy"
-            className="text-brand-body-alt"
-            iconClassName="text-brand"
-          />
-
-          <SectionTitle className="text-brand-on">
-            Technology-forward, deliberately conservative.
-          </SectionTitle>
-
-          <BodyText className="text-brand-on-soft">
-            SGI-LINK uses modern quantitative tools to seek attractive,
-            risk-aware returns — but our posture is intentionally measured. We
-            prefer robustness over cleverness, and clear explanations over
-            opaque models.
-          </BodyText>
-        </div>
-
-        <div className="grid gap-8 md:grid-cols-3">
-          <div className="space-y-2 text-sm leading-relaxed text-brand-on-soft">
-            <Eyebrow className="text-brand-chip">Risk first</Eyebrow>
-            <BodyText className="text-brand-on-soft text-sm sm:text-base">
-              Position sizing, drawdown limits, and liquidity considerations
-              come before return targets. Systems are evaluated on how they
-              behave when markets are difficult, not just when conditions are
-              favorable.
-            </BodyText>
-          </div>
-
-          <div className="space-y-2 text-sm leading-relaxed text-brand-on-soft">
-            <Eyebrow className="text-brand-chip">Rules over emotion</Eyebrow>
-            <BodyText className="text-brand-on-soft text-sm sm:text-base">
-              Entries, exits, and de-risking are governed by predefined rules.
-              This keeps the process consistent and helps avoid the emotional
-              decision-making that often undermines long-term results.
-            </BodyText>
-          </div>
-
-          <div className="space-y-2 text-sm leading-relaxed text-brand-on-soft">
-            <Eyebrow className="text-brand-chip">
-              Transparency over marketing
-            </Eyebrow>
-            <BodyText className="text-brand-on-soft text-sm sm:text-base">
-              We focus on realistic expectations and plain language around risk,
-              limitations, and process. If we can&apos;t explain a system in
-              straightforward terms, it doesn&apos;t belong in the portfolio.
-            </BodyText>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/** INVESTOR FIT – simple two-column layout, light structure */
-function InvestorFitSection() {
-  return (
-    <section className="border-b border-border bg-surface py-24">
-      <div className="mx-auto max-w-5xl space-y-10 px-4 sm:px-6">
-        <div className="max-w-xl space-y-3">
-          <IconEyebrow
-            icon={Users2}
-            label="Who SGI-LINK is built for"
-            className="text-text-muted"
-            iconClassName="text-brand"
-          />
-
-          <SectionTitle>Designed for patient, qualified capital.</SectionTitle>
-
-          <BodyText className="text-sm text-text-muted sm:text-base">
-            SGI-LINK is intended for investors who value structure and
-            repeatability — and who are comfortable judging strategies by their
-            risk discipline and process, not just by a single return number.
-          </BodyText>
-        </div>
-
-        <div className="grid gap-10 md:grid-cols-2 md:items-start">
-          {/* Left: typical investor profile */}
-          <div className="space-y-5 text-sm leading-relaxed text-text-muted">
-            <div>
-              <Eyebrow className="mb-1 text-text-muted">
-                Typical investors
-              </Eyebrow>
-              <BodyText className="text-sm text-text-muted sm:text-base">
-                Accredited and qualified investors, institutions, and family
-                offices looking to add a systematic FX and commodities sleeve
-                within a broader alternatives allocation.
-              </BodyText>
-            </div>
-
-            <div>
-              <Eyebrow className="mb-1 text-text-muted">Time horizon</Eyebrow>
-              <BodyText className="text-sm text-text-muted sm:text-base">
-                Multi-year capital with room for normal drawdowns along the way,
-                and a focus on how the strategy behaves over cycles, not single
-                months or quarters.
-              </BodyText>
-            </div>
-
-            <div>
-              <Eyebrow className="mb-1 text-text-muted">
-                Role in a portfolio
-              </Eyebrow>
-              <BodyText className="text-sm text-text-muted sm:text-base">
-                A rules-based engine that complements existing managers and
-                reduces reliance on discretionary macro calls or individual
-                security selection.
-              </BodyText>
-            </div>
-          </div>
-
-          {/* Right: alignment + “may not be a fit” */}
-          <div className="space-y-6 text-sm leading-relaxed text-text-muted">
-            <div>
-              <Eyebrow className="mb-2 text-text-muted">Alignment</Eyebrow>
-              <BodyText className="text-sm text-text-muted sm:text-base">
-                SGI invests alongside clients and operates under the same risk
-                framework and reporting structure, so incentives stay aligned
-                around process and risk, not just headline performance.
-              </BodyText>
-            </div>
-
-            <InfoCard title="May not be a fit if...">
-              <ul className="mt-1 space-y-1.5 text-xs leading-relaxed text-text">
-                <li>• You require daily liquidity and zero drawdowns.</li>
-                <li>
-                  • You view systematic strategies as &quot;black boxes&quot;.
-                </li>
-                <li>
-                  • You prefer highly concentrated, discretionary or
-                  event-driven exposures.
-                </li>
-              </ul>
-            </InfoCard>
-
-            <SmallMuted>
-              Additional details on minimums, liquidity terms, and onboarding
-              are available in formal offering documents and on the investor
-              information page.
-            </SmallMuted>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/** PRINCIPLES – simple grid, minimal chrome, consistent spacing */
-function PrinciplesSection() {
-  const principles = [
+/** FOUNDERS – short bios, focused on origin + responsibility */
+function FoundersSection() {
+  const founders = [
     {
-      label: "Discipline",
-      body: "We favor robust, repeatable processes over prediction or market timing.",
+      name: "Alex Morgan",
+      title: "Co-Founder & Chief Investment Officer",
+      focus:
+        "Leads research, portfolio construction, and system design for SGI-LINK.",
+      background:
+        "15+ years in systematic FX and commodities, previously at multi-manager platforms and a global macro hedge fund.",
+      lessons:
+        "Has seen multiple drawdown cycles; emphasizes risk limits and de-risking rules over maximizing headline returns.",
+      image:
+        "https://images.pexels.com/photos/3184300/pexels-photo-3184300.jpeg?auto=compress&cs=tinysrgb&w=1200",
     },
     {
-      label: "Transparency",
-      body: "We speak plainly about risk, return, and limitations — no shortcuts, no hype.",
-    },
-    {
-      label: "Alignment",
-      body: "We invest alongside clients and live under the same risk framework.",
-    },
-    {
-      label: "Long-term focus",
-      body: "We design systems, infrastructure, and relationships to endure across regimes.",
+      name: "Jordan Lee",
+      title: "Co-Founder & Managing Partner",
+      focus:
+        "Oversees firm strategy, investor relationships, and operational oversight.",
+      background:
+        "Background across prime brokerage, allocator due diligence, and fund operations.",
+      lessons:
+        "Believes that clear communication around risk, liquidity, and expectations matters as much as the strategy itself.",
+      image:
+        "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=1200",
     },
   ];
 
   return (
-    <section className="bg-surface py-24">
-      <div className="mx-auto max-w-5xl space-y-10 px-4 sm:px-6">
-        <div className="max-w-2xl space-y-3">
+    <section className="border-b border-border bg-surface py-24">
+      <div className="mx-auto max-w-7xl space-y-10 px-4 sm:px-6">
+        <div className="max-w-3xl space-y-3 sgi-section-fade-1">
           <IconEyebrow
-            icon={ShieldCheck}
-            label="Core Principles"
+            icon={Users2}
+            label="Founders"
             className="text-text-muted"
             iconClassName="text-brand"
           />
-
-          <SectionTitle>The ideas SGI-LINK is built on.</SectionTitle>
-
+          <SectionTitle>
+            Operators first, not just portfolio architects.
+          </SectionTitle>
           <BodyText className="text-sm text-text-muted sm:text-base">
-            Behind the technology is a simple set of beliefs about how capital
-            should be managed for long-term investors.
+            The founding team is responsible for both the investment
+            architecture and the day-to-day reality of running capital: managing
+            risk, building infrastructure, and speaking plainly with investors.
           </BodyText>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {principles.map((item) => (
-            <div
-              key={item.label}
-              className="rounded-2xl border border-border-strong bg-section-warm/60 px-5 py-5 text-sm leading-relaxed text-text-muted"
+        <div className="grid gap-8 md:grid-cols-2 sgi-section-fade-2">
+          {founders.map((founder) => (
+            <article
+              key={founder.name}
+              className="overflow-hidden rounded-2xl border border-border-card bg-surface shadow-sm shadow-slate-900/5"
             >
-              <p className="mb-2 text-sm font-semibold text-brand">
-                {item.label}
+              {/* Image header */}
+              <div
+                className="h-40 bg-cover bg-center sm:h-48"
+                style={{ backgroundImage: `url(${founder.image})` }}
+              />
+              <div className="space-y-3 p-5">
+                <Eyebrow className="text-brand-chip">{founder.title}</Eyebrow>
+                <p className="text-base font-semibold">{founder.name}</p>
+                <BodyText className="text-xs text-text-muted sm:text-sm">
+                  {founder.focus}
+                </BodyText>
+                <BodyText className="text-xs text-text-muted sm:text-sm">
+                  {founder.background}
+                </BodyText>
+                <SmallMuted className="text-text-muted">
+                  {founder.lessons}
+                </SmallMuted>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** INVESTMENT PARTNERS – collaborators / senior investment roles */
+function InvestmentPartnersSection() {
+  const partners = [
+    {
+      name: "Taylor Chen",
+      title: "Investment Partner – Systematic Macro",
+      focus:
+        "Supports research into cross-asset signals and regime behavior across FX and commodities.",
+      experience:
+        "Prior roles in macro research and risk at a multi-strategy fund; experience integrating systematic sleeves into broader portfolios.",
+    },
+    {
+      name: "Riley Patel",
+      title: "Investment Partner – Execution & Microstructure",
+      focus:
+        "Advises on venue selection, order-routing logic, and slippage management for live trading.",
+      experience:
+        "Background in electronic trading and execution analytics, with a focus on FX and listed futures.",
+    },
+  ];
+
+  return (
+    <section className="border-b border-border-blue bg-section-blue py-24">
+      <div className="mx-auto max-w-7xl space-y-10 px-4 sm:px-6">
+        <div className="max-w-3xl space-y-3 sgi-section-fade-1">
+          <IconEyebrow
+            icon={Briefcase}
+            label="Investment Partners"
+            className="text-brand-body-alt"
+            iconClassName="text-brand"
+          />
+          <SectionTitle className="text-brand-on">
+            External perspective without outsourcing responsibility.
+          </SectionTitle>
+          <BodyText className="text-sm text-brand-on-soft sm:text-base">
+            SGI-LINK draws on a small set of investment partners who have
+            relevant experience in systematic macro, execution, and allocator
+            risk — but ultimate decision-making and accountability remain with
+            the core team.
+          </BodyText>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 sgi-section-fade-2">
+          {partners.map((partner) => (
+            <div
+              key={partner.name}
+              className="space-y-2 rounded-2xl border border-border-blue bg-surface/90 p-5 text-sm leading-relaxed text-brand-on-soft shadow-sm shadow-slate-900/5"
+            >
+              <Eyebrow className="text-brand-chip">{partner.title}</Eyebrow>
+              <p className="text-base font-semibold text-brand-on">
+                {partner.name}
               </p>
-              <p className="text-xs sm:text-sm">{item.body}</p>
+              <BodyText className="text-brand-on-soft text-sm sm:text-base">
+                {partner.focus}
+              </BodyText>
+              <SmallMuted className="text-brand-label">
+                {partner.experience}
+              </SmallMuted>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** RISK & COMPLIANCE – roles and accountability */
+function RiskComplianceSection() {
+  const roles = [
+    {
+      icon: Scale,
+      label: "Risk Oversight",
+      title: "Chief Risk Officer (CRO)",
+      body: "Defines portfolio-level limits, monitors drawdowns and exposures, and is empowered to de-risk regardless of market narrative or recent performance.",
+    },
+    {
+      icon: Eye,
+      label: "Compliance & Governance",
+      title: "Compliance Lead",
+      body: "Oversees policies, marketing review, and regulatory obligations, ensuring that how we describe the strategy matches how it actually behaves.",
+    },
+    {
+      icon: AlertTriangle,
+      label: "Operational Resilience",
+      title: "Operations & Controls",
+      body: "Owns trade reconciliation, breaks management, and incident response so that operational issues are caught and addressed quickly.",
+    },
+  ];
+
+  return (
+    <section className="border-b border-border bg-surface py-24">
+      <div className="mx-auto max-w-7xl space-y-10 px-4 sm:px-6">
+        <div className="max-w-3xl space-y-3 sgi-section-fade-1">
+          <IconEyebrow
+            icon={ShieldCheck}
+            label="Risk & Compliance"
+            className="text-text-muted"
+            iconClassName="text-brand"
+          />
+          <SectionTitle>Structured accountability around risk.</SectionTitle>
+          <BodyText className="text-sm text-text-muted sm:text-base">
+            Risk and compliance roles are defined separately from idea
+            generation. Their mandate is to protect the integrity of the
+            portfolio and of the information investors receive — even when that
+            means saying &quot;no&quot; to a tempting trade or narrative.
+          </BodyText>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3 sgi-section-fade-2">
+          {roles.map((role) => (
+            <InfoCard key={role.title} title={role.label}>
+              <div className="mt-1 flex items-center gap-2 text-xs text-text-muted">
+                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-chip-blue text-brand shadow-sm">
+                  <role.icon className="h-3.5 w-3.5" />
+                </span>
+                <p className="text-xs font-medium sm:text-sm">{role.title}</p>
+              </div>
+              <BodyText className="mt-2 text-xs text-text-muted sm:text-sm">
+                {role.body}
+              </BodyText>
+            </InfoCard>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** WHY YOUR TEAM IS TRUSTWORTHY – experience, transparency, hard lessons */
+function TrustSection() {
+  return (
+    <section className="bg-section-warm py-24">
+      <div className="mx-auto max-w-7xl space-y-10 px-4 sm:px-6">
+        <div className="max-w-3xl space-y-3 sgi-section-fade-1">
+          <IconEyebrow
+            icon={Award}
+            label="Why This Team"
+            className="text-text-muted"
+            iconClassName="text-brand"
+          />
+          <SectionTitle>This page reinforces confidence.</SectionTitle>
+          <BodyText className="text-sm text-text-muted sm:text-base">
+            Trust isn&apos;t built on a single performance number. It comes from
+            experience across cycles, transparency about risk and limitations,
+            and a willingness to talk about hard lessons learned — not just
+            wins.
+          </BodyText>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3 sgi-section-fade-2">
+          <InfoCard title="Depth of experience">
+            <BodyText className="text-xs text-text-muted sm:text-sm">
+              The core team has spent years working in and around institutional
+              allocators, multi-manager platforms, and electronic trading. We
+              design SGI-LINK with the same scrutiny we used when evaluating
+              other managers.
+            </BodyText>
+          </InfoCard>
+
+          <InfoCard title="Transparency by default">
+            <BodyText className="text-xs text-text-muted sm:text-sm">
+              We prefer clear, sometimes unglamorous language about risk,
+              capacity, and drawdowns. If we can&apos;t explain a behavior or
+              decision, we don&apos;t consider that acceptable for a
+              long-term-focused vehicle.
+            </BodyText>
+          </InfoCard>
+
+          <InfoCard title="Hard lessons internalized">
+            <BodyText className="text-xs text-text-muted sm:text-sm">
+              Members of the team have lived through strategy overfitting,
+              liquidity surprises, and operational hiccups in prior roles. SGI
+              exists in part to encode those lessons into better guardrails and
+              more honest communication.
+            </BodyText>
+          </InfoCard>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 sgi-section-fade-3">
+          <InfoCard title="How we communicate with investors">
+            <BodyText className="text-xs text-text-muted sm:text-sm">
+              Regular updates emphasize risk and process changes, not just
+              recent returns. We are explicit about when conditions are
+              favorable vs. difficult, and what that means for expected
+              behavior.
+            </BodyText>
+            <SmallMuted className="mt-2 text-text-muted">
+              Example materials and reporting formats are available on request
+              for qualified investors.
+            </SmallMuted>
+          </InfoCard>
+
+          <InfoCard title="Alignment and access">
+            <BodyText className="text-xs text-text-muted sm:text-sm">
+              The team invests alongside clients under the same risk framework.
+              Investors have direct access to decision-makers, not just an
+              investor relations layer.
+            </BodyText>
+          </InfoCard>
         </div>
       </div>
     </section>
