@@ -217,7 +217,7 @@ export default function Header() {
 
         {/* Desktop right side: theme toggle + actions */}
         <div className="hidden items-center gap-4 lg:flex lg:flex-1 lg:justify-end">
-          <button
+          {/* <button
             type="button"
             onClick={toggleTheme}
             className="inline-flex items-center justify-center rounded-full border border-border bg-surface px-2.5 py-1 text-xs font-medium text-text-muted shadow-sm hover:bg-chip-blue"
@@ -228,7 +228,7 @@ export default function Header() {
             ) : (
               <MoonIcon className="h-4 w-4" aria-hidden="true" />
             )}
-          </button>
+          </button> */}
 
           <Link
             href="/investor-login"
