@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -17,8 +17,8 @@ import {
 import {
   Bars3Icon,
   XMarkIcon,
-  MoonIcon,
-  SunIcon,
+  // MoonIcon,
+  // SunIcon,
 } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
@@ -40,33 +40,11 @@ const resourceLinks = [
   { name: "Risk Disclosure", href: "/disclosures" },
 ];
 
-type Theme = "light" | "dark";
+// NOTE: Theme is intentionally fixed to light.
+// If/when you re-enable theming, reintroduce Theme type, state, and effects here.
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [theme, setTheme] = useState<Theme>("light");
-
-  // Load saved theme on mount
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const stored = window.localStorage.getItem("theme");
-    const initial: Theme = stored === "dark" ? "dark" : "light";
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setTheme(initial);
-    document.documentElement.dataset.theme = initial;
-  }, []);
-
-  // Apply theme + persist
-  useEffect(() => {
-    if (typeof document === "undefined") return;
-    document.documentElement.dataset.theme = theme;
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem("theme", theme);
-    }
-  }, [theme]);
-
-  const toggleTheme = () =>
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
 
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-border bg-surface/90 backdrop-blur-xl">
@@ -74,8 +52,8 @@ export default function Header() {
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:py-4 lg:px-8"
       >
-        {/* Logo */}
-        <div className="flex lg:flex-1">
+        {/* Logo – kept left-aligned, no flex grow on desktop */}
+        <div className="flex items-center">
           <Link
             href="/"
             className="-m-1.5 p-1.5 flex items-center"
@@ -84,7 +62,7 @@ export default function Header() {
             <span className="sr-only">SGI-LINK</span>
             <div className="relative h-8 w-32 sm:h-9 sm:w-36">
               <Image
-                src="/logo-blue.png"
+                src="/images/SGI-logo-05.png"
                 alt="SGI-LINK logo"
                 fill
                 className="object-contain"
@@ -96,7 +74,7 @@ export default function Header() {
 
         {/* Mobile menu button */}
         <div className="flex items-center gap-2 lg:hidden">
-          {/* Theme toggle (mobile) */}
+          {/* Theme toggle intentionally disabled; site is light-only for now. */}
           {/* <button
             type="button"
             onClick={toggleTheme}
@@ -215,21 +193,8 @@ export default function Header() {
           </Popover>
         </PopoverGroup>
 
-        {/* Desktop right side: theme toggle + actions */}
-        <div className="hidden items-center gap-4 lg:flex lg:flex-1 lg:justify-end">
-          {/* <button
-            type="button"
-            onClick={toggleTheme}
-            className="inline-flex items-center justify-center rounded-full border border-border bg-surface px-2.5 py-1 text-xs font-medium text-text-muted shadow-sm hover:bg-chip-blue"
-            aria-label="Toggle color theme"
-          >
-            {theme === "dark" ? (
-              <SunIcon className="h-4 w-4" aria-hidden="true" />
-            ) : (
-              <MoonIcon className="h-4 w-4" aria-hidden="true" />
-            )}
-          </button> */}
-
+        {/* Desktop right side: actions (theme toggle removed for light-only) */}
+        <div className="hidden items-center gap-4 lg:flex">
           <Link
             href="/investor-login"
             className="text-sm font-semibold text-text hover:text-brand"
@@ -326,7 +291,7 @@ export default function Header() {
                 {performanceLinks.map((item) => (
                   <Link
                     key={item.name}
-                    href={item.href}
+                    href={item.name}
                     className="block rounded-lg px-6 py-1.5 text-sm font-semibold text-text-muted hover:bg-chip-blue"
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -361,23 +326,8 @@ export default function Header() {
           </div>
 
           <div className="mt-6 space-y-2 border-t border-border pt-4">
-            {/* <button
-              type="button"
-              onClick={toggleTheme}
-              className="flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-surface px-3 py-2 text-base font-semibold text-text-muted hover:bg-chip-blue"
-            >
-              {theme === "dark" ? (
-                <>
-                  <SunIcon className="h-5 w-5" aria-hidden="true" />
-                  <span>Use light theme</span>
-                </>
-              ) : (
-                <>
-                  <MoonIcon className="h-5 w-5" aria-hidden="true" />
-                  <span>Use dark theme</span>
-                </>
-              )}
-            </button> */}
+            {/* Theme toggle intentionally removed – light theme is the only mode. */}
+            {/* <button>...</button> */}
 
             <Link
               href="/investor-login"
