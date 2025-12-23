@@ -9,6 +9,7 @@ export const Section = forwardRef<
     background?: Background;
     padding?: Padding;
     className?: string;
+    id?: string;
     children: ReactNode;
   }
 >(function Section(
@@ -16,6 +17,7 @@ export const Section = forwardRef<
     background = "surface",
     padding = "standard",
     className = "",
+    id,
     children,
   },
   ref
@@ -38,6 +40,7 @@ export const Section = forwardRef<
   return (
     <section
       ref={ref}
+      id={id}
       className={`${backgroundClasses[background]} ${paddingClasses[padding]} ${className}`}
     >
       {children}

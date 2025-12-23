@@ -9,7 +9,7 @@ export function ConsultationSection() {
   return (
     <Section background="bg" padding="large" className="relative z-30 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative isolate overflow-hidden bg-brand-on px-4 pt-12 shadow-2xl sm:rounded-3xl sm:px-6 sm:pt-16 md:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+        <div className="relative isolate overflow-hidden bg-brand-on px-4 pt-12 shadow-2xl rounded-3xl sm:px-6 sm:pt-16 md:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
           <svg
             viewBox="0 0 1024 1024"
             aria-hidden="true"
