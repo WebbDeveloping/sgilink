@@ -6,8 +6,9 @@ import {
   SectionTitle,
   BodyText,
   SmallMuted,
-} from "@/components/atoms";
-import { IconEyebrow, FaqItem, InfoCard } from "@/components/molecules";
+} from "@/components/typography";
+import { IconEyebrow } from "@/components/ui";
+import { FaqItem, InfoCard } from "@/components/cards";
 
 export default function FaqPage() {
   return (

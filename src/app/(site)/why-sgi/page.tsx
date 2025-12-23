@@ -14,8 +14,9 @@ import {
   SectionTitle,
   BodyText,
   SmallMuted,
-} from "@/components/atoms";
-import { IconEyebrow, InfoCard } from "@/components/molecules";
+} from "@/components/typography";
+import { IconEyebrow } from "@/components/ui";
+import { InfoCard } from "@/components/cards";
 
 export default function WhySgiPage() {
   return (

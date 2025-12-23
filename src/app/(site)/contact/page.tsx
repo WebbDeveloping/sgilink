@@ -6,8 +6,8 @@ import {
   SectionTitle,
   BodyText,
   SmallMuted,
-} from "@/components/atoms";
-import { IconEyebrow } from "@/components/molecules";
+} from "@/components/typography";
+import { IconEyebrow } from "@/components/ui";
 
 export default function ContactPage() {
   return (

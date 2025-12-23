@@ -13,8 +13,9 @@ import {
   SectionTitle,
   BodyText,
   SmallMuted,
-} from "@/components/atoms";
-import { IconEyebrow, InfoCard, OverviewMetric } from "@/components/molecules";
+} from "@/components/typography";
+import { IconEyebrow } from "@/components/ui";
+import { InfoCard, OverviewMetric } from "@/components/cards";
 
 export default function LiveResultsPage() {
   const snapshotStats = [
