@@ -48,7 +48,7 @@ export function StrategySection() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <Section background="warm" padding="standard" className="relative z-20">
+    <Section background="surface" padding="standard" className="relative z-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <ContentBlock
           eyebrow="Strategy Selection"

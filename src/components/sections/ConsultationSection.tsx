@@ -2,19 +2,26 @@
 "use client";
 
 import Image from "next/image";
+import { Section } from "./Section";
 import { PrimaryLinkButton } from "@/components/buttons";
 
 export function ConsultationSection() {
   return (
-    <div className="relative z-20 bg-surface">
-      <div className="mx-auto max-w-7xl py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
+    <Section background="bg" padding="large" className="relative z-30 bg-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative isolate overflow-hidden bg-brand-on px-4 pt-12 shadow-2xl sm:rounded-3xl sm:px-6 sm:pt-16 md:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
           <svg
             viewBox="0 0 1024 1024"
             aria-hidden="true"
             className="absolute top-1/2 left-1/2 -z-10 size-256 -translate-y-1/2 mask-[radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
           >
-            <circle r={512} cx={512} cy={512} fill="url(#sgi-radial-gradient)" fillOpacity="0.7" />
+            <circle
+              r={512}
+              cx={512}
+              cy={512}
+              fill="url(#sgi-radial-gradient)"
+              fillOpacity="0.7"
+            />
             <defs>
               <radialGradient id="sgi-radial-gradient">
                 <stop stopColor="#3a5e7b" />
@@ -27,13 +34,16 @@ export function ConsultationSection() {
               Ready to explore a different approach?
             </h2>
             <p className="mt-4 text-base/7 text-pretty text-brand-soft sm:mt-6 sm:text-lg sm:leading-8">
-              Our strategies aren&apos;t for everyone. We believe in personal conversations
-              to ensure SGI-LINK aligns with your investment goals and risk tolerance.
-              Schedule a private consultation to discuss how our systematic approach
-              can fit into your portfolio.
+              Our strategies aren&apos;t for everyone. We believe in personal
+              conversations to ensure SGI-LINK aligns with your investment goals
+              and risk tolerance. Schedule a private consultation to discuss how
+              our systematic approach can fit into your portfolio.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:mt-10 sm:flex-row sm:gap-x-6 lg:justify-start">
-              <PrimaryLinkButton href="/contact" className="w-full bg-surface text-brand hover:bg-chip-blue sm:w-auto">
+              <PrimaryLinkButton
+                href="/contact"
+                className="w-full bg-surface text-brand hover:bg-chip-blue sm:w-auto"
+              >
                 Schedule Your Consultation
               </PrimaryLinkButton>
               <a
@@ -57,7 +67,6 @@ export function ConsultationSection() {
           </div>
         </div>
       </div>
-    </div>
+    </Section>
   );
 }
-

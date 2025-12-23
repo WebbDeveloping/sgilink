@@ -3,7 +3,7 @@
 
 import { useEffect, useRef } from "react";
 import { useReducedMotion } from "framer-motion";
-import { ContentBlock } from "./ContentBlock";
+import { Section, ContentBlock } from "./";
 import { PrimaryLinkButton } from "@/components/buttons";
 
 interface PlanStep {
@@ -185,9 +185,11 @@ export function ThePlanSection() {
   }, []);
 
   return (
-    <section
+    <Section
       ref={sectionRef}
-      className="relative border-b border-border-blue bg-section-blue py-16 sm:py-24 lg:py-32"
+      background="blue"
+      padding="large"
+      className="relative border-b border-border-blue"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Split Column Layout */}
@@ -281,6 +283,6 @@ export function ThePlanSection() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
