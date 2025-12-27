@@ -15,7 +15,7 @@ export function IntroducingSection() {
             </span>
           }
           description={
-            <>
+            <div>
               <p className="mx-auto mt-4 max-w-2xl text-lg font-semibold leading-relaxed text-text sm:mt-6 sm:text-xl lg:text-2xl">
                 Purpose-Built for Investors Who Demand Substance
               </p>
@@ -24,7 +24,7 @@ export function IntroducingSection() {
                 require exceptional systems—backed by rigorous testing,
                 transparent methodology, and unwavering discipline.
               </p>
-            </>
+            </div>
           }
           align="center"
           maxWidth="lg"

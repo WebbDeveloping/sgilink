@@ -113,16 +113,6 @@ export function HomeHero() {
               <ArrowRight className="ml-2 h-5 w-5 shrink-0" />
             </SecondaryLinkButton>
           </FadeInUp>
-          <FadeInUp
-            delay="long"
-            className="mt-6 flex flex-col items-center justify-center gap-2 px-4 sm:mt-8 sm:flex-row sm:px-0"
-          >
-            <ShieldCheck className="h-4 w-4 shrink-0 text-brand" />
-            <SmallMuted className="text-center sm:text-left">
-              For qualified and accredited investors only. This is not an offer
-              or solicitation to buy or sell any security.
-            </SmallMuted>
-          </FadeInUp>
         </div>
       </div>
     </section>
