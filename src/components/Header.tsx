@@ -146,7 +146,7 @@ export default function Header() {
         {/* Desktop right side: actions (theme toggle removed for light-only) */}
         <div className="hidden items-center gap-4 lg:flex">
           <Link
-            href="/investor-login"
+            href="https://dart.cash/"
             className="text-sm font-semibold text-text hover:text-brand"
           >
             Investor Login <span aria-hidden="true">→</span>

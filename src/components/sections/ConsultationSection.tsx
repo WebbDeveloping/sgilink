@@ -42,7 +42,7 @@ export function ConsultationSection() {
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:mt-10 sm:flex-row sm:gap-x-6 lg:justify-start">
               <PrimaryLinkButton
                 href="/contact"
-                className="w-full bg-surface text-brand hover:bg-chip-blue sm:w-auto"
+                className="w-full bg-surface !text-brand hover:bg-chip-blue sm:w-auto"
               >
                 Schedule Your Consultation
               </PrimaryLinkButton>
