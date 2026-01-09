@@ -61,15 +61,7 @@ export function DarkHero() {
             className="inline-flex items-center gap-2 rounded-full border border-border-card bg-card/50 backdrop-blur-sm px-4 py-2 mb-6 sm:mb-8"
           >
             <p className="text-sm font-medium text-text-muted">Powered by</p>
-            <div className="relative w-5 h-5 flex items-center justify-center">
-              <img
-                src="https://framerusercontent.com/images/kOc6grwlsVqrrC0cVECnrcKuU.svg?width=21&height=23"
-                alt="SGI Link"
-                width={21}
-                height={23}
-                className="object-contain"
-              />
-            </div>
+
             <p className="text-sm font-medium text-text-muted">SGI Link</p>
           </motion.div>
 
