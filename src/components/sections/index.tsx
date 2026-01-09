@@ -4,6 +4,7 @@ export { BriefHero } from "./BriefHero";
 export { ProblemStatementSection } from "./ProblemStatementSection";
 export { AchievementRecognitionSection } from "./AchievementRecognitionSection";
 export { IntroducingSection } from "./IntroducingSection";
+export { StatisticsSection } from "./StatisticsSection";
 export { TheProcessSection } from "./TheProcessSection";
 export { ValuePropositionsSection } from "./ValuePropositionsSection";
 export { FundSnapshotSection } from "./FundSnapshotSection";

@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+/* Trading Platform Theme - Dark theme with bright blue accents */
+/* Based on trading platform design with gradient borders and modern UI */
+
+@theme {
+  /* Base surfaces - Very dark backgrounds */
+  --color-bg: #000000; /* Main background: near-black */
+  --color-surface: #0a0a0a; /* Surface background: slightly lighter than main */
+  --color-section-blue: #000000; /* Section backgrounds match main */
+  --color-section-warm: #000000; /* Section backgrounds match main */
+  --color-card: #111111; /* Card backgrounds: dark gray, lighter than surface */
+  --color-card-highlight: #1a1a1a; /* Highlighted cards (e.g., PRO ACCOUNT) */
+
+  /* Neutral text - White and light grays */
+  --color-text: #ffffff; /* Primary text: white */
+  --color-text-muted: #9ca3af; /* Secondary/muted text: light gray */
+  --color-text-subtle: #6b7280; /* Subtle text: medium gray */
+
+  /* Brand/Accent colors - Bright blue for interactive elements */
+  --color-brand: #3b82f6; /* Primary brand: bright blue (buttons, highlights) */
+  --color-brand-soft: #60a5fa; /* Soft brand: lighter blue variant */
+  --color-brand-dark: #2563eb; /* Dark brand: darker blue for hover states */
+  --color-brand-on: #ffffff; /* Text on brand backgrounds: white */
+  --color-brand-on-soft: #e5e7eb; /* Soft text on brand: light gray */
+  --color-brand-chip: #1e40af; /* Chip/badge brand: deep blue */
+  --color-brand-label: #60a5fa; /* Label brand: light blue */
+  --color-brand-body-alt: #93c5fd; /* Alternative brand text: very light blue */
+
+  /* Accent colors for special elements */
+  --color-accent-primary: #3b82f6; /* Primary accent: matches brand */
+  --color-accent-secondary: #2563eb; /* Secondary accent: darker blue */
+  --color-accent-chart: #3b82f6; /* Chart bars: bright blue */
+
+  /* Borders - Dark grays and gradient definitions */
+  --color-border: #1f2937; /* Default border: dark gray */
+  --color-border-strong: #374151; /* Strong border: medium gray */
+  --color-border-blue: #1e3a8a; /* Blue border: dark blue-gray */
+  --color-border-card: #2a2a2a; /* Card border: lighter gray than background */
+  
+  /* Gradient border colors - for borders with white top, darker bottom */
+  --color-border-gradient-top: #ffffff; /* Top of gradient border: white */
+  --color-border-gradient-bottom: #2a2a2a; /* Bottom of gradient border: lighter gray */
+  --color-border-gradient-mid: #1a1a1a; /* Mid point: between top and bottom */
+
+  /* Chips / badges */
+  --color-chip-warm: #1a1a1a; /* Warm chip: dark background */
+  --color-chip-blue: #1e3a8a; /* Blue chip: dark blue background */
+  --color-chip-accent: #3b82f6; /* Accent chip: bright blue background */
+
+  /* Interactive states */
+  --color-interactive-hover: #2563eb; /* Hover state: darker blue */
+  --color-interactive-active: #1d4ed8; /* Active state: deep blue */
+  --color-interactive-focus: #60a5fa; /* Focus state: light blue */
+}
+
+/* Trading theme activation */
+:root[data-theme="trading"] {
+  color-scheme: dark;
+
+  /* Base surfaces */
+  --color-bg: #000000;
+  --color-surface: #0a0a0a;
+  --color-section-blue: #000000;
+  --color-section-warm: #000000;
+  --color-card: #111111;
+  --color-card-highlight: #1a1a1a;
+
+  /* Text colors */
+  --color-text: #ffffff;
+  --color-text-muted: #9ca3af;
+  --color-text-subtle: #6b7280;
+
+  /* Brand/Accent colors */
+  --color-brand: #3b82f6;
+  --color-brand-soft: #60a5fa;
+  --color-brand-dark: #2563eb;
+  --color-brand-on: #ffffff;
+  --color-brand-on-soft: #e5e7eb;
+  --color-brand-chip: #1e40af;
+  --color-brand-label: #60a5fa;
+  --color-brand-body-alt: #93c5fd;
+
+  /* Accent colors */
+  --color-accent-primary: #3b82f6;
+  --color-accent-secondary: #2563eb;
+  --color-accent-chart: #3b82f6;
+
+  /* Borders */
+  --color-border: #1f2937;
+  --color-border-strong: #374151;
+  --color-border-blue: #1e3a8a;
+  --color-border-card: #2a2a2a;
+  --color-border-gradient-top: #ffffff;
+  --color-border-gradient-bottom: #2a2a2a;
+  --color-border-gradient-mid: #1a1a1a;
+
+  /* Chips / badges */
+  --color-chip-warm: #1a1a1a;
+  --color-chip-blue: #1e3a8a;
+  --color-chip-accent: #3b82f6;
+
+  /* Interactive states */
+  --color-interactive-hover: #2563eb;
+  --color-interactive-active: #1d4ed8;
+  --color-interactive-focus: #60a5fa;
+}
+
+/* Gradient border utilities */
+@layer utilities {
+  /* Standard gradient border - white top to darker bottom */
+  .border-gradient-trading {
+    border-image: linear-gradient(
+      to bottom,
+      var(--color-border-gradient-top),
+      var(--color-border-gradient-mid),
+      var(--color-border-gradient-bottom)
+    ) 1;
+  }
+
+  /* Alternative gradient border with more subtle transition */
+  .border-gradient-trading-soft {
+    border-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.8),
+      rgba(42, 42, 42, 0.6),
+      var(--color-border-gradient-bottom)
+    ) 1;
+  }
+
+  /* Gradient border for cards */
+  .border-gradient-card {
+    border-image: linear-gradient(
+      to bottom,
+      var(--color-border-gradient-top),
+      var(--color-border-card)
+    ) 1;
+  }
+
+  /* Blue gradient border variant */
+  .border-gradient-blue {
+    border-image: linear-gradient(
+      to bottom,
+      var(--color-brand-soft),
+      var(--color-brand-dark)
+    ) 1;
+  }
+}
+

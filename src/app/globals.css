@@ -2,6 +2,8 @@
 
 /* Base: light theme tokens (what you already had) */
 @theme {
+  /* Font Family */
+  --font-family-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* Base surfaces */
   --color-bg: #fcfcfd;
   --color-surface: #ffffff;

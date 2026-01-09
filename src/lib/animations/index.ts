@@ -4,4 +4,5 @@
 export * from "./config";
 export * from "./variants";
 export * from "./hooks";
+export * from "./textAnimations";
 

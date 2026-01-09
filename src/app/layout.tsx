@@ -1,10 +1,19 @@
 // app/layout.tsx
 import "./globals.css";
+import "./trading-theme.css";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { Inter } from "next/font/google";
 import { LineChart } from "lucide-react";
 import Link from "next/link";
 import Header from "@/components/Header";
+import TradingThemeProvider from "@/components/TradingThemeProvider";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: "SGI-LINK",
@@ -13,11 +22,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <body className="bg-bg text-text antialiased">
-        <Header />
-        <div className="pt-14 md:pt-16">{children}</div>
-        <Footer />
+        <TradingThemeProvider>
+          {/* <Header /> */}
+          <div className="pt-14 md:pt-16">{children}</div>
+          {/* <Footer /> */}
+        </TradingThemeProvider>
       </body>
     </html>
   );

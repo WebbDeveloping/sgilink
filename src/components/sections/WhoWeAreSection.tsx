@@ -24,7 +24,7 @@ export function WhoWeAreSection() {
     },
     {
       label: "Markets",
-      value: "FX & Commodities",
+      value: "Foreign Exchange & Commodities",
       description: "Systematic macro focus",
     },
     {

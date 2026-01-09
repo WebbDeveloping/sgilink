@@ -34,7 +34,7 @@ export function FundSnapshotSection() {
   ];
 
   const metrics = [
-    { label: "Markets", value: "FX & Commodities" },
+    { label: "Markets", value: "Foreign Exchange & Commodities" },
     { label: "Approach", value: "Systematic Only" },
     { label: "Target Role", value: "Systematic Diversifier" },
   ];

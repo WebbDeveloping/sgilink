@@ -12,7 +12,7 @@ export function HomeHero() {
   return (
     <section
       ref={heroRef}
-      className="relative isolate overflow-hidden h-[70vh] sm:h-[85vh] lg:h-dvh"
+      className="relative isolate overflow-hidden h-[70vh] sm:h-[65vh]"
       style={{ position: "sticky", top: 0 }}
     >
       {/* Background Image */}
@@ -33,15 +33,14 @@ export function HomeHero() {
             as="h1"
             className="text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl lg:text-7xl"
           >
-            Systematic Trading. Institutional Performance. Built for You.
+            The Future of Digital Trading
           </FadeInUp>
           <FadeInUp
             as="p"
             className="mx-auto mt-6 max-w-3xl text-base/7 font-medium text-pretty text-white/90 sm:mt-8 sm:text-lg/8 lg:text-xl/8"
           >
-            Access the same algorithmic strategies that power institutional
-            portfolios—designed for sophisticated investors seeking consistent,
-            data-driven returns.
+            Experience revolutionary AI-powered trading with SGI Link. Secure,
+            intelligent, and profitable digital asset management.
           </FadeInUp>
           <FadeInUp
             delay="long"
@@ -52,7 +51,7 @@ export function HomeHero() {
               className="w-full px-8 py-3 text-base sm:w-auto"
             >
               <FileText className="mr-2 h-5 w-5 shrink-0" />
-              Request Fund Deck
+              Get Started
             </PrimaryLinkButton>
             <SecondaryLinkButton
               href="/strategy"

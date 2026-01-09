@@ -203,3 +203,72 @@ All animations respect `prefers-reduced-motion` and are disabled when motion is 
 - ✅ Test at breakpoints: mobile (default), sm (640px), lg (1024px)
 - ✅ Use responsive typography and spacing
 
+## Content Sourcing Guidelines
+
+### Rule Statement
+
+**All new content must be sourced from the official SGI Link documentation.** This ensures consistency, accuracy, and alignment with the platform's messaging across all user-facing content.
+
+### Content Source File
+
+The official SGI Link documentation content is stored in:
+- **File**: `src/lib/content/sgi-link-docs.ts`
+- **Import**: `import { sgiLinkDocs } from '@/lib/content/sgi-link-docs'`
+
+This file serves as the single source of truth for all content. Always reference this file when creating or updating content.
+
+### Hybrid Usage Guidelines
+
+We use a hybrid approach that balances accuracy with UI flexibility:
+
+#### Exact Quotes Required For:
+- **Critical claims**: Platform definition, positioning, regulatory statements
+- **Feature descriptions**: Core functionality, technical capabilities, integration details
+- **Investor protections**: Protection mechanisms, security guarantees, compliance statements
+- **Competitive differentiators**: "Why Unique?" statements, competitor comparisons, value propositions
+
+#### Paraphrasing Allowed For:
+- **UI descriptions**: Section introductions, navigation labels, button text, tooltips
+- **Adaptations for context**: Shortened versions for cards, summaries for lists, headlines
+
+**Important**: Even when paraphrasing, the meaning must be preserved. Do not change facts, claims, or technical details.
+
+### Usage Examples
+
+```tsx
+// ✅ Correct: Exact quote for critical claim
+import { sgiLinkDocs } from '@/lib/content/sgi-link-docs';
+
+<ContentBlock
+  title="What is SGI Link?"
+  description={sgiLinkDocs.overview.exactQuotes.platformDescription}
+/>
+
+// ✅ Correct: Paraphrasing for UI context (preserves meaning)
+<Button>Get Started at dart.cash</Button>
+// Source: "Sign up at dart.cash, complete KYC/AML verification..."
+
+// ❌ Incorrect: Changing facts
+<p>Integration with dozens of brokerages...</p>
+// Should be: "Integration with hundreds of regulated offshore brokerages..."
+
+// ❌ Incorrect: Adding unverified claims
+<p>SGI Link is the fastest-growing platform...</p>
+// Only use claims that exist in the official documentation
+```
+
+### Best Practices
+
+1. **Always import from source file**: Never hardcode content
+2. **Use appropriate content type**: Exact quotes for critical claims, key points for summaries
+3. **Preserve meaning when paraphrasing**: Don't change facts or technical details
+4. **Document deviations**: If you must deviate, document the reason clearly
+5. **Update source file first**: If new official documentation is provided, update `sgi-link-docs.ts` before using it
+
+### Related Documentation
+
+For detailed guidelines, examples, and best practices, see:
+- **Content Guidelines**: `CONTENT_GUIDELINES.md` - Comprehensive usage guide with examples
+- **Content Source**: `src/lib/content/sgi-link-docs.ts` - Official documentation content
+- **Official Documentation**: https://sgi-link.com/documentation
+
