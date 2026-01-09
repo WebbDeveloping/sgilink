@@ -28,7 +28,7 @@ export function DarkHero() {
   return (
     <section
       id="hero"
-      className="relative isolate overflow-hidden bg-bg h-[70vh] sm:h-[65vh]"
+      className="relative isolate overflow-hidden bg-bg h-[70vh] sm:h-[85vh]"
     >
       {/* Video Background */}
       <div className="absolute inset-0 -z-20">
@@ -48,7 +48,7 @@ export function DarkHero() {
       <div className="absolute inset-0 -z-10 bg-black/60" />
 
       {/* Bottom Gradient Fade */}
-      <div className="absolute inset-x-0 bottom-0 h-18 sm:h-48 lg:h-64 -z-10 bg-gradient-to-b from-transparent to-black" />
+      <div className="absolute inset-x-0 bottom-0 h-32 sm:h-48 lg:h-64 -z-10 bg-gradient-to-b from-transparent to-black" />
 
       {/* Content Container */}
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-40 flex items-center justify-center min-h-full">
@@ -61,7 +61,15 @@ export function DarkHero() {
             className="inline-flex items-center gap-2 rounded-full border border-border-card bg-card/50 backdrop-blur-sm px-4 py-2 mb-6 sm:mb-8"
           >
             <p className="text-sm font-medium text-text-muted">Powered by</p>
-            {/* <div className="relative w-5 h-5 flex items-center justify-center"></div> */}
+            <div className="relative w-5 h-5 flex items-center justify-center">
+              <img
+                src="https://framerusercontent.com/images/kOc6grwlsVqrrC0cVECnrcKuU.svg?width=21&height=23"
+                alt="SGI Link"
+                width={21}
+                height={23}
+                className="object-contain"
+              />
+            </div>
             <p className="text-sm font-medium text-text-muted">SGI Link</p>
           </motion.div>
 

@@ -1,10 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import {
-  sections,
-  type SectionConfig,
-} from "@/components/sections/dark/content/sectionsConfig";
+import { sections } from "@/components/sections/dark/content/sectionsConfig";
 import { ContentSectionsSidebar } from "@/components/sections/dark/content/ContentSectionsSidebar";
 import { SectionMetadata } from "@/components/sections/dark/content/SectionMetadata";
 
@@ -51,12 +48,6 @@ export default function ContentSectionsPage() {
       // Update active section immediately
       setActiveSection(sectionId);
 
-      // Auto-expand the category containing this section
-      const category = getCategoryFromSectionId(sectionId);
-      if (category) {
-        setExpandedCategories((prev) => new Set(prev).add(category));
-      }
-
       // Close mobile menu after navigation
       setMobileMenuOpen(false);
     }
@@ -87,12 +78,6 @@ export default function ContentSectionsPage() {
             scrollPosition < offsetTop + offsetHeight
           ) {
             setActiveSection(sectionId);
-
-            // Auto-expand the category containing the active section
-            const category = getCategoryFromSectionId(sectionId);
-            if (category) {
-              setExpandedCategories((prev) => new Set(prev).add(category));
-            }
 
             // Auto-scroll menu to active item
             const menuItem = document.getElementById(`menu-${sectionId}`);
