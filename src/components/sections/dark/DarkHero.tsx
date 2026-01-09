@@ -15,7 +15,14 @@ export function DarkHero() {
     : characterReveal;
 
   // Split heading into words for proper wrapping
-  const headingWords = ["The", "Future", "of", "Digital", "Trading"];
+  const headingWords = [
+    "Systematic",
+    "Trading.",
+    "Institutional",
+    "Performance.",
+    "Built for You.",
+  ];
+  // "systematic Trading. Institutional Performance. Built for You."
 
   // Split each word into characters
   const splitIntoCharacters = (word: string) => {
@@ -98,8 +105,9 @@ export function DarkHero() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mx-auto mt-6 max-w-3xl text-sm leading-[160%] text-center text-text sm:mt-8 sm:text-base lg:text-lg"
           >
-            Experience revolutionary AI-powered trading with SGI Link. Secure,
-            intelligent, and profitable digital asset management.
+            Access the same algorithmic strategies that power institutional
+            portfolios - designed for sophisticated investors seeking
+            consistent, data-driven returns.
           </motion.p>
 
           {/* CTA Button */}
