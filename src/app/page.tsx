@@ -1,26 +1,28 @@
-// app/sgi-brief/page.tsx
-// SGI-LINK – Brief Site Content (Simplified Investor-Facing Copy)
+// app/page.tsx
+// SGI-LINK – Home Page (New Design)
 
 import {
-  BriefHero,
-  FundSnapshotSection,
+  HomeHero,
+  IntroducingSection,
   StrategySection,
-  TechnologySection,
-  InvestorProfileSection,
   FaqTeaserSection,
-  FinalCtaSection,
-} from "@/components/organisms";
+  ConsultationSection,
+  ValuePropositionsCards,
+  ThePlanSection,
+} from "@/components/sections";
 
-export default function SgiBriefPage() {
+export default function HomePage() {
   return (
     <main className="min-h-screen bg-bg text-text">
-      <BriefHero />
-      <FundSnapshotSection />
-      <StrategySection />
-      <TechnologySection />
-      <InvestorProfileSection />
-      <FaqTeaserSection />
-      <FinalCtaSection />
+      <HomeHero />
+      <div>
+        <IntroducingSection />
+        <ValuePropositionsCards />
+        <ThePlanSection />
+        <StrategySection />
+        <FaqTeaserSection />
+        <ConsultationSection />
+      </div>
     </main>
   );
 }

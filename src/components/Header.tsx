@@ -22,17 +22,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
-// Grouped nav so desktop isn’t crazy long
-const aboutLinks = [
-  { name: "About SGI-LINK", href: "/about" },
-  { name: "Team", href: "/team" },
-  { name: "Why SGI", href: "/why-sgi" },
-];
-
-const performanceLinks = [
-  { name: "Live Results", href: "/live-results" },
-  { name: "Performance History", href: "/performance-history" },
-];
+// Grouped nav so desktop isn't crazy long
 
 const resourceLinks = [
   { name: "FAQs", href: "/faq" },
@@ -100,33 +90,21 @@ export default function Header() {
 
         {/* Desktop nav */}
         <PopoverGroup className="hidden items-center gap-x-10 lg:flex">
-          {/* About group */}
-          <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold text-text hover:text-brand">
-              About
-              <ChevronDownIcon
-                aria-hidden="true"
-                className="h-5 w-5 flex-none text-text-muted"
-              />
-            </PopoverButton>
+          {/* Home (single link) */}
+          <Link
+            href="/"
+            className="text-sm font-semibold text-text hover:text-brand"
+          >
+            Home
+          </Link>
 
-            <PopoverPanel
-              transition
-              className="absolute left-1/2 z-10 mt-3 w-64 -translate-x-1/2 overflow-hidden rounded-2xl bg-surface shadow-lg ring-1 ring-border-card data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[enter]:ease-out data-[leave]:duration-150 data-[leave]:ease-in"
-            >
-              <div className="p-3">
-                {aboutLinks.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="block rounded-lg px-3 py-2 text-sm font-medium text-text hover:bg-chip-warm hover:text-brand"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </PopoverPanel>
-          </Popover>
+          {/* About (single link) */}
+          <Link
+            href="/about"
+            className="text-sm font-semibold text-text hover:text-brand"
+          >
+            About
+          </Link>
 
           {/* Strategy (single link) */}
           <Link
@@ -135,34 +113,6 @@ export default function Header() {
           >
             Strategy
           </Link>
-
-          {/* Performance dropdown */}
-          <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold text-text hover:text-brand">
-              Performance
-              <ChevronDownIcon
-                aria-hidden="true"
-                className="h-5 w-5 flex-none text-text-muted"
-              />
-            </PopoverButton>
-
-            <PopoverPanel
-              transition
-              className="absolute left-1/2 z-10 mt-3 w-64 -translate-x-1/2 overflow-hidden rounded-2xl bg-surface shadow-lg ring-1 ring-border-card data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[enter]:ease-out data-[leave]:duration-150 data-[leave]:ease-in"
-            >
-              <div className="p-3">
-                {performanceLinks.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="block rounded-lg px-3 py-2 text-sm font-medium text-text hover:bg-chip-blue hover:text-brand-on-soft"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </PopoverPanel>
-          </Popover>
 
           {/* Resources dropdown */}
           <Popover className="relative">
@@ -196,7 +146,7 @@ export default function Header() {
         {/* Desktop right side: actions (theme toggle removed for light-only) */}
         <div className="hidden items-center gap-4 lg:flex">
           <Link
-            href="/investor-login"
+            href="https://dart.cash/"
             className="text-sm font-semibold text-text hover:text-brand"
           >
             Investor Login <span aria-hidden="true">→</span>
@@ -246,28 +196,23 @@ export default function Header() {
           </div>
 
           <div className="mt-6 space-y-2">
-            {/* About group */}
-            <Disclosure as="div" className="-mx-3">
-              <DisclosureButton className="group flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-base font-semibold text-text hover:bg-chip-warm">
-                About
-                <ChevronDownIcon
-                  aria-hidden="true"
-                  className="h-5 w-5 flex-none text-text-muted group-data-[open]:rotate-180 transition"
-                />
-              </DisclosureButton>
-              <DisclosurePanel className="mt-2 space-y-1">
-                {aboutLinks.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="block rounded-lg px-6 py-1.5 text-sm font-semibold text-text-muted hover:bg-chip-warm"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </DisclosurePanel>
-            </Disclosure>
+            {/* Home */}
+            <Link
+              href="/"
+              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-text hover:bg-chip-warm"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
+
+            {/* About */}
+            <Link
+              href="/about"
+              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-text hover:bg-chip-warm"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About
+            </Link>
 
             {/* Strategy */}
             <Link
@@ -277,29 +222,6 @@ export default function Header() {
             >
               Strategy
             </Link>
-
-            {/* Performance */}
-            <Disclosure as="div" className="-mx-3">
-              <DisclosureButton className="group flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-base font-semibold text-text hover:bg-chip-blue">
-                Performance
-                <ChevronDownIcon
-                  aria-hidden="true"
-                  className="h-5 w-5 flex-none text-text-muted group-data-[open]:rotate-180 transition"
-                />
-              </DisclosureButton>
-              <DisclosurePanel className="mt-2 space-y-1">
-                {performanceLinks.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.name}
-                    className="block rounded-lg px-6 py-1.5 text-sm font-semibold text-text-muted hover:bg-chip-blue"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </DisclosurePanel>
-            </Disclosure>
 
             {/* Resources */}
             <Disclosure as="div" className="-mx-3">

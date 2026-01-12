@@ -1,241 +1,226 @@
-// app/contact/page.jsx
-
-import { Mail, CalendarClock, MapPin, MessageCircle } from "lucide-react";
 import {
-  Eyebrow,
-  SectionTitle,
-  BodyText,
-  SmallMuted,
-} from "@/components/atoms";
-import { IconEyebrow } from "@/components/molecules";
+  BuildingOffice2Icon,
+  EnvelopeIcon,
+  PhoneIcon,
+} from "@heroicons/react/24/outline";
 
-export default function ContactPage() {
+export default function Example() {
   return (
-    <main className="min-h-screen bg-bg text-text">
-      <ContactHeroFormSection />
-      <ContactDetailsSection />
-    </main>
-  );
-}
-
-/** HERO + FORM – hero content left, form right */
-function ContactHeroFormSection() {
-  return (
-    <section className="border-b border-border bg-surface py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl gap-12 px-4 sm:px-6 md:grid md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.1fr)] md:items-start">
-        {/* Left: hero content (on desktop) / top (on mobile) */}
-        <div className="mb-10 space-y-4 md:order-1 md:mb-0">
-          <IconEyebrow
-            icon={MessageCircle}
-            label="Contact"
-            className="text-text-muted"
-            iconClassName="text-brand"
-          />
-
-          <SectionTitle
-            as="h1"
-            className="text-3xl leading-tight tracking-tight sm:text-4xl md:text-5xl"
-          >
-            Start a conversation with{" "}
-            <span className="relative inline-block">
-              <span className="absolute inset-x-0 bottom-1 h-2 rounded-full bg-section-blue" />
-              <span className="relative">the SGI-LINK team</span>
-            </span>
-            .
-          </SectionTitle>
-
-          <BodyText className="text-sm text-text-muted sm:text-base">
-            Use the form to share a bit about your interest or questions. We
-            respond directly — no call centers, no automated sales funnels —
-            with a focus on clarity and fit for accredited and qualified
-            investors.
-          </BodyText>
-        </div>
-
-        {/* Right: form (on desktop) / bottom (on mobile) */}
-        <div className="md:order-2 rounded-2xl border border-border-card bg-surface p-6 shadow-sm shadow-slate-900/5 sm:p-8">
-          <form className="space-y-5">
-            <div className="space-y-1">
-              <Eyebrow className="text-text-muted">Name</Eyebrow>
-              <input
-                type="text"
-                name="name"
-                autoComplete="name"
-                className="block w-full rounded-xl border border-border-card bg-surface px-3 py-2 text-sm text-text placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
-                placeholder="Your name"
-              />
-            </div>
-
-            <div className="space-y-1">
-              <Eyebrow className="text-text-muted">Email</Eyebrow>
-              <input
-                type="email"
-                name="email"
-                autoComplete="email"
-                className="block w-full rounded-xl border border-border-card bg-surface px-3 py-2 text-sm text-text placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
-                placeholder="you@example.com"
-              />
-            </div>
-
-            <div className="space-y-1">
-              <Eyebrow className="text-text-muted">Investor type</Eyebrow>
-              <select
-                name="investorType"
-                className="block w-full rounded-xl border border-border-card bg-surface px-3 py-2 text-sm text-text focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+    <div className="relative isolate bg-surface">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
+        <div className="relative px-6 pt-24 pb-20 sm:pt-32 lg:static lg:px-8 lg:py-48">
+          <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
+            <div className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden bg-section-blue ring-1 ring-border lg:w-1/2">
+              <svg
+                aria-hidden="true"
+                className="absolute inset-0 size-full mask-[radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-border"
               >
-                <option value="">Select an option</option>
-                <option value="accredited">Accredited investor</option>
-                <option value="quep">QUEP / high net worth</option>
-                <option value="allocator">Institutional allocator</option>
-                <option value="other">Other</option>
-              </select>
+                <defs>
+                  <pattern
+                    x="100%"
+                    y={-1}
+                    id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527"
+                    width={200}
+                    height={200}
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <path d="M130 200V.5M.5 .5H200" fill="none" />
+                  </pattern>
+                </defs>
+                <rect
+                  width="100%"
+                  height="100%"
+                  strokeWidth={0}
+                  className="fill-surface"
+                />
+                <svg
+                  x="100%"
+                  y={-1}
+                  className="overflow-visible fill-section-blue"
+                >
+                  <path d="M-470.5 0h201v201h-201Z" strokeWidth={0} />
+                </svg>
+                <rect
+                  fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)"
+                  width="100%"
+                  height="100%"
+                  strokeWidth={0}
+                />
+              </svg>
+              <div
+                aria-hidden="true"
+                className="absolute top-[calc(100%-13rem)] -left-56 hidden transform-gpu blur-3xl lg:top-[calc(50%-7rem)] lg:left-[max(-14rem,calc(100%-59rem))]"
+              >
+                <div
+                  style={{
+                    clipPath:
+                      "polygon(74.1% 56.1%, 100% 38.6%, 97.5% 73.3%, 85.5% 100%, 80.7% 98.2%, 72.5% 67.7%, 60.2% 37.8%, 52.4% 32.2%, 47.5% 41.9%, 45.2% 65.8%, 27.5% 23.5%, 0.1% 35.4%, 17.9% 0.1%, 27.6% 23.5%, 76.1% 2.6%, 74.1% 56.1%)",
+                  }}
+                  className="aspect-1155/678 w-288.75 bg-linear-to-br from-brand-soft to-brand opacity-10"
+                />
+              </div>
             </div>
-
-            <div className="space-y-1">
-              <Eyebrow className="text-text-muted">
-                What would you like to discuss?
-              </Eyebrow>
-              <textarea
-                name="message"
-                rows={5}
-                className="block w-full rounded-xl border border-border-card bg-surface px-3 py-2 text-sm text-text placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
-                placeholder="A brief description of your questions or interest..."
-              />
+            <h2 className="text-4xl font-semibold tracking-tight text-pretty text-text sm:text-5xl">
+              Get in touch
+            </h2>
+            <p className="mt-6 text-lg/8 text-text-muted">
+              Proin volutpat consequat porttitor cras nullam gravida at. Orci
+              molestie a eu arcu. Sed ut tincidunt integer elementum id sem.
+              Arcu sed malesuada et magna.
+            </p>
+            <dl className="mt-10 space-y-4 text-base/7 text-text-muted">
+              <div className="flex gap-x-4">
+                <dt className="flex-none">
+                  <span className="sr-only">Address</span>
+                  <BuildingOffice2Icon
+                    aria-hidden="true"
+                    className="h-7 w-6 text-text-muted"
+                  />
+                </dt>
+                <dd>
+                  545 Mavis Island
+                  <br />
+                  Chicago, IL 99191
+                </dd>
+              </div>
+              <div className="flex gap-x-4">
+                <dt className="flex-none">
+                  <span className="sr-only">Telephone</span>
+                  <PhoneIcon
+                    aria-hidden="true"
+                    className="h-7 w-6 text-text-muted"
+                  />
+                </dt>
+                <dd>
+                  <a href="tel:+1 (555) 234-5678" className="hover:text-text">
+                    +1 (555) 234-5678
+                  </a>
+                </dd>
+              </div>
+              <div className="flex gap-x-4">
+                <dt className="flex-none">
+                  <span className="sr-only">Email</span>
+                  <EnvelopeIcon
+                    aria-hidden="true"
+                    className="h-7 w-6 text-text-muted"
+                  />
+                </dt>
+                <dd>
+                  <a
+                    href="mailto:hello@example.com"
+                    className="hover:text-text"
+                  >
+                    hello@example.com
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+        <form
+          action="#"
+          method="POST"
+          className="px-6 pt-20 pb-24 sm:pb-32 lg:px-8 lg:py-48"
+        >
+          <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
+            <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+              <div>
+                <label
+                  htmlFor="first-name"
+                  className="block text-sm/6 font-semibold text-text"
+                >
+                  First name
+                </label>
+                <div className="mt-2.5">
+                  <input
+                    id="first-name"
+                    name="first-name"
+                    type="text"
+                    autoComplete="given-name"
+                    className="block w-full rounded-md bg-surface px-3.5 py-2 text-base text-text outline-1 -outline-offset-1 outline-border placeholder:text-text-muted focus:outline-2 focus:-outline-offset-2 focus:outline-brand"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  htmlFor="last-name"
+                  className="block text-sm/6 font-semibold text-text"
+                >
+                  Last name
+                </label>
+                <div className="mt-2.5">
+                  <input
+                    id="last-name"
+                    name="last-name"
+                    type="text"
+                    autoComplete="family-name"
+                    className="block w-full rounded-md bg-surface px-3.5 py-2 text-base text-text outline-1 -outline-offset-1 outline-border placeholder:text-text-muted focus:outline-2 focus:-outline-offset-2 focus:outline-brand"
+                  />
+                </div>
+              </div>
+              <div className="sm:col-span-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm/6 font-semibold text-text"
+                >
+                  Email
+                </label>
+                <div className="mt-2.5">
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    className="block w-full rounded-md bg-surface px-3.5 py-2 text-base text-text outline-1 -outline-offset-1 outline-border placeholder:text-text-muted focus:outline-2 focus:-outline-offset-2 focus:outline-brand"
+                  />
+                </div>
+              </div>
+              <div className="sm:col-span-2">
+                <label
+                  htmlFor="phone-number"
+                  className="block text-sm/6 font-semibold text-text"
+                >
+                  Phone number
+                </label>
+                <div className="mt-2.5">
+                  <input
+                    id="phone-number"
+                    name="phone-number"
+                    type="tel"
+                    autoComplete="tel"
+                    className="block w-full rounded-md bg-surface px-3.5 py-2 text-base text-text outline-1 -outline-offset-1 outline-border placeholder:text-text-muted focus:outline-2 focus:-outline-offset-2 focus:outline-brand"
+                  />
+                </div>
+              </div>
+              <div className="sm:col-span-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm/6 font-semibold text-text"
+                >
+                  Message
+                </label>
+                <div className="mt-2.5">
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    className="block w-full rounded-md bg-surface px-3.5 py-2 text-base text-text outline-1 -outline-offset-1 outline-border placeholder:text-text-muted focus:outline-2 focus:-outline-offset-2 focus:outline-brand"
+                    defaultValue={""}
+                  />
+                </div>
+              </div>
             </div>
-
-            <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:justify-between">
-              <SmallMuted className="text-text-muted">
-                By submitting this form, you&apos;re indicating interest in
-                learning more. This is not a solicitation to invest.
-              </SmallMuted>
-
+            <div className="mt-8 flex justify-end">
               <button
                 type="submit"
-                className="inline-flex text-nowrap items-center justify-center rounded-full bg-brand px-5 py-2 text-sm font-semibold text-surface shadow-sm shadow-slate-900/10 hover:bg-brand-dark"
+                className="rounded-md bg-brand px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
               >
-                Submit inquiry
+                Send message
               </button>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
-    </section>
-  );
-}
-
-/** DETAILS – email, scheduling link, optional office location */
-function ContactDetailsSection() {
-  return (
-    <section className="bg-section-warm py-24">
-      <div className="mx-auto max-w-7xl space-y-8 px-4 sm:px-6">
-        {/* Intro */}
-        <div className="max-w-3xl space-y-3">
-          <IconEyebrow
-            icon={Mail}
-            label="Other Ways to Reach Us"
-            className="text-text-muted"
-            iconClassName="text-brand"
-          />
-          <SectionTitle>Contact details at a glance.</SectionTitle>
-          <BodyText className="text-sm text-text-muted sm:text-base">
-            For most investors, the form above is the easiest way to start the
-            conversation. You can also reach us directly using the options
-            below, especially if you already have materials or a specific
-            diligence process in mind.
-          </BodyText>
-        </div>
-
-        {/* Cards */}
-        <div className="grid gap-6 md:grid-cols-3">
-          {/* Email */}
-          <div className="rounded-2xl border border-border bg-surface p-6 shadow-sm">
-            <h3 className="mb-3 text-sm font-semibold text-brand">Email</h3>
-
-            <div className="flex items-start gap-3">
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-chip-blue text-brand shadow-sm">
-                <Mail className="h-4 w-4" />
-              </span>
-
-              <div className="space-y-1">
-                <BodyText className="text-xs text-text sm:text-sm">
-                  <a
-                    href="mailto:contact@sgilink.com"
-                    className="font-medium text-brand underline-offset-2 hover:underline"
-                  >
-                    contact@sgilink.com
-                  </a>
-                </BodyText>
-
-                <SmallMuted className="text-text-muted">
-                  For general questions, diligence requests, and follow-ups from
-                  existing conversations.
-                </SmallMuted>
-              </div>
-            </div>
-          </div>
-
-          {/* Schedule a call */}
-          <div className="rounded-2xl border border-border bg-surface p-6 shadow-sm">
-            <h3 className="mb-3 text-sm font-semibold text-brand">
-              Schedule a call
-            </h3>
-
-            <div className="flex items-start gap-3">
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-chip-blue text-brand shadow-sm">
-                <CalendarClock className="h-4 w-4" />
-              </span>
-
-              <div className="space-y-1">
-                <BodyText className="text-xs text-text sm:text-sm">
-                  <a
-                    href="https://calendly.com/sgilink/intro"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="font-medium text-brand underline-offset-2 hover:underline"
-                  >
-                    Open scheduling link
-                  </a>
-                </BodyText>
-
-                <SmallMuted className="text-text-muted">
-                  Ideal if you’ve already confirmed accreditation and want to
-                  book a call directly.
-                </SmallMuted>
-              </div>
-            </div>
-          </div>
-
-          {/* Office location */}
-          <div className="rounded-2xl border border-border bg-surface p-6 shadow-sm">
-            <h3 className="mb-3 text-sm font-semibold text-brand">
-              Office location
-            </h3>
-
-            <div className="flex items-start gap-3">
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-chip-blue text-brand shadow-sm">
-                <MapPin className="h-4 w-4" />
-              </span>
-
-              <div className="space-y-1">
-                <BodyText className="text-xs text-text sm:text-sm leading-relaxed">
-                  SGI-LINK
-                  <br />
-                  123 Market Street
-                  <br />
-                  Suite 500
-                  <br />
-                  City, State, ZIP
-                </BodyText>
-
-                <SmallMuted className="text-text-muted">
-                  In-person meetings are available for qualified investors by
-                  appointment only.
-                </SmallMuted>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
   );
 }
