@@ -15,6 +15,7 @@ export default function SgiBriefPage() {
   return (
     <main className="min-h-screen bg-bg text-text">
       <BriefHero />
+      {/* wtf */}
       <FundSnapshotSection />
       <StrategySection />
       <TechnologySection />
